@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import AuthProvider from "@/features/auth/context/AuthContext";
+import AuthProvider from "./features/auth/context/AuthProvider";
 import LoginPage from "@/features/auth/pages/LoginPage";
 import SignUpPage from "@/features/auth/pages/SignUpPage";
 import ForgotPasswordPage from "@/features/auth/pages/ForgotPasswordPage";
