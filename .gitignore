@@ -140,6 +140,6 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
-supabase/
+# supabase/
 complete_md/
 md/

@@ -17,6 +17,7 @@ import { MaterialUploadPage } from "@/features/upload/pages/MaterialUploadPage";
 import { QuizzesPage } from "./features/quizzes/pages/QuizzesPage";
 import { QuizDetailPage } from "./features/quizzes/pages/QuizDetailPage";
 import { QuizSessionPage } from "./features/quizzes/pages/QuizSessionPage";
+import { StudyPlanPage } from "./features/study/pages/StudyPlanPage";
 
 // Create a Query Client for React Query
 const queryClient = new QueryClient({
@@ -57,10 +58,7 @@ function App() {
               {/* Routes with DashboardLayout */}
               <Route element={<DashboardLayout />}>
                 <Route path="/dashboard" element={<DashboardPage />} />
-                <Route
-                  path="/study-plan"
-                  element={<div className="p-6">Study Plan (Coming Soon)</div>}
-                />
+                <Route path="/study-plan" element={<StudyPlanPage />} />
                 <Route path="/subjects" element={<SubjectsPage />} />
                 <Route path="/subjects/:id" element={<SubjectDetailPage />} />
                 <Route path="/upload" element={<MaterialUploadPage />} />
