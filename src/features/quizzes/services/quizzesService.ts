@@ -9,7 +9,10 @@ import type {
   Subject,
 } from "../types/quiz";
 import { generateQuizQuestions } from "../lib/quizGen";
-import { updateMasteryFromQuizResults } from "@/features/study-plan/services/mastery.service";
+import {
+  updateMasteryFromQuizResults,
+  updateSubjectPassChance,
+} from "@/features/study/services/mastery.service";
 
 export const getSubjects = async (): Promise<Subject[]> => {
   const { data, error } = await supabase.from("subjects").select("*");
@@ -242,6 +245,20 @@ export const generateAndCreateQuiz = async (
     ...q,
   }));
   console.log("Generated Questions:", questionsWithQuizId);
+
+  // Validate that all questions have concepts (for BKT tracking)
+  const missingConcepts = questionsWithQuizId.filter((q) => !q.concept);
+  if (missingConcepts.length > 0) {
+    console.warn(
+      `⚠️ ${missingConcepts.length} questions are missing concept field - BKT tracking will use topic instead`
+    );
+    // Fallback: use topic as concept if concept is missing
+    questionsWithQuizId.forEach((q) => {
+      if (!q.concept) {
+        q.concept = q.topic;
+      }
+    });
+  }
 
   const { data: qData, error: qError } = await supabase
     .from("questions")
@@ -560,6 +577,18 @@ export const updateMasteryAfterQuiz = async (
   await Promise.all(updatePromises);
 
   console.log("✅ BKT mastery updates complete");
+
+  // Update subject pass_chance based on new mastery levels
+  try {
+    const passChanceResult = await updateSubjectPassChance(quiz.subject_id);
+    if (passChanceResult.error) {
+      console.error("⚠️ Failed to update pass chance:", passChanceResult.error);
+    } else {
+      console.log(`✅ Subject pass chance updated: ${passChanceResult.data}%`);
+    }
+  } catch (passChanceError) {
+    console.error("⚠️ Exception updating pass chance:", passChanceError);
+  }
 };
 
 /**

@@ -14,7 +14,7 @@ export const GardenHeader: React.FC<GardenHeaderProps> = ({
 }) => {
   return (
     <div
-      className={`px-6 lg:px-8 py-8 bg-linear-to-br ${subjectColor} text-white relative overflow-hidden`}
+      className={`px-6 lg:px-8 py-8 bg-${subjectColor}-600 text-white relative overflow-hidden`}
     >
       <button
         onClick={onClose}

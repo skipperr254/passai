@@ -8,6 +8,7 @@ type GeneratedQuestionsType = {
   explanation: string;
   difficulty: "easy" | "medium" | "hard";
   topic: string;
+  concept: string; // Specific concept being tested (for BKT tracking)
   points: number;
   source_snippet: string;
 };
@@ -58,6 +59,13 @@ export const generateQuizQuestions = async (
       3. Have accurate answers with helpful explanations
       4. Match the requested difficulty level
       5. Cover key concepts from the material
+      6. Each question MUST identify a SPECIFIC CONCEPT being tested (for knowledge tracking)
+
+      CONCEPT IDENTIFICATION:
+      - For each question, identify the SPECIFIC concept/topic being tested
+      - Concepts should be precise and granular (e.g., "Photosynthesis" not just "Biology")
+      - Examples: "Mitochondrial Function", "Pythagorean Theorem", "French Revolution Causes"
+      - This concept will be used to track student mastery over time
 
       Question types ALLOWED:
       - multiple-choice: Exactly 4 plain text options with one correct answer (NO "A. ", "B. " prefixes)
@@ -96,13 +104,16 @@ export const generateQuizQuestions = async (
               "correct_answer": "0" | "1" | "2" | "3" for MCQ or "true" | "false" for true-false. Give the index of the correct answer in the options array for multiple-choice. For true-false, use "true" or "false",
               "explanation": "Why this answer is correct and what concept it tests",
               "difficulty": "easy" | "medium" | "hard",
-              "topic": "concept1", // Key topic/concept covered.
+              "topic": "General topic area", // Broad topic category
+              "concept": "Specific concept name", // REQUIRED: Specific, granular concept being tested (e.g., "Cellular Respiration", "Quadratic Formula", "Treaty of Versailles")
               "points": 1-5 // Points based on difficulty: easy=1, medium=2-3, hard=4-5
               "source_snippet": "excerpt from the material that relates to this question" // The part of the material this question is based on. They can read that section to understand the context.
             }
             // ... ${settings.questionCount} total questions
           ]
         }
+
+      CRITICAL: Every question MUST include a "concept" field with a specific, meaningful concept name. This is used for tracking student mastery over time.
 
       Question type distribution:
       - 70% multiple-choice (4 options each)

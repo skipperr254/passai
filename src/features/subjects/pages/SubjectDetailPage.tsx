@@ -2,8 +2,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
   Calendar,
-  FileText,
-  Brain,
   TrendingUp,
   Edit,
   Trash2,
@@ -30,6 +28,10 @@ import {
 import type { Subject, UpdateSubjectInput } from "../types/subject.types";
 import { useSubjectGardenHealth } from "../../quizzes/hooks/useSubjectGardenHealth";
 import { SubjectGardenCard } from "../../quizzes/components/garden/SubjectGardenCard";
+import { PassProbabilityCard } from "../../study/components/PassProbabilityCard";
+import { useTopicMastery, useWeakTopics } from "../../study/hooks/useMastery";
+import { TopicMasteryCard } from "../../study/components/TopicMasteryCard";
+import { WeakAreasCard } from "../../study/components/WeakAreasCard";
 
 type ModalState =
   | { type: "closed" }
@@ -54,6 +56,10 @@ export default function SubjectDetailPage() {
     statusLabel,
     isLoading: gardenLoading,
   } = useSubjectGardenHealth(id);
+
+  // Topic Mastery
+  const { data: topicMastery, isLoading: masteryLoading } = useTopicMastery(id);
+  const { data: weakAreas, isLoading: weakAreasLoading } = useWeakTopics(id);
 
   // Mutations
   const updateMutation = useUpdateSubject();
@@ -323,70 +329,28 @@ export default function SubjectDetailPage() {
           />
         </div>
 
-        {/* Content Grid */}
-        <div className="grid gap-6 lg:grid-cols-2">
-          {/* Materials Section - Empty State */}
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="flex items-center gap-2 text-xl font-bold text-gray-900">
-                <FileText className="size-6 text-purple-600" />
-                Study Materials
-              </h2>
-              <button
-                onClick={() => navigate(`/upload?subjectId=${subject.id}`)}
-                className="text-sm font-medium text-purple-600 hover:text-purple-700"
-              >
-                View All
-              </button>
-            </div>
-            <div className="flex min-h-[200px] items-center justify-center">
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-purple-50">
-                  <FileText className="size-8 text-purple-600" />
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                  No materials yet
-                </h3>
-                <p className="mb-4 text-sm text-gray-600">
-                  Upload study materials like PDFs, notes, and documents to get
-                  started
-                </p>
-                <button
-                  onClick={() => navigate(`/upload?subjectId=${subject.id}`)}
-                  className="rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-purple-700"
-                >
-                  Upload Materials
-                </button>
-              </div>
-            </div>
-          </div>
+        {/* Pass Probability Card - Detailed View */}
+        <div className="mb-8">
+          <PassProbabilityCard
+            passChance={subject.pass_chance}
+            subjectName={subject.name}
+            showDetails={true}
+          />
+        </div>
 
-          {/* Quizzes Section - Empty State */}
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="flex items-center gap-2 text-xl font-bold text-gray-900">
-                <Brain className="size-6 text-blue-600" />
-                Quizzes
-              </h2>
-            </div>
-            <div className="flex min-h-[200px] items-center justify-center">
-              <div className="text-center">
-                <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-blue-50">
-                  <Brain className="size-8 text-blue-600" />
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                  No quizzes yet
-                </h3>
-                <p className="mb-4 text-sm text-gray-600">
-                  Generate AI-powered quizzes from your materials to test your
-                  knowledge
-                </p>
-                <button className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700">
-                  Generate Quiz
-                </button>
-              </div>
-            </div>
-          </div>
+        {/* Mastery & Weak Areas Grid */}
+        <div className="grid gap-6 lg:grid-cols-2">
+          {/* Topic Mastery Breakdown */}
+          <TopicMasteryCard
+            topics={topicMastery || []}
+            isLoading={masteryLoading}
+          />
+
+          {/* Weak Areas / Areas to Improve */}
+          <WeakAreasCard
+            weakAreas={weakAreas || []}
+            isLoading={weakAreasLoading}
+          />
         </div>
 
         {/* Teacher Emphasis Section */}

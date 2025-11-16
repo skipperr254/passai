@@ -19,7 +19,7 @@ export const LevelProgress: React.FC<LevelProgressProps> = ({
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div
-            className={`w-12 h-12 rounded-xl bg-linear-to-br ${subjectColor} flex items-center justify-center shadow-lg`}
+            className={`w-12 h-12 rounded-xl bg-${subjectColor}-600 flex items-center justify-center shadow-lg`}
           >
             <Award className="w-6 h-6 text-white" />
           </div>
@@ -47,7 +47,7 @@ export const LevelProgress: React.FC<LevelProgressProps> = ({
         </div>
         <div className="h-4 bg-white rounded-full overflow-hidden shadow-inner">
           <div
-            className={`h-full bg-linear-to-r ${subjectColor} rounded-full transition-all duration-1000 ease-out relative`}
+            className={`h-full bg-${subjectColor}-600 rounded-full transition-all duration-1000 ease-out relative`}
             style={{ width: `${displayProgress}%` }}
           >
             <div className="absolute inset-0 bg-white/20 animate-pulse" />
