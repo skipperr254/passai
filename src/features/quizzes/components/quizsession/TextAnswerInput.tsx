@@ -40,8 +40,8 @@ export const TextAnswerInput: React.FC<TextAnswerInputProps> = ({
       <div className="flex items-center justify-between mt-2 px-1">
         <p className="text-xs text-slate-500">
           {questionType === "essay"
-            ? "💡 Write clearly and organize your thoughts"
-            : "💡 Be specific and concise"}
+            ? "🌺 Write clearly and organize your thoughts"
+            : "🌺 Be specific and concise"}
         </p>
         <p className="text-xs text-slate-400">
           {value.length} character{value.length !== 1 ? "s" : ""}

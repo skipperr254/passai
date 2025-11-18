@@ -70,7 +70,7 @@ export const WelcomeStep: React.FC = () => {
 
       <div className="bg-linear-to-br from-slate-50 to-blue-50 rounded-xl p-6 border border-slate-200">
         <p className="text-sm text-slate-700 text-center">
-          ⚡ <strong>Pro tip:</strong> The more you practice, the smarter our AI
+          🌺 <strong>Pro tip:</strong> The more you practice, the smarter our AI
           gets at identifying your weak areas and creating targeted quizzes!
         </p>
       </div>
@@ -141,7 +141,7 @@ export const SubjectsStep: React.FC = () => {
 
       <div className="bg-linear-to-br from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-200">
         <p className="text-sm text-slate-700">
-          💡 <strong>Tip:</strong> You can add multiple subjects and switch
+          🌺 <strong>Tip:</strong> You can add multiple subjects and switch
           between them anytime from your dashboard!
         </p>
       </div>
@@ -297,7 +297,7 @@ export const QuizzesStep: React.FC = () => {
 
       <div className="bg-linear-to-br from-emerald-50 to-green-50 rounded-xl p-4 border border-emerald-200">
         <p className="text-sm text-slate-700">
-          ✨ <strong>Smart Feedback:</strong> Get instant AI-powered feedback
+          🌱 <strong>Smart Feedback:</strong> Get instant AI-powered feedback
           that tells you exactly what you got right and what to improve!
         </p>
       </div>
@@ -373,7 +373,7 @@ export const ProgressStep: React.FC = () => {
         <h4 className="font-bold mb-2">You're All Set!</h4>
         <p className="text-sm text-blue-100">
           Ready to start your learning journey? Let's add your first subject and
-          begin mastering your exams! 🚀
+          begin growing your knowledge garden! 🌱
         </p>
       </div>
     </div>

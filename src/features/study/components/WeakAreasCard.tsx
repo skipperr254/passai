@@ -169,7 +169,7 @@ export function WeakAreasCard({ weakAreas, isLoading }: WeakAreasCardProps) {
         {/* Action Tip */}
         <div className="pt-3 border-t border-orange-200">
           <p className="text-sm text-orange-800">
-            💡 <strong>Tip:</strong> Complete quizzes focusing on these topics
+            🌺 <strong>Tip:</strong> Complete quizzes focusing on these topics
             to improve your overall pass probability.
           </p>
         </div>

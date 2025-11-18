@@ -226,7 +226,7 @@ export default function SubjectForm({
         {/* Section Divider */}
         <div className="pt-6 border-t border-slate-200">
           <h3 className="text-lg font-bold text-slate-900 mb-1">
-            📚 Curriculum Customization
+            Curriculum Customization
           </h3>
           <p className="text-sm text-slate-500 mb-6">
             Help us generate questions that match your actual exam
@@ -331,7 +331,7 @@ export default function SubjectForm({
             </p>
           )}
           <p className="mt-1.5 text-xs text-slate-500">
-            💡 This helps generate questions that match your actual exam format
+            This helps generate questions that match your actual exam format
           </p>
         </div>
 
@@ -364,8 +364,7 @@ export default function SubjectForm({
             </p>
           )}
           <p className="mt-1.5 text-xs text-slate-500">
-            📝 This helps generate answers that match your teacher's
-            expectations
+            This helps generate answers that match your teacher's expectations
           </p>
         </div>
 

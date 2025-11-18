@@ -51,7 +51,7 @@ export default function EmptyState({ onCreateSubject }: EmptyStateProps) {
         {/* Helper Text */}
         <div className="mt-8 pt-8 border-t border-slate-200">
           <p className="text-sm text-slate-500">
-            💡 <strong>Tip:</strong> Start by adding a subject you're currently
+            🌺 <strong>Tip:</strong> Start by adding a subject you're currently
             studying, then upload your materials to generate personalized
             quizzes.
           </p>

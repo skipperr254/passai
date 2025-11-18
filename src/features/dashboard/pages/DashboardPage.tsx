@@ -40,12 +40,12 @@ export default function DashboardPage() {
       {/* Welcome Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-slate-900 mb-2">
-          Welcome back, {profile?.first_name || "Student"}! 👋
+          Welcome back, {profile?.first_name || "Student"}! 🌱
         </h1>
         <p className="text-slate-600">
           {hasSubjects
-            ? "Here's your study overview for today"
-            : "Let's get started with your learning journey"}
+            ? "Your garden is growing - here's today's progress"
+            : "Let's plant the seeds of your learning journey"}
         </p>
       </div>
 

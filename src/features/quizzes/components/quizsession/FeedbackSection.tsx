@@ -35,10 +35,11 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({
           <Loader2 className="w-6 h-6 text-blue-600 shrink-0 animate-spin" />
           <div className="flex-1">
             <h3 className="font-bold text-slate-900 mb-1">
-              🤖 Grading your answer...
+              🌱 Carefully reviewing your answer...
             </h3>
             <p className="text-sm text-slate-700">
-              Our AI is analyzing your response. This usually takes 2-3 seconds.
+              Our AI is nurturing your response with care. This usually takes
+              2-3 seconds.
             </p>
           </div>
         </div>

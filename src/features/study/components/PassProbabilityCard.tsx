@@ -35,19 +35,19 @@ export function PassProbabilityCard({
   // Default to 0 if no pass chance available
   const probability = passChance ?? 0;
 
-  // Determine status and styling based on probability
+  // Determine status and styling based on probability (garden-themed)
   const getStatus = (prob: number) => {
     if (prob >= 80)
-      return { label: "Excellent", color: "text-green-600", emoji: "🎯" };
+      return { label: "Thriving", color: "text-green-600", emoji: "�" };
     if (prob >= 70)
-      return { label: "Good", color: "text-green-500", emoji: "✅" };
+      return { label: "Blooming", color: "text-green-500", emoji: "🌻" };
     if (prob >= 60)
-      return { label: "Fair", color: "text-yellow-600", emoji: "📈" };
+      return { label: "Healthy", color: "text-yellow-600", emoji: "🌿" };
     if (prob >= 50)
-      return { label: "Moderate", color: "text-yellow-500", emoji: "⚠️" };
+      return { label: "Growing", color: "text-yellow-500", emoji: "🌱" };
     if (prob >= 40)
-      return { label: "Needs Work", color: "text-orange-500", emoji: "📚" };
-    return { label: "Focus Required", color: "text-red-500", emoji: "🔥" };
+      return { label: "Sprouting", color: "text-orange-500", emoji: "🌱" };
+    return { label: "Needs Water", color: "text-red-500", emoji: "�" };
   };
 
   const getProgressColor = (prob: number) => {
