@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import {
-  Book,
   Brain,
   Target,
   TrendingUp,
@@ -8,6 +7,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
 
 export default function LandingPage() {
   return (
@@ -17,8 +17,8 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="text-center">
             {/* Logo */}
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-linear-to-br from-blue-600 via-indigo-600 to-violet-600 shadow-2xl shadow-blue-500/30 mb-8">
-              <Book className="w-10 h-10 text-white" />
+            <div className="mb-8">
+              <Logo size={80} className="mx-auto" />
             </div>
 
             {/* Main Heading */}

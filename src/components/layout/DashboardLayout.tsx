@@ -1,5 +1,4 @@
 import {
-  Book,
   Settings,
   Bell,
   LayoutDashboard,
@@ -7,11 +6,13 @@ import {
   FileQuestion,
   GraduationCap,
   LogOut,
+  Book,
 } from "lucide-react";
 import { useState } from "react";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/features/auth/hooks/useAuth";
 import { signOut } from "@/features/auth/services/authService";
+import { Logo } from "@/components/ui/Logo";
 
 type NavigationItem = {
   id: string;
@@ -74,19 +75,7 @@ export default function DashboardLayout() {
         {/* Desktop Sidebar */}
         <aside className="hidden lg:flex w-80 bg-white/80 backdrop-blur-xl border-r border-slate-200/60 flex-col shadow-sm">
           <div className="p-6 border-b border-slate-200/60">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-blue-600 via-indigo-600 to-violet-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
-                <Book className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
-                  PassAI
-                </h1>
-                <p className="text-sm text-slate-500 font-medium">
-                  Intelligent Study
-                </p>
-              </div>
-            </div>
+            <Logo size={48} showText={true} />
           </div>
 
           <nav
@@ -170,9 +159,7 @@ export default function DashboardLayout() {
                 onClick={() => navigate("/profile")}
                 className="flex items-center gap-3 hover:opacity-80 transition-opacity active:scale-95"
               >
-                <div className="w-10 h-10 rounded-xl bg-linear-to-br from-blue-600 via-indigo-600 to-violet-600 flex items-center justify-center shadow-md">
-                  <Book className="w-5 h-5 text-white" />
-                </div>
+                <Logo size={40} />
                 <div>
                   <h1 className="text-base font-bold text-slate-900">PassAI</h1>
                   <p className="text-xs text-slate-500 font-medium">

@@ -2,12 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Book, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import {
   resetPasswordSchema,
   type ResetPasswordInput,
 } from "../services/schemas";
 import { resetPassword } from "../services/authService";
+import { Logo } from "@/components/ui/Logo";
 
 export default function ResetPasswordPage() {
   const navigate = useNavigate();
@@ -48,8 +49,8 @@ export default function ResetPasswordPage() {
       <div className="w-full max-w-md">
         {/* Logo and Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-linear-to-br from-blue-600 via-indigo-600 to-violet-600 shadow-lg shadow-blue-500/20 mb-4">
-            <Book className="w-8 h-8 text-white" />
+          <div className="mb-4">
+            <Logo size={64} className="mx-auto" />
           </div>
           <h1 className="text-3xl font-bold text-slate-900 mb-2">
             Reset your password
