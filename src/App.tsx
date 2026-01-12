@@ -65,6 +65,7 @@ function App() {
               <Route element={<DashboardLayout />}>
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/study-plan" element={<StudyPlanPage />} />
+                <Route path="/study-plan/:subjectId" element={<StudyPlanPage />} />
                 <Route path="/subjects" element={<SubjectsPage />} />
                 <Route path="/subjects/:id" element={<SubjectDetailPage />} />
                 <Route path="/upload" element={<MaterialUploadPage />} />

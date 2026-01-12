@@ -38,6 +38,9 @@ export type StudyPlanTask = {
   resource_links: string[] | null;
   // Garden metaphor metadata (optional)
   outcome?: string; // e.g., "Grows your seedling to 🌿"
+  // Material reference fields (new - for material-based tasks)
+  fileName?: string; // Name of the uploaded file to reference
+  section?: string; // Specific section or topic within the file
 };
 
 export type StudyPlan = {

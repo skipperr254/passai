@@ -23,7 +23,7 @@ export interface GenerationResult {
 
 export async function generateQuestions(
   systemPrompt: string,
-  userPrompt: string
+  userPrompt: string,
 ): Promise<GenerationResult> {
   console.log("🤖 Calling Anthropic Claude...");
 
@@ -41,8 +41,9 @@ export async function generateQuestions(
     ],
   });
 
-  const responseText =
-    message.content[0]?.type === "text" ? message.content[0].text : null;
+  const responseText = message.content[0]?.type === "text"
+    ? message.content[0].text
+    : null;
 
   if (!responseText) {
     throw new Error("Empty response from Claude");
@@ -53,10 +54,25 @@ export async function generateQuestions(
 
   console.log("✅ Generated questions:", questions.length);
 
-  // Validate that all questions have concepts (for BKT tracking)
-  questions.forEach((q) => {
-    if (!q.concept) {
+  // Validate and fix missing required fields
+  questions.forEach((q, index) => {
+    // Ensure topic is present (required NOT NULL field in database)
+    if (!q.topic || q.topic.trim() === "") {
+      // Try to use concept as fallback, or use a generic topic
+      q.topic = q.concept || "General Knowledge";
+      console.warn(
+        `⚠️ Question ${index + 1}: Missing topic, using fallback: "${q.topic}"`,
+      );
+    }
+
+    // Ensure concept is present (for BKT tracking)
+    if (!q.concept || q.concept.trim() === "") {
       q.concept = q.topic; // Fallback to topic if concept missing
+      console.warn(
+        `⚠️ Question ${
+          index + 1
+        }: Missing concept, using topic: "${q.concept}"`,
+      );
     }
   });
 

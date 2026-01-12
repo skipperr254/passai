@@ -7,13 +7,11 @@ import type { QuizSettings, Subject } from "../../types/quiz";
 import { SubjectSelection } from "./SubjectSelection";
 import { MaterialSelection } from "./MaterialSelection";
 import { QuizConfiguration } from "./QuizConfiguration";
-import { GeneratingProgress } from "./GeneratingProgress";
-import { ScheduleOptions } from "./ScheduleOptions";
 import { toast } from "sonner";
 
 interface CreateQuizFlowProps {
   onClose: () => void;
-  onQuizCreated?: (quizId: string, scheduleTime?: string) => void;
+  onQuizCreated?: (quizId: string) => void;
   preSelectedSubject?: string;
 }
 
@@ -29,11 +27,7 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
 
   const needsSubjectSelection = !preSelectedSubject;
   const [step, setStep] = useState<
-    | "select-subject"
-    | "select-materials"
-    | "configure"
-    | "generating"
-    | "schedule"
+    "select-subject" | "select-materials" | "configure" | "generating"
   >(needsSubjectSelection ? "select-subject" : "select-materials");
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(
     preSelectedSubject
@@ -58,9 +52,6 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
     cognitiveMix: { recall: 30, understanding: 50, application: 20 },
     focusAreas: "",
   });
-  const [scheduleOption, setScheduleOption] = useState<"now" | "later">("now");
-  const [scheduleDateTime, setScheduleDateTime] = useState("");
-  const [createdQuizId, setCreatedQuizId] = useState<string | null>(null);
 
   const filteredMaterials = selectedSubject
     ? materials.filter((m) => m.subject_id === selectedSubject.id)
@@ -95,9 +86,10 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
       },
       {
         onSuccess: ({ quizId }) => {
-          setCreatedQuizId(quizId);
-          setStep("schedule");
           console.log("✅ Quiz created successfully with ID:", quizId);
+          toast.success("Quiz generated successfully!");
+          onQuizCreated?.(quizId);
+          onClose();
         },
         onError: (error) => {
           console.error("❌ Quiz generation failed:", error);
@@ -112,22 +104,10 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
     );
   };
 
-  const handleScheduleQuiz = () => {
-    if (!createdQuizId) return;
-    if (scheduleOption === "now") {
-      onQuizCreated?.(createdQuizId);
-    } else {
-      onQuizCreated?.(createdQuizId, scheduleDateTime);
-    }
-    onClose();
-  };
-
   const canProceedFromSubject = !!selectedSubject;
   const canProceedFromMaterials = selectedMaterials.length > 0;
-  const canSchedule =
-    !!createdQuizId && (scheduleOption !== "later" || !!scheduleDateTime);
 
-  const totalSteps = needsSubjectSelection ? 4 : 3;
+  const totalSteps = needsSubjectSelection ? 3 : 2;
   const currentStepNumber =
     step === "select-subject"
       ? 1
@@ -139,8 +119,6 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
       ? needsSubjectSelection
         ? 3
         : 2
-      : step === "schedule"
-      ? totalSteps
       : 0;
 
   return (
@@ -168,7 +146,6 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
                 {step === "select-materials" && "Select materials"}
                 {step === "configure" && "Configure quiz details"}
                 {step === "generating" && "Generating your quiz..."}
-                {step === "schedule" && "Ready to start or schedule"}
               </p>
             </div>
             <button
@@ -223,22 +200,26 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
             />
           )}
           {step === "generating" && (
-            <GeneratingProgress
-              generationProgress={
-                isGenerating ? "generating-questions" : "complete"
-              }
-              isLoading={isGenerating}
-            />
-          )}
-          {step === "schedule" && (
-            <ScheduleOptions
-              scheduleOption={scheduleOption}
-              setScheduleOption={setScheduleOption}
-              scheduleDateTime={scheduleDateTime}
-              setScheduleDateTime={setScheduleDateTime}
-              quizSettings={quizSettings}
-              selectedSubject={selectedSubject}
-            />
+            <div className="p-6 lg:p-12">
+              <div className="max-w-md mx-auto text-center">
+                <div className="relative w-24 h-24 mx-auto mb-8">
+                  <div className="absolute inset-0 bg-linear-to-br from-blue-500 to-indigo-600 rounded-full animate-pulse opacity-20" />
+                  <div className="absolute inset-2 bg-linear-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
+                    <Loader2 className="w-12 h-12 text-white animate-spin" />
+                  </div>
+                  <div
+                    className="absolute inset-0 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
+                    style={{ animationDuration: "2s" }}
+                  />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                  Generating Your Quiz
+                </h3>
+                <p className="text-slate-600">
+                  Our AI is creating personalized questions from your materials
+                </p>
+              </div>
+            </div>
           )}
         </div>
 
@@ -247,7 +228,7 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
           <div className="flex gap-3">
             {step !== "generating" && (
               <>
-                {step !== "select-subject" && step !== "schedule" && (
+                {step !== "select-subject" && (
                   <button
                     onClick={() => {
                       if (step === "configure") setStep("select-materials");
@@ -273,17 +254,14 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
                       setStep("configure");
                     else if (step === "configure") {
                       handleGenerateQuiz();
-                    } else if (step === "schedule") {
-                      handleScheduleQuiz();
                     }
                   }}
                   disabled={
                     (step === "select-subject" && !canProceedFromSubject) ||
                     (step === "select-materials" && !canProceedFromMaterials) ||
-                    (step === "configure" && isGenerating) ||
-                    (step === "schedule" && !canSchedule)
+                    (step === "configure" && isGenerating)
                   }
-                  className="flex-1 flex items-center justify-center gap-2 px-4 lg:px-6 py-3 bg-linear-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 lg:px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
                 >
                   {isGenerating ? (
                     <>
@@ -296,14 +274,8 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
                         {step === "select-subject" && "Continue"}
                         {step === "select-materials" && "Continue"}
                         {step === "configure" && "Generate Quiz"}
-                        {step === "schedule" &&
-                          (scheduleOption === "now"
-                            ? "Start Quiz"
-                            : "Schedule Quiz")}
                       </span>
-                      {step !== "schedule" ? (
-                        <ChevronRight className="w-5 h-5" />
-                      ) : null}
+                      <ChevronRight className="w-5 h-5" />
                     </>
                   )}
                 </button>

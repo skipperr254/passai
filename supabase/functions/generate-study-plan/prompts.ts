@@ -5,6 +5,7 @@
 
 import type {
     GardenStage,
+    StudyMaterial,
     TopicMastery,
     TopicPerformance,
 } from "./database.ts";
@@ -66,13 +67,24 @@ You MUST respond with valid JSON in this exact structure:
       "timeToNextStage": 30, // Minutes to next garden stage
       "recommendations": [
         {
-          "title": "Review character relationships in your materials",
-          "description": "Focus on how family dynamics drive character decisions in the stories you've studied",
-          "taskType": "review" | "practice" | "reading" | "exercise" | "video",
+          "title": "Read Willy Loman analysis in your Death of Salesman notes",
+          "description": "Review 'Death_of_Salesman_Notes.pdf' focusing on Willy's character motivations and family relationships. You missed 2 questions about his decisions.",
+          "taskType": "reading",
           "timeMinutes": 15,
-          "outcome": "This addresses both tricky questions and grows your seedling toward 🌿"
+          "outcome": "This addresses the character motivation questions and grows your seedling toward 🌿",
+          "fileName": "Death_of_Salesman_Notes.pdf",
+          "section": "Willy Loman character analysis"
+        },
+        {
+          "title": "Re-read the family dynamics section in Chapter 3",
+          "description": "Review 'Chapter_3_Summary.pdf' which covers the Loman family relationships theme",
+          "taskType": "review",
+          "timeMinutes": 12,
+          "outcome": "Strengthens understanding of family themes",
+          "fileName": "Chapter_3_Summary.pdf",
+          "section": "Family dynamics and themes"
         }
-        // 3-5 recommendations per topic
+        // 3-5 recommendations per topic, ALL must reference uploaded files
       ]
     }
     // Include ALL topics (weak ones first, strong ones last)
@@ -81,23 +93,40 @@ You MUST respond with valid JSON in this exact structure:
 
 **CRITICAL GUIDELINES:**
 1. PRIORITIZE WEAKEST FIRST: List topics from weakest (🌱) to strongest (🌳)
-2. BE SPECIFIC: "Review character relationships" not "study more"
-3. SHOW OUTCOMES: "Grows to 60%" not vague promises
-4. BE ENCOURAGING: Celebrate current progress, don't emphasize gaps
-5. PRESERVE AUTONOMY: "Want to water this?" not "You must complete"
-6. USE GARDEN LANGUAGE: Consistently use growth/water/bloom metaphors
+2. BE SPECIFIC WITH MATERIALS: "Read 'Chapter_3_Notes.pdf' section on family dynamics" not "study more"
+3. ALWAYS REFERENCE ACTUAL FILES: Every recommendation MUST reference a specific uploaded file by name
+4. SHOW OUTCOMES: "Grows to 60%" not vague promises
+5. BE ENCOURAGING: Celebrate current progress, don't emphasize gaps
+6. PRESERVE AUTONOMY: "Want to water this?" not "You must complete"
+7. USE GARDEN LANGUAGE: Consistently use growth/water/bloom metaphors
+8. NO EXTERNAL RESOURCES: Only use the materials the student has uploaded - no videos, websites, or external exercises
 
-**TASK TYPES:**
-- "review": Re-read material, study notes, review concepts
-- "practice": Work through practice questions
-- "reading": Read specific sections or articles
-- "exercise": Complete assignments or problem sets
-- "video": Watch educational videos
+**TASK TYPES (MATERIALS-BASED ONLY):**
+- "reading": Read a specific uploaded file or section of a file
+- "review": Re-read or revisit a previously studied file
+- "practice": Work through practice questions (if quiz questions are available)
+
+**FORBIDDEN TASK TYPES:**
+❌ "video" - DO NOT suggest watching videos
+❌ "exercise" - DO NOT suggest external exercises
+❌ "drawing" - DO NOT suggest drawing diagrams
+❌ Any tasks that don't use uploaded materials
+
+**MATERIAL REFERENCES:**
+Every recommendation MUST include:
+- fileName: The exact name of the uploaded file
+- section: What part/topic to focus on in that file
+Example: "Read 'Death_of_Salesman_Notes.pdf' - focus on the Willy Loman character analysis section"
 
 **TIME ESTIMATES:**
 - Be realistic: Most recommendations should be 10-30 minutes
 - Time to next stage should be achievable (usually 20-60 min total)
+- Time to next stage should be achievable (usually 20-60 min total)
 - Show clear path: "Do these 3 things (45 min) → Grow to 🌿"
+
+**TOPIC NAMES:**
+- You MUST use the EXACT topic names provided in the "TOPIC MASTERY" list if they exist.
+- Do not invent new topic names unless they are completely new concepts not covered in the list.
 
 CRITICAL: Respond ONLY with valid JSON. No explanations outside the JSON object.`;
 }
@@ -118,6 +147,7 @@ export function buildUserPrompt(
         correct_answers: number;
         total_questions: number;
     },
+    studyMaterials: StudyMaterial[],
 ): string {
     // Calculate days until test
     const daysUntilTest = settings.testDate
@@ -154,6 +184,24 @@ Recent Quiz Performance:
 - Correct: ${attempt.correct_answers}/${attempt.total_questions}
 `;
 
+    // Build study materials list with content previews
+    const materialsOverview = studyMaterials.length > 0
+        ? studyMaterials
+            .map((material) => {
+                // Get first 300 characters of text content as preview
+                const preview = material.text_content
+                    ? material.text_content.substring(0, 300).replace(
+                        /\s+/g,
+                        " ",
+                    ).trim() + "..."
+                    : "No text content available";
+
+                return `- "${material.file_name}" (${material.file_type.toUpperCase()})
+  Preview: ${preview}`;
+            })
+            .join("\n\n")
+        : "No study materials uploaded yet - student needs to upload materials first";
+
     // Build weak topics detail
     const weakTopicsDetail = quizPerformance.weakTopics.length > 0
         ? quizPerformance.weakTopics
@@ -186,6 +234,9 @@ ${masteryOverview}
 
 ${quizSummary}
 
+UPLOADED STUDY MATERIALS (Use ONLY these files in recommendations):
+${materialsOverview}
+
 AREAS THAT NEED WATERING (Weak Performance):
 ${weakTopicsDetail}
 
@@ -206,12 +257,17 @@ YOUR TASK:
 1. Create a warm, encouraging study plan using garden metaphor
 2. Focus on the weakest topics first (seedlings that need water)
 3. Provide 3-5 specific, actionable recommendations per topic
-4. Show clear outcomes: "Do X (Y minutes) → Grow to [stage]"
-5. Be realistic with time estimates
-6. Celebrate progress: "Your garden is at ${gardenHealth}% - you're growing!"
+4. CRITICAL: Every recommendation MUST reference a specific uploaded file by name (fileName and section fields required)
+5. Match recommendations to weak topics - if they struggled with "Character Analysis", suggest reading materials that cover character analysis
+6. Show clear outcomes: "Do X (Y minutes) → Grow to [stage]"
+7. Be realistic with time estimates (10-30 minutes per task)
+8. Celebrate progress: "Your garden is at ${gardenHealth}% - you're growing!"
+9. NO EXTERNAL RESOURCES: Only use the uploaded materials listed above - no videos, websites, or external exercises
+
+IMPORTANT: If no materials are uploaded, you MUST inform the student to upload materials first. Do not create fake materials or external resources.
 
 Remember: The goal is to make the student feel CAPABLE, not overwhelmed.
-Show them a clear, achievable path forward with specific steps.
+Show them a clear, achievable path forward using THEIR uploaded materials.
 
 Generate the study plan in JSON format as specified in the system prompt.`;
 

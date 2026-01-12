@@ -32,47 +32,60 @@ export interface StudyPlanAIResponse {
     }>;
 }
 
-export async function generateStudyPlanWithAI(
+export async function callAnthropic(
     systemPrompt: string,
     userPrompt: string,
-): Promise<StudyPlanAIResponse> {
-    const client = await createAnthropicClient();
-
-    console.log("🤖 Calling Anthropic API for study plan generation...");
-
-    const response = await client.messages.create({
-        model: "claude-3-5-haiku-20241022",
-        max_tokens: 4096,
-        temperature: 0.7,
-        system: systemPrompt,
-        messages: [
-            {
-                role: "user",
-                content: userPrompt,
-            },
-        ],
-    });
-
-    // Extract content
-    const content = response.content[0];
-    if (content.type !== "text") {
-        throw new Error("Unexpected response type from Anthropic");
-    }
-
-    // Parse JSON response
-    let studyPlan: StudyPlanAIResponse;
+): Promise<
+    { success: boolean; studyPlan?: StudyPlanAIResponse; error?: string }
+> {
     try {
-        studyPlan = JSON.parse(content.text);
+        const client = await createAnthropicClient();
+
+        console.log("🤖 Calling Anthropic API for study plan generation...");
+
+        const response = await client.messages.create({
+            model: "claude-3-5-haiku-20241022",
+            max_tokens: 4096,
+            temperature: 0.7,
+            system: systemPrompt,
+            messages: [
+                {
+                    role: "user",
+                    content: userPrompt,
+                },
+            ],
+        });
+
+        // Extract content
+        const content = response.content[0];
+        if (content.type !== "text") {
+            throw new Error("Unexpected response type from Anthropic");
+        }
+
+        // Parse JSON response
+        let studyPlan: StudyPlanAIResponse;
+        try {
+            studyPlan = JSON.parse(content.text);
+        } catch (error) {
+            console.error("Failed to parse AI response:", content.text);
+            return {
+                success: false,
+                error: "AI returned invalid JSON response",
+            };
+        }
+
+        // Log usage
+        console.log("📊 AI Usage:", {
+            input_tokens: response.usage.input_tokens,
+            output_tokens: response.usage.output_tokens,
+        });
+
+        return { success: true, studyPlan };
     } catch (error) {
-        console.error("Failed to parse AI response:", content.text);
-        throw new Error("AI returned invalid JSON response");
+        console.error("Anthropic API Error:", error);
+        return {
+            success: false,
+            error: error instanceof Error ? error.message : "Unknown error",
+        };
     }
-
-    // Log usage
-    console.log("📊 AI Usage:", {
-        input_tokens: response.usage.input_tokens,
-        output_tokens: response.usage.output_tokens,
-    });
-
-    return studyPlan;
 }

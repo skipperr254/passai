@@ -13,7 +13,7 @@ type QuizAttempt = Tables<"quiz_attempts">;
  * Returns the most recent completed attempt if found
  */
 export const getCompletedQuizAttemptsForSubject = async (
-  subjectId: string
+  subjectId: string,
 ): Promise<{ hasAttempts: boolean; latestAttempt: QuizAttempt | null }> => {
   try {
     const {
@@ -35,7 +35,7 @@ export const getCompletedQuizAttemptsForSubject = async (
           subject_id,
           title
         )
-      `
+      `,
       )
       .eq("user_id", user.id)
       .eq("status", "completed")
@@ -59,7 +59,7 @@ export const getCompletedQuizAttemptsForSubject = async (
  * Check if user already has an active study plan for the subject
  */
 export const hasActiveStudyPlan = async (
-  subjectId: string
+  subjectId: string,
 ): Promise<boolean> => {
   try {
     const {
@@ -107,11 +107,13 @@ export const saveStudyPlanToDatabase = async (
         description: string;
         task_type: string;
         estimated_time_minutes: number;
+        fileName?: string;
+        section?: string;
       }>;
     }>;
   },
   subjectId: string,
-  testDate: string | null
+  testDate: string | null,
 ): Promise<string> => {
   try {
     const {
@@ -130,7 +132,7 @@ export const saveStudyPlanToDatabase = async (
     // Validate test date is in the future
     if (endDate <= now) {
       throw new Error(
-        "Cannot create study plan for a test date in the past. Please set a future test date."
+        "Cannot create study plan for a test date in the past. Please set a future test date.",
       );
     }
 
@@ -180,9 +182,11 @@ export const saveStudyPlanToDatabase = async (
         title: task.title,
         description: task.description,
         task_type: task.task_type,
-        estimated_time_minutes: task.estimated_time_minutes,
+        estimated_duration: task.estimated_time_minutes, // Use estimated_duration column
         order_index: taskIndex,
         is_completed: false,
+        file_name: task.fileName || null, // Add material reference
+        section: task.section || null, // Add section reference
       }));
 
       const { error: tasksError } = await supabase
@@ -203,7 +207,7 @@ export const saveStudyPlanToDatabase = async (
  * Fetch study plans for a specific subject with nested topics and tasks
  */
 export const fetchStudyPlans = async (
-  subjectId: string
+  subjectId: string,
 ): Promise<StudyPlan[]> => {
   try {
     const {
@@ -224,7 +228,7 @@ export const fetchStudyPlans = async (
           *,
           studyy_plan_tasks (*)
         )
-      `
+      `,
       )
       .eq("user_id", user.id)
       .eq("subject_id", subjectId)
@@ -235,36 +239,34 @@ export const fetchStudyPlans = async (
 
     // Transform database structure to match our StudyPlan type
     const transformedPlans: StudyPlan[] = (plans || []).map((plan) => {
-      const planTopics =
-        (plan.studyy_plan_topics as unknown as Array<{
-          id: string;
-          title: string;
-          description: string;
-          order_index: number;
-          priority: string;
-          status: string;
-          total_tasks: number;
-          total_time_minutes: number;
-          mastery_level: number | null;
-          studyy_plan_tasks: unknown;
-        }>) || [];
+      const planTopics = (plan.studyy_plan_topics as unknown as Array<{
+        id: string;
+        title: string;
+        description: string;
+        order_index: number;
+        priority: string;
+        status: string;
+        total_tasks: number;
+        total_time_minutes: number;
+        mastery_level: number | null;
+        studyy_plan_tasks: unknown;
+      }>) || [];
 
       const topics = planTopics.map((topic) => {
-        const topicTasks =
-          (topic.studyy_plan_tasks as unknown as Array<{
-            id: string;
-            topic_id: string;
-            title: string;
-            description: string;
-            task_type: string;
-            estimated_time_minutes: number;
-            order_index: number;
-            is_completed: boolean;
-            completed_at: string | null;
-            resource_links: string[] | null;
-          }>) || [];
+        const topicTasks = (topic.studyy_plan_tasks as unknown as Array<{
+          id: string;
+          topic_id: string;
+          title: string;
+          description: string;
+          task_type: string;
+          estimated_time_minutes: number;
+          order_index: number;
+          is_completed: boolean;
+          completed_at: string | null;
+          resource_links: string[] | null;
+        }>) || [];
         const completedTasksCount = topicTasks.filter(
-          (t) => t.is_completed
+          (t) => t.is_completed,
         ).length;
 
         return {
@@ -324,7 +326,7 @@ export const fetchStudyPlans = async (
  */
 export const updateTaskCompletion = async (
   taskId: string,
-  isCompleted: boolean
+  isCompleted: boolean,
 ): Promise<void> => {
   try {
     const { error } = await supabase

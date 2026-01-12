@@ -25,6 +25,8 @@ export type TopicWithGarden = {
         taskType: "review" | "practice" | "reading" | "exercise" | "video";
         timeMinutes: number;
         outcome: string;
+        fileName?: string; // Material reference
+        section?: string; // Section within material
     }>;
     bktData?: {
         p_known: number;
@@ -139,6 +141,8 @@ export const convertEdgePlanToDatabaseFormat = (
             description: string;
             task_type: "review" | "practice" | "reading" | "exercise" | "video";
             estimated_time_minutes: number;
+            fileName?: string; // Material reference
+            section?: string; // Section within material
         }>;
     }>;
 } => {
@@ -179,6 +183,8 @@ export const convertEdgePlanToDatabaseFormat = (
             description: rec.description,
             task_type: rec.taskType,
             estimated_time_minutes: rec.timeMinutes,
+            fileName: rec.fileName, // Pass through material reference
+            section: rec.section, // Pass through section reference
         })),
     }));
 

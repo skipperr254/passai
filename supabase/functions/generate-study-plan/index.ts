@@ -16,6 +16,7 @@ import {
     analyzeQuizPerformance,
     calculateTimeToNextStage,
     fetchQuizAttempt,
+    fetchStudyMaterials,
     fetchSubject,
     fetchTopicMastery,
     getMasteryStage,
@@ -94,8 +95,8 @@ serve(async (req) => {
         // 3. Fetch subject details
         const subject = await fetchSubject(
             authResult.supabase,
-            userId,
             subjectId,
+            userId,
         );
         if (!subject) {
             return new Response(
@@ -113,17 +114,28 @@ serve(async (req) => {
         // 4. Fetch topic mastery data (BKT)
         const topicMastery = await fetchTopicMastery(
             authResult.supabase,
-            userId,
             subjectId,
+            userId,
         );
 
         console.log(`Found ${topicMastery.length} topics with mastery data`);
 
-        // 5. Fetch quiz attempt details
+        // 5. Fetch study materials for the subject
+        const studyMaterials = await fetchStudyMaterials(
+            authResult.supabase,
+            subjectId,
+            userId,
+        );
+
+        console.log(
+            `Found ${studyMaterials.length} study materials with content`,
+        );
+
+        // 6. Fetch quiz attempt details
         const quizAttempt = await fetchQuizAttempt(
             authResult.supabase,
-            userId,
             quizAttemptId,
+            userId,
         );
 
         if (!quizAttempt) {
@@ -140,7 +152,10 @@ serve(async (req) => {
         }
 
         // 6. Analyze quiz performance by topic
-        const quizPerformance = analyzeQuizPerformance(quizAttempt);
+        const quizPerformance = analyzeQuizPerformance(
+            quizAttempt.questions,
+            quizAttempt.answers,
+        );
 
         console.log("Quiz performance analysis", {
             weakTopics: quizPerformance.weakTopics.length,
@@ -154,8 +169,9 @@ serve(async (req) => {
                 topicMastery.reduce((sum, t) => sum + t.mastery_level, 0) /
                     topicMastery.length,
             )
-            : quizAttempt.score;
+            : quizAttempt.attempt.score;
 
+        // 8. Build prompts with garden metaphor
         // 8. Build prompts with garden metaphor
         const systemPrompt = buildSystemPrompt();
         const userPrompt = buildUserPrompt(
@@ -168,10 +184,11 @@ serve(async (req) => {
             topicMastery,
             quizPerformance,
             {
-                score: quizAttempt.score,
-                correct_answers: quizAttempt.correct_answers,
-                total_questions: quizAttempt.total_questions,
+                score: quizAttempt.attempt.score,
+                correct_answers: quizAttempt.attempt.correct_answers,
+                total_questions: quizAttempt.attempt.total_questions,
             },
+            studyMaterials, // Pass study materials to prompt builder
         );
 
         // 9. Call Anthropic for study plan generation

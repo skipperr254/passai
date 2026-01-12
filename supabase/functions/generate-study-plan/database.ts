@@ -54,6 +54,19 @@ export interface UserAnswer {
     is_correct: boolean;
 }
 
+export interface StudyMaterial {
+    id: string;
+    subject_id: string;
+    user_id: string;
+    file_name: string;
+    file_type: string;
+    file_size: number;
+    storage_path: string;
+    text_content: string | null;
+    processing_status: string;
+    created_at: string;
+}
+
 export interface GardenStage {
     emoji: "🌱" | "🌿" | "🌻" | "🌳";
     name: string;
@@ -297,4 +310,32 @@ export function analyzeQuizPerformance(
     strongTopics.sort((a, b) => b.percentage - a.percentage);
 
     return { byTopic, weakTopics, strongTopics };
+}
+
+/**
+ * Fetch study materials for a subject
+ * Returns all materials that have been successfully processed and have text content
+ */
+export async function fetchStudyMaterials(
+    supabaseClient: SupabaseClient,
+    subjectId: string,
+    userId: string,
+): Promise<StudyMaterial[]> {
+    const { data: materials, error } = await supabaseClient
+        .from("study_materials")
+        .select(
+            "id, subject_id, user_id, file_name, file_type, file_size, storage_path, text_content, processing_status, created_at",
+        )
+        .eq("subject_id", subjectId)
+        .eq("user_id", userId)
+        .eq("processing_status", "ready") // Only fetch successfully processed materials
+        .not("text_content", "is", null) // Only materials with extracted content
+        .order("created_at", { ascending: false }); // Most recent first
+
+    if (error) {
+        console.error("Error fetching study materials:", error);
+        return []; // Return empty array if no materials or error
+    }
+
+    return (materials || []) as StudyMaterial[];
 }

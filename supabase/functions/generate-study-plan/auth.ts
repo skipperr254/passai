@@ -16,17 +16,20 @@ export const corsHeaders = {
 };
 
 export interface AuthResult {
-    user: {
+    success: boolean;
+    userId?: string;
+    supabase?: SupabaseClient;
+    user?: {
         id: string;
         email?: string;
     };
-    supabaseClient: SupabaseClient;
+    error?: string;
 }
 
 export async function validateAuth(req: Request): Promise<AuthResult> {
     const authHeader = req.headers.get("Authorization");
     if (!authHeader) {
-        throw new Error("Missing authorization header");
+        return { success: false, error: "Missing authorization header" };
     }
 
     const token = authHeader.replace("Bearer ", "");
@@ -42,8 +45,13 @@ export async function validateAuth(req: Request): Promise<AuthResult> {
     } = await supabaseClient.auth.getUser(token);
 
     if (error || !user) {
-        throw new Error("Invalid or expired token");
+        return { success: false, error: "Invalid or expired token" };
     }
 
-    return { user, supabaseClient };
+    return {
+        success: true,
+        userId: user.id,
+        user,
+        supabase: supabaseClient,
+    };
 }
