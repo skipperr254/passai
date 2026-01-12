@@ -117,11 +117,9 @@ export const QuizzesPage = () => {
       {showCreateQuiz && (
         <CreateQuizFlow
           onClose={() => setShowCreateQuiz(false)}
-          onQuizCreated={(quizId, scheduleTime) => {
+          onQuizCreated={(quizId: string) => {
             setShowCreateQuiz(false);
-            if (!scheduleTime) {
-              navigate(`/quizzes/${quizId}`);
-            }
+            navigate(`/quizzes/${quizId}`);
             queryClient.invalidateQueries({ queryKey: ["quizzes"] }); // Add this import useQueryClient from '@tanstack/react-query'
           }}
         />

@@ -261,7 +261,7 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
                     (step === "select-materials" && !canProceedFromMaterials) ||
                     (step === "configure" && isGenerating)
                   }
-                  className="flex-1 flex items-center justify-center gap-2 px-4 lg:px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 lg:px-6 py-3 bg-linear-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
                 >
                   {isGenerating ? (
                     <>

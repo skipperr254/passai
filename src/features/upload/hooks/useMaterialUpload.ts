@@ -69,8 +69,8 @@ export function useMaterialUpload() {
             case ProcessingStatus.FAILED:
               updatedProgress.status = "failed";
               updatedProgress.progress = 100;
-              updatedProgress.error =
-                update.errorMessage || "Processing failed";
+              updatedProgress.error = update.errorMessage ||
+                "Processing failed";
               break;
 
             default:
@@ -104,7 +104,7 @@ export function useMaterialUpload() {
         return newMap;
       });
     },
-    []
+    [],
   );
 
   /**
@@ -208,16 +208,17 @@ export function useMaterialUpload() {
             // Update progress to show error
             updateProgress(fileId, {
               status: "failed",
-              error:
-                error instanceof Error ? error.message : "Processing failed",
+              error: error instanceof Error
+                ? error.message
+                : "Processing failed",
             });
-          }
+          },
         );
 
-        // Upload complete - mark as 100% (processing will be tracked via Realtime)
+        // Upload complete - now processing on backend (will be updated via Realtime)
         updateProgress(fileId, {
-          status: "complete",
-          progress: 100,
+          status: "processing",
+          progress: 90,
           materialId: material.id,
         });
 
@@ -227,8 +228,9 @@ export function useMaterialUpload() {
           materialId: material.id,
         };
       } catch (error) {
-        const errorMessage =
-          error instanceof Error ? error.message : "Unknown error";
+        const errorMessage = error instanceof Error
+          ? error.message
+          : "Unknown error";
         updateProgress(fileId, { status: "failed", error: errorMessage });
         return {
           success: false,
@@ -237,7 +239,7 @@ export function useMaterialUpload() {
         };
       }
     },
-    [user?.id, updateProgress]
+    [user?.id, updateProgress],
   );
 
   /**
@@ -266,7 +268,7 @@ export function useMaterialUpload() {
         const validation = validateFiles(
           files,
           storageUsage.used,
-          storageUsage.limit
+          storageUsage.limit,
         );
 
         // Handle batch errors
@@ -317,7 +319,7 @@ export function useMaterialUpload() {
         setIsUploading(false);
       }
     },
-    [user?.id, uploadSingleFile]
+    [user?.id, uploadSingleFile],
   );
 
   /**
@@ -334,7 +336,7 @@ export function useMaterialUpload() {
     async (file: File, subjectId: string): Promise<UploadResult> => {
       return uploadSingleFile(file, subjectId);
     },
-    [uploadSingleFile]
+    [uploadSingleFile],
   );
 
   return {

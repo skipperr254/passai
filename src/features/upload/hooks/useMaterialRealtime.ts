@@ -3,7 +3,7 @@
  * Subscribes to material processing status changes via Supabase Realtime
  */
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { supabase } from "@/lib/supabase/client";
 import { useAuth } from "@/features/auth/hooks/useAuth";
 import type { RealtimeChannel } from "@supabase/supabase-js";
@@ -18,9 +18,17 @@ export interface MaterialStatusUpdate {
 }
 
 export function useMaterialRealtime(
-  onStatusChange?: (update: MaterialStatusUpdate) => void
+  onStatusChange?: (update: MaterialStatusUpdate) => void,
 ) {
   const { user } = useAuth();
+
+  // Use ref to store the latest callback without causing re-subscriptions
+  const callbackRef = useRef(onStatusChange);
+
+  // Update ref when callback changes
+  useEffect(() => {
+    callbackRef.current = onStatusChange;
+  }, [onStatusChange]);
 
   useEffect(() => {
     if (!user?.id) return;
@@ -43,9 +51,9 @@ export function useMaterialRealtime(
 
           const material = payload.new as StudyMaterial;
 
-          // Notify callback of status change
-          if (onStatusChange) {
-            onStatusChange({
+          // Notify callback of status change using ref
+          if (callbackRef.current) {
+            callbackRef.current({
               materialId: material.id,
               status: material.processing_status,
               textContent: material.text_content,
@@ -53,7 +61,7 @@ export function useMaterialRealtime(
               updatedAt: material.updated_at,
             });
           }
-        }
+        },
       )
       .subscribe((status) => {
         console.log("📡 Realtime subscription status:", status);
@@ -64,7 +72,7 @@ export function useMaterialRealtime(
       console.log("📡 Cleaning up Realtime subscription");
       supabase.removeChannel(channel);
     };
-  }, [user?.id, onStatusChange]);
+  }, [user?.id]);
 }
 
 /**
@@ -72,9 +80,17 @@ export function useMaterialRealtime(
  */
 export function useSingleMaterialRealtime(
   materialId: string | null,
-  onStatusChange?: (update: MaterialStatusUpdate) => void
+  onStatusChange?: (update: MaterialStatusUpdate) => void,
 ) {
   const { user } = useAuth();
+
+  // Use ref to store the latest callback without causing re-subscriptions
+  const callbackRef = useRef(onStatusChange);
+
+  // Update ref when callback changes
+  useEffect(() => {
+    callbackRef.current = onStatusChange;
+  }, [onStatusChange]);
 
   useEffect(() => {
     if (!user?.id || !materialId) return;
@@ -97,9 +113,9 @@ export function useSingleMaterialRealtime(
 
           const material = payload.new as StudyMaterial;
 
-          // Notify callback
-          if (onStatusChange) {
-            onStatusChange({
+          // Notify callback using ref
+          if (callbackRef.current) {
+            callbackRef.current({
               materialId: material.id,
               status: material.processing_status,
               textContent: material.text_content,
@@ -107,7 +123,7 @@ export function useSingleMaterialRealtime(
               updatedAt: material.updated_at,
             });
           }
-        }
+        },
       )
       .subscribe();
 
@@ -116,5 +132,5 @@ export function useSingleMaterialRealtime(
       console.log(`📡 Unsubscribing from material: ${materialId}`);
       supabase.removeChannel(channel);
     };
-  }, [user?.id, materialId, onStatusChange]);
+  }, [user?.id, materialId]);
 }
