@@ -30,13 +30,13 @@ interface GardenDashboardProps {
 const getPlantIcon = (stage: GardenStage) => {
   switch (stage) {
     case "🌱":
-      return <Sprout className="w-8 h-8 text-green-600" />;
+      return <Sprout className="w-8 h-8 text-[#4A7C59]" />;
     case "🌿":
-      return <Leaf className="w-8 h-8 text-green-600" />;
+      return <Leaf className="w-8 h-8 text-[#4A7C59]" />;
     case "🌻":
       return <Flower2 className="w-8 h-8 text-amber-500" />;
     case "🌳":
-      return <TreeDeciduous className="w-8 h-8 text-emerald-700" />;
+      return <TreeDeciduous className="w-8 h-8 text-[#4A7C59]" />;
   }
 };
 
@@ -46,13 +46,13 @@ const getPlantIcon = (stage: GardenStage) => {
 const getPlantBgGradient = (stage: GardenStage): string => {
   switch (stage) {
     case "🌱":
-      return "from-green-50 to-emerald-50";
+      return "from-[#6A994E]/5 to-[#6A994E]/5";
     case "🌿":
-      return "from-green-100 to-emerald-100";
+      return "from-[#6A994E]/10 to-[#6A994E]/10";
     case "🌻":
-      return "from-amber-50 to-yellow-50";
+      return "from-amber-50 to-[#F2A541]/5";
     case "🌳":
-      return "from-emerald-100 to-green-200";
+      return "from-[#6A994E]/10 to-[#6A994E]/20";
   }
 };
 
@@ -92,20 +92,20 @@ const getStageMessage = (stage: GardenStage): string => {
  * Get overall garden health gradient
  */
 const getGardenHealthGradient = (health: number): string => {
-  if (health >= 75) return "from-emerald-50 via-green-50 to-lime-50";
-  if (health >= 60) return "from-green-50 via-emerald-50 to-teal-50";
-  if (health >= 40) return "from-lime-50 via-yellow-50 to-green-50";
-  return "from-yellow-50 via-green-50 to-emerald-50";
+  if (health >= 75) return "from-[#6A994E]/5 via-[#6A994E]/5 to-lime-50";
+  if (health >= 60) return "from-[#6A994E]/5 via-[#6A994E]/5 to-teal-50";
+  if (health >= 40) return "from-lime-50 via-[#F2A541]/5 to-[#6A994E]/5";
+  return "from-[#F2A541]/5 via-[#6A994E]/5 to-[#6A994E]/5";
 };
 
 /**
  * Get health text color
  */
 const getHealthTextColor = (health: number): string => {
-  if (health >= 75) return "text-emerald-700";
-  if (health >= 60) return "text-green-700";
+  if (health >= 75) return "text-[#4A7C59]";
+  if (health >= 60) return "text-[#4A7C59]";
   if (health >= 40) return "text-lime-700";
-  return "text-green-600";
+  return "text-[#4A7C59]";
 };
 
 /**
@@ -113,10 +113,10 @@ const getHealthTextColor = (health: number): string => {
  */
 const getHealthIcon = (health: number) => {
   if (health >= 75)
-    return <TreeDeciduous className="w-10 h-10 text-emerald-700" />;
-  if (health >= 60) return <Flower2 className="w-10 h-10 text-green-600" />;
+    return <TreeDeciduous className="w-10 h-10 text-[#4A7C59]" />;
+  if (health >= 60) return <Flower2 className="w-10 h-10 text-[#4A7C59]" />;
   if (health >= 40) return <Leaf className="w-10 h-10 text-lime-600" />;
-  return <Sprout className="w-10 h-10 text-green-600" />;
+  return <Sprout className="w-10 h-10 text-[#4A7C59]" />;
 };
 
 export function GardenDashboard({
@@ -162,13 +162,13 @@ export function GardenDashboard({
         <div
           className={`bg-gradient-to-br ${getGardenHealthGradient(
             gardenHealth
-          )} rounded-xl p-6 border-2 border-green-200/60 shadow-sm`}
+          )} rounded-xl p-6 border-2 border-[#6A994E]/20/60 shadow-sm`}
         >
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">{getHealthIcon(gardenHealth)}</div>
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="text-lg font-semibold text-slate-700">
+                <h3 className="text-lg font-semibold text-[#2D3436]/80">
                   Garden Health
                 </h3>
                 <span
@@ -180,7 +180,7 @@ export function GardenDashboard({
                 </span>
               </div>
               {encouragement && (
-                <p className="text-base text-slate-700 leading-relaxed">
+                <p className="text-base text-[#2D3436]/80 leading-relaxed">
                   {encouragement}
                 </p>
               )}
@@ -191,7 +191,7 @@ export function GardenDashboard({
           <div className="mt-4">
             <div className="h-3 bg-white/60 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-green-500 to-emerald-600 transition-all duration-500 ease-out rounded-full"
+                className="h-full bg-gradient-to-r from-[#6A994E] to-[#4A7C59] transition-all duration-500 ease-out rounded-full"
                 style={{ width: `${gardenHealth}%` }}
               />
             </div>
@@ -201,7 +201,7 @@ export function GardenDashboard({
         {/* Individual Topic Plants */}
         {sortedTopics.length > 0 && (
           <div>
-            <h4 className="text-sm font-semibold text-slate-600 mb-4 flex items-center gap-2">
+            <h4 className="text-sm font-semibold text-[#2D3436]/70 mb-4 flex items-center gap-2">
               <Leaf className="w-4 h-4" />
               Your Garden Plants ({sortedTopics.length})
             </h4>
@@ -211,23 +211,23 @@ export function GardenDashboard({
                   key={index}
                   className={`bg-gradient-to-br ${getPlantBgGradient(
                     topic.gardenStage
-                  )} rounded-lg p-4 border border-green-200/40 shadow-sm hover:shadow-md transition-shadow`}
+                  )} rounded-lg p-4 border border-[#6A994E]/20/40 shadow-sm hover:shadow-md transition-shadow`}
                 >
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0">
                       {getPlantIcon(topic.gardenStage)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h5 className="font-semibold text-slate-800 text-sm mb-1 truncate">
+                      <h5 className="font-semibold text-[#2D3436]/90 text-sm mb-1 truncate">
                         {topic.name}
                       </h5>
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-lg">{topic.gardenStage}</span>
-                        <span className="text-xs font-medium text-slate-600">
+                        <span className="text-xs font-medium text-[#2D3436]/70">
                           {getStageLabel(topic.gardenStage)}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-600 mb-2">
+                      <p className="text-xs text-[#2D3436]/70 mb-2">
                         {topic.encouragement ||
                           getStageMessage(topic.gardenStage)}
                       </p>
@@ -235,14 +235,14 @@ export function GardenDashboard({
                       {/* Mastery Level Bar */}
                       <div className="space-y-1">
                         <div className="flex items-center justify-between text-xs">
-                          <span className="text-slate-600">Mastery</span>
-                          <span className="font-medium text-slate-700">
+                          <span className="text-[#2D3436]/70">Mastery</span>
+                          <span className="font-medium text-[#2D3436]/80">
                             {topic.masteryLevel}%
                           </span>
                         </div>
                         <div className="h-2 bg-white/60 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-gradient-to-r from-green-500 to-green-600 transition-all duration-300 rounded-full"
+                            className="h-full bg-gradient-to-r from-[#6A994E] to-[#4A7C59] transition-all duration-300 rounded-full"
                             style={{ width: `${topic.masteryLevel}%` }}
                           />
                         </div>
@@ -251,7 +251,7 @@ export function GardenDashboard({
                       {/* Time to Next Stage */}
                       {topic.timeToNextStage !== undefined &&
                         topic.gardenStage !== "🌳" && (
-                          <p className="text-xs text-slate-500 mt-2 italic">
+                          <p className="text-xs text-[#2D3436]/60 mt-2 italic">
                             ~{topic.timeToNextStage} min to next stage
                           </p>
                         )}
@@ -266,8 +266,8 @@ export function GardenDashboard({
         {/* Empty State */}
         {sortedTopics.length === 0 && (
           <div className="text-center py-8">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-50">
-              <Sprout className="h-8 w-8 text-green-600" />
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#6A994E]/5">
+              <Sprout className="h-8 w-8 text-[#4A7C59]" />
             </div>
             <h3 className="mb-2 text-lg font-semibold text-gray-900">
               Ready to plant your garden?

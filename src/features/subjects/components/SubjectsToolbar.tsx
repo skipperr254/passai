@@ -40,7 +40,7 @@ export default function SubjectsToolbar({
           placeholder="Search subjects..."
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full rounded-lg border border-gray-300 py-2.5 pl-10 pr-4 text-sm transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          className="w-full rounded-lg border border-gray-300 py-2.5 pl-10 pr-4 text-sm transition-colors focus:border-[#0D7377] focus:outline-none focus:ring-2 focus:ring-[#0D7377]/20"
         />
       </div>
 
@@ -54,7 +54,7 @@ export default function SubjectsToolbar({
             <select
               value={sortBy}
               onChange={(e) => onSortChange(e.target.value as SortOption)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm transition-colors hover:border-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm transition-colors hover:border-gray-400 focus:border-[#0D7377] focus:outline-none focus:ring-2 focus:ring-[#0D7377]/20"
             >
               <option value="name">Name (A-Z)</option>
               <option value="test-date">Test Date</option>
@@ -69,7 +69,7 @@ export default function SubjectsToolbar({
               onClick={() => onFilterChange("all")}
               className={`rounded px-3 py-1.5 text-sm font-medium transition-colors ${
                 filterBy === "all"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-[#0D7377] text-white"
                   : "text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -79,7 +79,7 @@ export default function SubjectsToolbar({
               onClick={() => onFilterChange("active")}
               className={`rounded px-3 py-1.5 text-sm font-medium transition-colors ${
                 filterBy === "active"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-[#0D7377] text-white"
                   : "text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -89,7 +89,7 @@ export default function SubjectsToolbar({
               onClick={() => onFilterChange("past")}
               className={`rounded px-3 py-1.5 text-sm font-medium transition-colors ${
                 filterBy === "past"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-[#0D7377] text-white"
                   : "text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -118,7 +118,7 @@ export default function SubjectsToolbar({
             onClick={() => onViewModeChange("grid")}
             className={`rounded p-1.5 transition-colors ${
               viewMode === "grid"
-                ? "bg-blue-600 text-white"
+                ? "bg-[#0D7377] text-white"
                 : "text-gray-700 hover:bg-gray-100"
             }`}
             aria-label="Grid view"
@@ -129,7 +129,7 @@ export default function SubjectsToolbar({
             onClick={() => onViewModeChange("list")}
             className={`rounded p-1.5 transition-colors ${
               viewMode === "list"
-                ? "bg-blue-600 text-white"
+                ? "bg-[#0D7377] text-white"
                 : "text-gray-700 hover:bg-gray-100"
             }`}
             aria-label="List view"

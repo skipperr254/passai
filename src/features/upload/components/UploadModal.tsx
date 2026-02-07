@@ -148,7 +148,7 @@ export function UploadModal({
       <DialogContent className="max-h-[90vh] max-w-3xl overflow-y-auto lg:max-w-4xl">
         <DialogHeader className="pb-4">
           <DialogTitle className="flex items-center gap-2 text-xl font-bold text-slate-900 lg:text-2xl">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-r from-blue-600 to-indigo-600">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-r from-[#0D7377] to-[#4A7C59]">
               <Upload className="h-5 w-5 text-white" />
             </div>
             Upload Materials
@@ -233,7 +233,7 @@ export function UploadModal({
             <Button
               onClick={handleUpload}
               disabled={isUploading || stagedFiles.length === 0}
-              className="h-11 rounded-xl bg-linear-to-r from-blue-600 to-indigo-600 font-semibold shadow-md hover:shadow-lg active:scale-95 disabled:opacity-50"
+              className="h-11 rounded-xl bg-linear-to-r from-[#0D7377] to-[#4A7C59] font-semibold shadow-md hover:shadow-lg active:scale-95 disabled:opacity-50"
             >
               {isUploading ? (
                 <>

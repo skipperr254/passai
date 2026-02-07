@@ -14,7 +14,7 @@ export const MoodSelection: React.FC<MoodSelectionProps> = ({
 }) => {
   return (
     <div className="mb-6">
-      <label className="block text-sm font-bold text-slate-900 mb-3">
+      <label className="block text-sm font-bold text-[#2D3436] mb-3">
         How are you feeling about the quiz so far?
       </label>
       <div className="grid grid-cols-2 gap-3">
@@ -28,7 +28,7 @@ export const MoodSelection: React.FC<MoodSelectionProps> = ({
               className={`relative p-4 rounded-xl border-2 transition-all active:scale-95 ${
                 isSelected
                   ? `bg-linear-to-br ${mood.color} text-white border-transparent shadow-lg`
-                  : "bg-white border-slate-200 hover:border-slate-300 text-slate-700"
+                  : "bg-white border-[#E8E4E1] hover:border-[#E8E4E1] text-[#2D3436]/80"
               }`}
             >
               <div className="text-center">
@@ -41,7 +41,7 @@ export const MoodSelection: React.FC<MoodSelectionProps> = ({
                 </div>
                 <p
                   className={`text-sm font-bold ${
-                    isSelected ? "text-white" : "text-slate-900"
+                    isSelected ? "text-white" : "text-[#2D3436]"
                   }`}
                 >
                   {mood.label}

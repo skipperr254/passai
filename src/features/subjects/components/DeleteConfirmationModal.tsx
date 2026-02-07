@@ -65,7 +65,7 @@ export default function DeleteConfirmationModal({
           {!isDeleting && (
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-lg hover:bg-[#FAF3E0] text-[#2D3436]/70 transition-colors"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -78,14 +78,14 @@ export default function DeleteConfirmationModal({
           </div>
 
           {/* Title */}
-          <h2 className="text-2xl font-bold text-slate-900 text-center mb-2">
+          <h2 className="text-2xl font-bold text-[#2D3436] text-center mb-2">
             Delete Subject?
           </h2>
 
           {/* Description */}
-          <p className="text-slate-600 text-center mb-6">
+          <p className="text-[#2D3436]/70 text-center mb-6">
             This action <strong>cannot be undone</strong>. This will permanently
-            delete <strong className="text-slate-900">{subject.name}</strong>{" "}
+            delete <strong className="text-[#2D3436]">{subject.name}</strong>{" "}
             and all associated:
           </p>
 
@@ -115,7 +115,7 @@ export default function DeleteConfirmationModal({
           <div className="mb-6">
             <label
               htmlFor="confirmName"
-              className="block text-sm font-semibold text-slate-700 mb-2"
+              className="block text-sm font-semibold text-[#2D3436]/80 mb-2"
             >
               Type <strong>{subject.name}</strong> to confirm
             </label>
@@ -130,7 +130,7 @@ export default function DeleteConfirmationModal({
               className={`w-full px-4 py-3 rounded-xl border ${
                 error
                   ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                  : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                  : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
               } focus:outline-none focus:ring-4 transition-all`}
               placeholder="Type subject name here..."
               disabled={isDeleting}
@@ -145,7 +145,7 @@ export default function DeleteConfirmationModal({
               type="button"
               onClick={handleClose}
               disabled={isDeleting}
-              className="flex-1 px-4 py-3 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 px-4 py-3 border-2 border-[#E8E4E1] text-[#2D3436]/80 font-semibold rounded-xl hover:bg-[#FAF3E0] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Cancel
             </button>

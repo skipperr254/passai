@@ -218,7 +218,7 @@ export default function SubjectsPage() {
           </div>
           <button
             onClick={handleOpenCreate}
-            className="flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+            className="flex items-center gap-2 rounded-lg bg-[#0D7377] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#0D7377]/90"
           >
             <Plus className="size-5" />
             Add Subject
@@ -250,7 +250,7 @@ export default function SubjectsPage() {
                 setSearchQuery("");
                 setFilterBy("all");
               }}
-              className="mt-3 text-sm font-medium text-blue-600 hover:text-blue-700"
+              className="mt-3 text-sm font-medium text-[#0D7377] hover:text-[#0D7377]/90"
             >
               Clear filters
             </button>

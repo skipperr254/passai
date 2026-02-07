@@ -55,7 +55,7 @@ function getSubjectStatus(subject: Subject): StatusConfig {
     return {
       icon: AlertTriangle,
       label: "Needs Attention",
-      colorClass: "text-red-600 dark:text-red-400",
+      colorClass: "text-[#E07A5F] dark:text-[#E07A5F]",
     };
   }
 
@@ -64,7 +64,7 @@ function getSubjectStatus(subject: Subject): StatusConfig {
     return {
       icon: Clock,
       label: "Review Needed",
-      colorClass: "text-amber-600 dark:text-amber-400",
+      colorClass: "text-[#F2A541] dark:text-[#F2A541]",
     };
   }
 
@@ -73,7 +73,7 @@ function getSubjectStatus(subject: Subject): StatusConfig {
     return {
       icon: TrendingUp,
       label: "Excellent",
-      colorClass: "text-green-600 dark:text-green-400",
+      colorClass: "text-[#6A994E] dark:text-[#8CB369]",
     };
   }
 
@@ -81,7 +81,7 @@ function getSubjectStatus(subject: Subject): StatusConfig {
     return {
       icon: TrendingUp,
       label: "On Track",
-      colorClass: "text-green-600 dark:text-green-400",
+      colorClass: "text-[#6A994E] dark:text-[#8CB369]",
     };
   }
 
@@ -89,7 +89,7 @@ function getSubjectStatus(subject: Subject): StatusConfig {
     return {
       icon: Minus,
       label: "Keep Going",
-      colorClass: "text-amber-600 dark:text-amber-400",
+      colorClass: "text-[#E9C46A] dark:text-[#E9C46A]",
     };
   }
 
@@ -97,7 +97,7 @@ function getSubjectStatus(subject: Subject): StatusConfig {
     return {
       icon: TrendingDown,
       label: "Needs Work",
-      colorClass: "text-orange-600 dark:text-orange-400",
+      colorClass: "text-[#E07A5F] dark:text-[#E07A5F]",
     };
   }
 
@@ -105,7 +105,7 @@ function getSubjectStatus(subject: Subject): StatusConfig {
   return {
     icon: BookOpen,
     label: "Get Started",
-    colorClass: "text-slate-500 dark:text-slate-400",
+    colorClass: "text-[#6B7280] dark:text-[#9CA3AF]",
   };
 }
 
@@ -114,94 +114,94 @@ const COLOR_VARIANTS: Record<
   { bg: string; text: string; gradient: string; stopColor: string }
 > = {
   blue: {
-    bg: "bg-blue-100 dark:bg-blue-900/30",
-    text: "text-blue-600 dark:text-blue-400",
-    gradient: "from-blue-600 to-blue-400",
-    stopColor: "#2563eb",
+    bg: "bg-[#0D7377]/10 dark:bg-[#0D7377]/20",
+    text: "text-[#0D7377] dark:text-[#2EC4B6]",
+    gradient: "from-[#0D7377] to-[#0D7377]/70",
+    stopColor: "#0D7377",
   },
   green: {
-    bg: "bg-green-100 dark:bg-green-900/30",
-    text: "text-green-600 dark:text-green-400",
-    gradient: "from-green-600 to-green-400",
-    stopColor: "#16a34a",
+    bg: "bg-[#6A994E]/10 dark:bg-[#6A994E]/20",
+    text: "text-[#6A994E] dark:text-[#8CB369]",
+    gradient: "from-[#6A994E] to-[#8CB369]",
+    stopColor: "#6A994E",
   },
   purple: {
-    bg: "bg-purple-100 dark:bg-purple-900/30",
-    text: "text-purple-600 dark:text-purple-400",
-    gradient: "from-purple-600 to-purple-400",
-    stopColor: "#9333ea",
+    bg: "bg-[#0D7377]/10 dark:bg-[#0D7377]/20",
+    text: "text-[#0D7377] dark:text-[#2EC4B6]",
+    gradient: "from-[#0D7377] to-[#4A7C59]",
+    stopColor: "#0D7377",
   },
   red: {
-    bg: "bg-red-100 dark:bg-red-900/30",
-    text: "text-red-600 dark:text-red-400",
-    gradient: "from-red-600 to-red-400",
-    stopColor: "#dc2626",
+    bg: "bg-[#E07A5F]/10 dark:bg-[#E07A5F]/20",
+    text: "text-[#E07A5F] dark:text-[#E07A5F]",
+    gradient: "from-[#E07A5F] to-[#D4A373]",
+    stopColor: "#E07A5F",
   },
   amber: {
-    bg: "bg-amber-100 dark:bg-amber-900/30",
-    text: "text-amber-600 dark:text-amber-400",
-    gradient: "from-amber-600 to-amber-400",
-    stopColor: "#d97706",
+    bg: "bg-[#F2A541]/10 dark:bg-[#F2A541]/20",
+    text: "text-[#F2A541] dark:text-[#F2A541]",
+    gradient: "from-[#F2A541] to-[#E9C46A]",
+    stopColor: "#F2A541",
   },
   pink: {
-    bg: "bg-pink-100 dark:bg-pink-900/30",
-    text: "text-pink-600 dark:text-pink-400",
-    gradient: "from-pink-600 to-pink-400",
-    stopColor: "#db2777",
+    bg: "bg-[#E07A5F]/10 dark:bg-[#E07A5F]/20",
+    text: "text-[#E07A5F] dark:text-[#E07A5F]",
+    gradient: "from-[#E07A5F] to-[#E07A5F]/70",
+    stopColor: "#E07A5F",
   },
   cyan: {
-    bg: "bg-cyan-100 dark:bg-cyan-900/30",
-    text: "text-cyan-600 dark:text-cyan-400",
-    gradient: "from-cyan-600 to-cyan-400",
-    stopColor: "#0891b2",
+    bg: "bg-[#5FA8D3]/10 dark:bg-[#5FA8D3]/20",
+    text: "text-[#5FA8D3] dark:text-[#5FA8D3]",
+    gradient: "from-[#5FA8D3] to-[#0D7377]",
+    stopColor: "#5FA8D3",
   },
   indigo: {
-    bg: "bg-indigo-100 dark:bg-indigo-900/30",
-    text: "text-indigo-600 dark:text-indigo-400",
-    gradient: "from-indigo-600 to-indigo-400",
-    stopColor: "#4f46e5",
+    bg: "bg-[#4A7C59]/10 dark:bg-[#4A7C59]/20",
+    text: "text-[#4A7C59] dark:text-[#8CB369]",
+    gradient: "from-[#4A7C59] to-[#6A994E]",
+    stopColor: "#4A7C59",
   },
   emerald: {
-    bg: "bg-emerald-100 dark:bg-emerald-900/30",
-    text: "text-emerald-600 dark:text-emerald-400",
-    gradient: "from-emerald-600 to-emerald-400",
-    stopColor: "#059669",
+    bg: "bg-[#8CB369]/10 dark:bg-[#8CB369]/20",
+    text: "text-[#8CB369] dark:text-[#8CB369]",
+    gradient: "from-[#8CB369] to-[#6A994E]",
+    stopColor: "#8CB369",
   },
   rose: {
-    bg: "bg-rose-100 dark:bg-rose-900/30",
-    text: "text-rose-600 dark:text-rose-400",
-    gradient: "from-rose-600 to-rose-400",
-    stopColor: "#e11d48",
+    bg: "bg-[#E07A5F]/10 dark:bg-[#E07A5F]/20",
+    text: "text-[#E07A5F] dark:text-[#E07A5F]",
+    gradient: "from-[#E07A5F] to-[#D4A373]",
+    stopColor: "#E07A5F",
   },
   violet: {
-    bg: "bg-violet-100 dark:bg-violet-900/30",
-    text: "text-violet-600 dark:text-violet-400",
-    gradient: "from-violet-600 to-violet-400",
-    stopColor: "#7c3aed",
+    bg: "bg-[#0D7377]/10 dark:bg-[#0D7377]/20",
+    text: "text-[#0D7377] dark:text-[#2EC4B6]",
+    gradient: "from-[#0D7377] to-[#4A7C59]",
+    stopColor: "#0D7377",
   },
   teal: {
-    bg: "bg-teal-100 dark:bg-teal-900/30",
-    text: "text-teal-600 dark:text-teal-400",
-    gradient: "from-teal-600 to-teal-400",
-    stopColor: "#0d9488",
+    bg: "bg-[#0D7377]/10 dark:bg-[#0D7377]/20",
+    text: "text-[#0D7377] dark:text-[#2EC4B6]",
+    gradient: "from-[#0D7377] to-[#0D7377]/70",
+    stopColor: "#0D7377",
   },
   orange: {
-    bg: "bg-orange-100 dark:bg-orange-900/30",
-    text: "text-orange-600 dark:text-orange-400",
-    gradient: "from-orange-600 to-orange-400",
-    stopColor: "#ea580c",
+    bg: "bg-[#E07A5F]/10 dark:bg-[#E07A5F]/20",
+    text: "text-[#E07A5F] dark:text-[#E07A5F]",
+    gradient: "from-[#E07A5F] to-[#F2A541]",
+    stopColor: "#E07A5F",
   },
   lime: {
-    bg: "bg-lime-100 dark:bg-lime-900/30",
-    text: "text-lime-600 dark:text-lime-400",
-    gradient: "from-lime-600 to-lime-400",
-    stopColor: "#65a30d",
+    bg: "bg-[#8CB369]/10 dark:bg-[#8CB369]/20",
+    text: "text-[#8CB369] dark:text-[#8CB369]",
+    gradient: "from-[#8CB369] to-[#6A994E]",
+    stopColor: "#8CB369",
   },
   fuchsia: {
-    bg: "bg-fuchsia-100 dark:bg-fuchsia-900/30",
-    text: "text-fuchsia-600 dark:text-fuchsia-400",
-    gradient: "from-fuchsia-600 to-fuchsia-400",
-    stopColor: "#c026d3",
+    bg: "bg-[#E07A5F]/10 dark:bg-[#E07A5F]/20",
+    text: "text-[#E07A5F] dark:text-[#E07A5F]",
+    gradient: "from-[#E07A5F] to-[#D4A373]",
+    stopColor: "#E07A5F",
   },
 };
 
@@ -225,7 +225,7 @@ export const SubjectCard = ({ subject }: SubjectCardProps) => {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1 truncate cursor-default">
+                <h3 className="text-xl font-bold text-[#2D3436] dark:text-white mb-1 truncate cursor-default">
                   {subject.name}
                 </h3>
               </TooltipTrigger>
@@ -234,7 +234,7 @@ export const SubjectCard = ({ subject }: SubjectCardProps) => {
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
-          <p className="text-sm text-slate-500 dark:text-slate-400 truncate">
+          <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] truncate">
             {subject.exam_board || "General"}
           </p>
         </div>
@@ -262,7 +262,7 @@ export const SubjectCard = ({ subject }: SubjectCardProps) => {
               stroke="currentColor"
               strokeWidth="12"
               fill="none"
-              className="text-slate-100 dark:text-slate-800"
+              className="text-[#E8E4E1] dark:text-[#2D3436]"
             />
             {/* Progress Circle */}
             <circle
@@ -309,7 +309,7 @@ export const SubjectCard = ({ subject }: SubjectCardProps) => {
             >
               {passChance}%
             </span>
-            <span className="text-xs text-slate-500 font-medium uppercase tracking-wide mt-1">
+            <span className="text-xs text-[#6B7280] font-medium uppercase tracking-wide mt-1">
               Pass Chance
             </span>
           </div>
@@ -317,13 +317,13 @@ export const SubjectCard = ({ subject }: SubjectCardProps) => {
       </div>
 
       {/* Footer Stats */}
-      <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-sm relative z-10">
+      <div className="mt-4 pt-4 border-t border-[#E8E4E1] dark:border-[#2D3436] flex items-center justify-between text-sm relative z-10">
         <div className={cn("flex items-center gap-1.5", status.colorClass)}>
           <StatusIcon className="w-4 h-4" />
           <span className="font-medium">{status.label}</span>
         </div>
         {subject.test_date && (
-          <div className="flex items-center gap-1.5 text-slate-500">
+          <div className="flex items-center gap-1.5 text-[#6B7280]">
             <Clock className="w-4 h-4" />
             <span>
               {new Date(subject.test_date).toLocaleDateString(undefined, {

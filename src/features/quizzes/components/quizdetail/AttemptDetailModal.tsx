@@ -31,7 +31,7 @@ export const AttemptDetailModal: React.FC<AttemptDetailModalProps> = ({
       >
         {/* Modal Header */}
         <div
-          className={`shrink-0 px-6 py-5 border-b border-slate-200 bg-${quiz.subject_color}-600`}
+          className={`shrink-0 px-6 py-5 border-b border-[#E8E4E1] bg-${quiz.subject_color}-600`}
         >
           <div className="w-12 h-1 bg-white/30 rounded-full mx-auto mb-4 md:hidden"></div>
           <div className="flex items-center justify-between">
@@ -50,16 +50,16 @@ export const AttemptDetailModal: React.FC<AttemptDetailModalProps> = ({
         {/* Modal Content */}
         <div className="flex-1 overflow-y-auto p-6">
           <SummaryStats attempt={attempt} />
-          <h3 className="text-lg font-bold text-slate-900 mb-4">
+          <h3 className="text-lg font-bold text-[#2D3436] mb-4">
             Question Review
           </h3>
           <QuestionsReview questions={questions} />
         </div>
         {/* Modal Footer */}
-        <div className="shrink-0 px-6 py-4 border-t border-slate-200 bg-slate-50">
+        <div className="shrink-0 px-6 py-4 border-t border-[#E8E4E1] bg-[#FAF3E0]">
           <button
             onClick={onClose}
-            className="w-full px-4 py-3 bg-slate-700 hover:bg-slate-800 text-white font-semibold rounded-xl active:scale-95 transition-all"
+            className="w-full px-4 py-3 bg-[#2D3436]/80 hover:bg-[#2D3436]/90 text-white font-semibold rounded-xl active:scale-95 transition-all"
           >
             Close
           </button>

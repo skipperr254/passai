@@ -142,7 +142,7 @@ export default function SubjectForm({
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-semibold text-slate-700 mb-2"
+            className="block text-sm font-semibold text-[#2D3436]/80 mb-2"
           >
             Subject Name <span className="text-red-500">*</span>
           </label>
@@ -153,7 +153,7 @@ export default function SubjectForm({
             className={`w-full px-4 py-3 rounded-xl border ${
               errors.name
                 ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
             } focus:outline-none focus:ring-4 transition-all`}
             placeholder="e.g., Biology Midterm"
             disabled={isSubmitting || isLoading}
@@ -167,10 +167,10 @@ export default function SubjectForm({
         <div>
           <label
             htmlFor="description"
-            className="block text-sm font-semibold text-slate-700 mb-2"
+            className="block text-sm font-semibold text-[#2D3436]/80 mb-2"
           >
             Description{" "}
-            <span className="text-slate-400 text-xs font-normal">
+            <span className="text-[#2D3436]/50 text-xs font-normal">
               (optional)
             </span>
           </label>
@@ -181,7 +181,7 @@ export default function SubjectForm({
             className={`w-full px-4 py-3 rounded-xl border ${
               errors.description
                 ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
             } focus:outline-none focus:ring-4 transition-all resize-none`}
             placeholder="e.g., Chapters 1-5, focus on cell biology and genetics"
             disabled={isSubmitting || isLoading}
@@ -197,10 +197,10 @@ export default function SubjectForm({
         <div>
           <label
             htmlFor="test_date"
-            className="block text-sm font-semibold text-slate-700 mb-2"
+            className="block text-sm font-semibold text-[#2D3436]/80 mb-2"
           >
             Test Date{" "}
-            <span className="text-slate-400 text-xs font-normal">
+            <span className="text-[#2D3436]/50 text-xs font-normal">
               (optional)
             </span>
           </label>
@@ -212,7 +212,7 @@ export default function SubjectForm({
             className={`w-full px-4 py-3 rounded-xl border ${
               errors.test_date
                 ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
             } focus:outline-none focus:ring-4 transition-all`}
             disabled={isSubmitting || isLoading}
           />
@@ -224,11 +224,11 @@ export default function SubjectForm({
         </div>
 
         {/* Section Divider */}
-        <div className="pt-6 border-t border-slate-200">
-          <h3 className="text-lg font-bold text-slate-900 mb-1">
+        <div className="pt-6 border-t border-[#E8E4E1]">
+          <h3 className="text-lg font-bold text-[#2D3436] mb-1">
             Curriculum Customization
           </h3>
-          <p className="text-sm text-slate-500 mb-6">
+          <p className="text-sm text-[#2D3436]/60 mb-6">
             Help us generate questions that match your actual exam
           </p>
         </div>
@@ -237,10 +237,10 @@ export default function SubjectForm({
         <div>
           <label
             htmlFor="exam_board"
-            className="block text-sm font-semibold text-slate-700 mb-2"
+            className="block text-sm font-semibold text-[#2D3436]/80 mb-2"
           >
             Exam Board{" "}
-            <span className="text-slate-400 text-xs font-normal">
+            <span className="text-[#2D3436]/50 text-xs font-normal">
               (optional)
             </span>
           </label>
@@ -250,7 +250,7 @@ export default function SubjectForm({
             className={`w-full px-4 py-3 rounded-xl border ${
               errors.exam_board
                 ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
             } focus:outline-none focus:ring-4 transition-all`}
             disabled={isSubmitting || isLoading}
           >
@@ -272,10 +272,10 @@ export default function SubjectForm({
         <div>
           <label
             htmlFor="teacher_emphasis"
-            className="block text-sm font-semibold text-slate-700 mb-2"
+            className="block text-sm font-semibold text-[#2D3436]/80 mb-2"
           >
             Teacher Emphasis{" "}
-            <span className="text-slate-400 text-xs font-normal">
+            <span className="text-[#2D3436]/50 text-xs font-normal">
               (optional)
             </span>
           </label>
@@ -286,7 +286,7 @@ export default function SubjectForm({
             className={`w-full px-4 py-3 rounded-xl border ${
               errors.teacher_emphasis
                 ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
             } focus:outline-none focus:ring-4 transition-all resize-none`}
             placeholder="e.g., Focus on essay structure and thesis statements"
             disabled={isSubmitting || isLoading}
@@ -302,10 +302,10 @@ export default function SubjectForm({
         <div>
           <label
             htmlFor="question_style"
-            className="block text-sm font-semibold text-slate-700 mb-2"
+            className="block text-sm font-semibold text-[#2D3436]/80 mb-2"
           >
             Question Format{" "}
-            <span className="text-slate-400 text-xs font-normal">
+            <span className="text-[#2D3436]/50 text-xs font-normal">
               (how you'll be tested)
             </span>
           </label>
@@ -315,7 +315,7 @@ export default function SubjectForm({
             className={`w-full px-4 py-3 rounded-xl border ${
               errors.question_style
                 ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
             } focus:outline-none focus:ring-4 transition-all`}
             disabled={isSubmitting || isLoading}
           >
@@ -330,7 +330,7 @@ export default function SubjectForm({
               {errors.question_style.message}
             </p>
           )}
-          <p className="mt-1.5 text-xs text-slate-500">
+          <p className="mt-1.5 text-xs text-[#2D3436]/60">
             This helps generate questions that match your actual exam format
           </p>
         </div>
@@ -339,10 +339,10 @@ export default function SubjectForm({
         <div>
           <label
             htmlFor="grading_rubric"
-            className="block text-sm font-semibold text-slate-700 mb-2"
+            className="block text-sm font-semibold text-[#2D3436]/80 mb-2"
           >
             Grading Rubric{" "}
-            <span className="text-slate-400 text-xs font-normal">
+            <span className="text-[#2D3436]/50 text-xs font-normal">
               (optional)
             </span>
           </label>
@@ -353,7 +353,7 @@ export default function SubjectForm({
             className={`w-full px-4 py-3 rounded-xl border ${
               errors.grading_rubric
                 ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
             } focus:outline-none focus:ring-4 transition-all resize-none`}
             placeholder="e.g., 'Looks for specific vocabulary and clear explanations' or 'Wants step-by-step work shown' or 'Emphasizes thesis + 3 supporting points'"
             disabled={isSubmitting || isLoading}
@@ -363,7 +363,7 @@ export default function SubjectForm({
               {errors.grading_rubric.message}
             </p>
           )}
-          <p className="mt-1.5 text-xs text-slate-500">
+          <p className="mt-1.5 text-xs text-[#2D3436]/60">
             This helps generate answers that match your teacher's expectations
           </p>
         </div>
@@ -375,7 +375,7 @@ export default function SubjectForm({
               type="button"
               onClick={onCancel}
               disabled={isSubmitting || isLoading}
-              className="px-6 py-3 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-6 py-3 border-2 border-[#E8E4E1] text-[#2D3436]/80 font-semibold rounded-xl hover:bg-[#FAF3E0] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Cancel
             </button>
@@ -383,7 +383,7 @@ export default function SubjectForm({
           <button
             type="submit"
             disabled={isSubmitting || isLoading}
-            className="px-6 py-3 bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            className="px-6 py-3 bg-linear-to-r from-[#0D7377] to-[#4A7C59] hover:from-[#0D7377]/90 hover:to-[#4A7C59]/90 text-white font-semibold rounded-xl shadow-lg shadow-[#0D7377]/25 hover:shadow-xl hover:shadow-[#0D7377]/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
             {isSubmitting || isLoading ? (
               <>

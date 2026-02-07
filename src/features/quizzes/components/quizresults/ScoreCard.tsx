@@ -7,14 +7,14 @@ interface ScoreCardProps {
 
 export const ScoreCard: React.FC<ScoreCardProps> = ({ score, scoreMsg }) => {
   const getScoreColor = () => {
-    if (score >= 90) return "from-emerald-500 to-green-600";
-    if (score >= 75) return "from-green-500 to-emerald-600";
-    if (score >= 60) return "from-amber-500 to-orange-600";
-    return "from-red-500 to-pink-600";
+    if (score >= 90) return "from-[#6A994E] to-[#4A7C59]";
+    if (score >= 75) return "from-[#8CB369] to-[#6A994E]";
+    if (score >= 60) return "from-[#F2A541] to-[#E07A5F]";
+    return "from-[#E07A5F] to-[#D4A373]";
   };
 
   return (
-    <div className="bg-white rounded-2xl border-2 border-slate-200 shadow-lg overflow-hidden">
+    <div className="bg-white rounded-2xl border-2 border-[#E8E4E1] shadow-lg overflow-hidden">
       <div className={`p-6 lg:p-8 bg-linear-to-br ${getScoreColor()}`}>
         <div className="text-center text-white">
           <p className="text-sm lg:text-base font-semibold mb-2 text-white/90">

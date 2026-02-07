@@ -67,16 +67,16 @@ export const StudyPlanDashboard: React.FC<StudyPlanDashboardProps> = ({
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Garden Header */}
-      <div className="bg-linear-to-br from-green-50 to-blue-50 rounded-2xl p-6 lg:p-8 border border-green-100 shadow-sm mb-8">
+      <div className="bg-linear-to-br from-green-50 to-[#0D7377]/5 rounded-2xl p-6 lg:p-8 border border-green-100 shadow-sm mb-8">
         <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="text-3xl animate-bounce-slow">🌱</span>
-              <h1 className="text-2xl lg:text-3xl font-bold text-slate-900">
+              <h1 className="text-2xl lg:text-3xl font-bold text-[#2D3436]">
                 Your Learning Garden
               </h1>
             </div>
-            <p className="text-slate-600 max-w-xl leading-relaxed">
+            <p className="text-[#2D3436]/70 max-w-xl leading-relaxed">
               {studyPlan.description ||
                 "Welcome to your personalized study garden. Water your seedlings by completing tasks and watch your knowledge grow!"}
             </p>
@@ -84,18 +84,18 @@ export const StudyPlanDashboard: React.FC<StudyPlanDashboardProps> = ({
 
           <div className="flex flex-wrap gap-4 shrink-0">
             {/* Garden Health Card */}
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-slate-100 min-w-[140px]">
-              <div className="flex items-center gap-2 text-slate-500 mb-1">
+            <div className="bg-white rounded-xl p-4 shadow-sm border border-[#FAF3E0] min-w-[140px]">
+              <div className="flex items-center gap-2 text-[#2D3436]/60 mb-1">
                 <Sprout className="w-4 h-4 text-green-500" />
                 <span className="text-xs font-semibold uppercase tracking-wider">
                   Health
                 </span>
               </div>
               <div className="flex items-end gap-2">
-                <span className="text-2xl font-bold text-slate-900">
+                <span className="text-2xl font-bold text-[#2D3436]">
                   {gardenHealth}%
                 </span>
-                <div className="flex h-2 w-16 bg-slate-100 rounded-full mb-1.5 overflow-hidden">
+                <div className="flex h-2 w-16 bg-[#FAF3E0] rounded-full mb-1.5 overflow-hidden">
                   <div
                     className="bg-green-500 h-full rounded-full transition-all duration-500"
                     style={{ width: `${gardenHealth}%` }}
@@ -105,36 +105,36 @@ export const StudyPlanDashboard: React.FC<StudyPlanDashboardProps> = ({
             </div>
 
             {/* Days Remaining Card */}
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-slate-100 min-w-[140px]">
-              <div className="flex items-center gap-2 text-slate-500 mb-1">
-                <Calendar className="w-4 h-4 text-blue-500" />
+            <div className="bg-white rounded-xl p-4 shadow-sm border border-[#FAF3E0] min-w-[140px]">
+              <div className="flex items-center gap-2 text-[#2D3436]/60 mb-1">
+                <Calendar className="w-4 h-4 text-[#0D7377]/50" />
                 <span className="text-xs font-semibold uppercase tracking-wider">
                   Time Left
                 </span>
               </div>
               <div className="flex items-end gap-1">
-                <span className="text-2xl font-bold text-slate-900">
+                <span className="text-2xl font-bold text-[#2D3436]">
                   {daysRemaining}
                 </span>
-                <span className="text-sm font-medium text-slate-500 mb-1">
+                <span className="text-sm font-medium text-[#2D3436]/60 mb-1">
                   days
                 </span>
               </div>
             </div>
 
             {/* Total Hours Card */}
-            <div className="bg-white rounded-xl p-4 shadow-sm border border-slate-100 min-w-[140px]">
-              <div className="flex items-center gap-2 text-slate-500 mb-1">
-                <Clock className="w-4 h-4 text-purple-500" />
+            <div className="bg-white rounded-xl p-4 shadow-sm border border-[#FAF3E0] min-w-[140px]">
+              <div className="flex items-center gap-2 text-[#2D3436]/60 mb-1">
+                <Clock className="w-4 h-4 text-[#0D7377]" />
                 <span className="text-xs font-semibold uppercase tracking-wider">
                   Est. Time
                 </span>
               </div>
               <div className="flex items-end gap-1">
-                <span className="text-2xl font-bold text-slate-900">
+                <span className="text-2xl font-bold text-[#2D3436]">
                   {studyPlan.total_hours}
                 </span>
-                <span className="text-sm font-medium text-slate-500 mb-1">
+                <span className="text-sm font-medium text-[#2D3436]/60 mb-1">
                   hours
                 </span>
               </div>
@@ -144,8 +144,8 @@ export const StudyPlanDashboard: React.FC<StudyPlanDashboardProps> = ({
       </div>
 
       {/* Topics List */}
-      <h2 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-slate-100 text-slate-600 text-xs">
+      <h2 className="text-lg font-bold text-[#2D3436] mb-4 flex items-center gap-2">
+        <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#FAF3E0] text-[#2D3436]/70 text-xs">
           {studyPlan.topics.length}
         </span>
         Garden Beds (Topics)

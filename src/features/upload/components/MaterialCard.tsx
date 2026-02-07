@@ -59,13 +59,13 @@ function getMaterialGradient(type: MaterialType) {
     case "pdf":
       return "from-red-500 to-pink-600";
     case "image":
-      return "from-blue-500 to-cyan-600";
+      return "from-[#0D7377] to-cyan-600";
     case "docx":
-      return "from-green-500 to-emerald-600";
+      return "from-[#6A994E] to-[#4A7C59]";
     case "pptx":
       return "from-orange-500 to-amber-600";
     case "text":
-      return "from-purple-500 to-indigo-600";
+      return "from-[#0D7377] to-[#4A7C59]";
     default:
       return "from-slate-500 to-slate-600";
   }
@@ -96,11 +96,11 @@ function formatRelativeTime(date: Date): string {
 function getStatusBadge(status: ProcessingStatus) {
   switch (status) {
     case "pending":
-      return { text: "Pending", color: "bg-yellow-100 text-yellow-800" };
+      return { text: "Pending", color: "bg-[#F2A541]/10 text-yellow-800" };
     case "processing":
-      return { text: "Processing", color: "bg-blue-100 text-blue-800" };
+      return { text: "Processing", color: "bg-[#0D7377]/10 text-[#0D7377]" };
     case "ready":
-      return { text: "Ready", color: "bg-green-100 text-green-800" };
+      return { text: "Ready", color: "bg-[#6A994E]/10 text-[#4A7C59]/90" };
     case "failed":
       return { text: "Failed", color: "bg-red-100 text-red-800" };
     default:
@@ -175,11 +175,11 @@ export function MaterialCard({
 
         {/* File info */}
         <div className="min-w-0 flex-1">
-          <h3 className="mb-1 truncate font-bold text-slate-900 transition-colors group-hover:text-blue-600">
+          <h3 className="mb-1 truncate font-bold text-slate-900 transition-colors group-hover:text-[#0D7377]">
             {material.file_name}
           </h3>
           <div className="mb-2 flex flex-wrap items-center gap-1.5">
-            <span className="inline-flex items-center gap-1 rounded-md bg-linear-to-r from-blue-600 to-indigo-600 px-2 py-0.5 text-xs font-semibold text-white shadow-sm">
+            <span className="inline-flex items-center gap-1 rounded-md bg-linear-to-r from-[#0D7377] to-[#4A7C59] px-2 py-0.5 text-xs font-semibold text-white shadow-sm">
               <Book className="h-3 w-3" />
               {subjectName}
             </span>
@@ -234,9 +234,9 @@ export function MaterialCard({
           {onView && (
             <button
               onClick={() => onView(material)}
-              className="flex h-8 w-8 items-center justify-center rounded-lg transition-colors hover:bg-blue-50"
+              className="flex h-8 w-8 items-center justify-center rounded-lg transition-colors hover:bg-[#0D7377]/5"
             >
-              <Eye className="h-4 w-4 text-slate-600 hover:text-blue-600" />
+              <Eye className="h-4 w-4 text-slate-600 hover:text-[#0D7377]" />
             </button>
           )}
           {onDelete && (

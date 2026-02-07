@@ -8,18 +8,16 @@ export default function AnimatedGradientHero({
   scrollToId: (id: string) => void;
 }) {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-background via-primary/5 to-purple-500/10 animate-gradient">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent animate-pulse opacity-50" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-[#4A7C59]/10 animate-gradient">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent animate-pulse opacity-50" />
       <div className="container relative py-24 md:py-32">
         <div className="mx-auto max-w-4xl text-center space-y-8">
           <h1
-            className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white animate-fade-in"
+            className="text-5xl md:text-7xl font-bold text-[#2D3436] dark:text-white animate-fade-in"
             style={{ textShadow: "0 2px 10px rgba(0,0,0,0.1)" }}
           >
             Know Your Pass Probability.
-            <span className="block mt-2 bg-linear-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-              Study Smarter.
-            </span>
+            <span className="block mt-2 text-primary">Study Smarter.</span>
           </h1>
           <p
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto animate-fade-in"
@@ -35,7 +33,7 @@ export default function AnimatedGradientHero({
             <Button
               size="lg"
               onClick={handleGetStarted}
-              className="bg-linear-to-r from-primary to-purple-600 hover:opacity-90 text-lg px-8 py-6"
+              className="bg-primary hover:bg-primary/90 text-lg px-8 py-6"
             >
               Start Free Today
             </Button>

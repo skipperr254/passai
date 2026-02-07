@@ -7,9 +7,9 @@ interface PlantHealthProps {
 
 export const PlantHealth: React.FC<PlantHealthProps> = ({ plantHealth }) => {
   const getHealthColor = () => {
-    if (plantHealth >= 80) return "from-emerald-500 to-green-600";
-    if (plantHealth >= 60) return "from-green-500 to-emerald-600";
-    if (plantHealth >= 40) return "from-amber-500 to-orange-600";
+    if (plantHealth >= 80) return "from-[#6A994E] to-[#4A7C59]";
+    if (plantHealth >= 60) return "from-[#6A994E] to-[#4A7C59]";
+    if (plantHealth >= 40) return "from-[#F2A541] to-[#E07A5F]";
     return "from-red-500 to-pink-600";
   };
 
@@ -32,8 +32,8 @@ export const PlantHealth: React.FC<PlantHealthProps> = ({ plantHealth }) => {
           <Heart className="w-6 h-6 text-white" />
         </div>
         <div className="flex-1">
-          <p className="text-sm font-semibold text-slate-600">Plant Health</p>
-          <p className="text-2xl font-bold text-slate-900">{plantHealth}%</p>
+          <p className="text-sm font-semibold text-[#2D3436]/70">Plant Health</p>
+          <p className="text-2xl font-bold text-[#2D3436]">{plantHealth}%</p>
         </div>
       </div>
       <div className="h-3 bg-white rounded-full overflow-hidden mb-3 shadow-inner">
@@ -42,7 +42,7 @@ export const PlantHealth: React.FC<PlantHealthProps> = ({ plantHealth }) => {
           style={{ width: `${plantHealth}%` }}
         />
       </div>
-      <p className="text-sm text-slate-700 font-medium">{getHealthMessage()}</p>
+      <p className="text-sm text-[#2D3436]/80 font-medium">{getHealthMessage()}</p>
     </div>
   );
 };

@@ -131,7 +131,7 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="shrink-0 px-4 lg:px-6 py-4 lg:py-5 border-b border-slate-200 bg-linear-to-br from-blue-500 to-indigo-600">
+        <div className="shrink-0 px-4 lg:px-6 py-4 lg:py-5 border-b border-[#E8E4E1] bg-linear-to-br from-[#0D7377] to-[#4A7C59]">
           <div className="w-12 h-1 bg-white/30 rounded-full mx-auto mb-4 md:hidden"></div>
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0">
@@ -203,19 +203,19 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
             <div className="p-6 lg:p-12">
               <div className="max-w-md mx-auto text-center">
                 <div className="relative w-24 h-24 mx-auto mb-8">
-                  <div className="absolute inset-0 bg-linear-to-br from-blue-500 to-indigo-600 rounded-full animate-pulse opacity-20" />
-                  <div className="absolute inset-2 bg-linear-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
+                  <div className="absolute inset-0 bg-linear-to-br from-[#0D7377] to-[#4A7C59] rounded-full animate-pulse opacity-20" />
+                  <div className="absolute inset-2 bg-linear-to-br from-[#0D7377] to-[#4A7C59] rounded-full flex items-center justify-center">
                     <Loader2 className="w-12 h-12 text-white animate-spin" />
                   </div>
                   <div
-                    className="absolute inset-0 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
+                    className="absolute inset-0 border-4 border-[#0D7377] border-t-transparent rounded-full animate-spin"
                     style={{ animationDuration: "2s" }}
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                <h3 className="text-2xl font-bold text-[#2D3436] mb-2">
                   Generating Your Quiz
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-[#2D3436]/70">
                   Our AI is creating personalized questions from your materials
                 </p>
               </div>
@@ -224,7 +224,7 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
         </div>
 
         {/* Footer Actions */}
-        <div className="shrink-0 px-4 lg:px-6 py-4 border-t border-slate-200 bg-slate-50">
+        <div className="shrink-0 px-4 lg:px-6 py-4 border-t border-[#E8E4E1] bg-[#FAF3E0]">
           <div className="flex gap-3">
             {step !== "generating" && (
               <>
@@ -238,7 +238,7 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
                       )
                         setStep("select-subject");
                     }}
-                    className="px-4 lg:px-6 py-3 bg-white border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 active:scale-95 transition-all"
+                    className="px-4 lg:px-6 py-3 bg-white border-2 border-[#E8E4E1] text-[#2D3436]/80 font-semibold rounded-xl hover:bg-[#FAF3E0] active:scale-95 transition-all"
                   >
                     Back
                   </button>
@@ -261,7 +261,7 @@ export const CreateQuizFlow: React.FC<CreateQuizFlowProps> = ({
                     (step === "select-materials" && !canProceedFromMaterials) ||
                     (step === "configure" && isGenerating)
                   }
-                  className="flex-1 flex items-center justify-center gap-2 px-4 lg:px-6 py-3 bg-linear-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 lg:px-6 py-3 bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
                 >
                   {isGenerating ? (
                     <>

@@ -49,7 +49,7 @@ export const SubjectSelector: React.FC<SubjectSelectorProps> = ({
             />
 
             {/* Dropdown */}
-            <div className="absolute top-full left-0 right-0 lg:right-auto mt-2 w-full lg:w-72 bg-white rounded-xl border-2 border-slate-200 shadow-xl z-50 max-h-96 overflow-y-auto">
+            <div className="absolute top-full left-0 right-0 lg:right-auto mt-2 w-full lg:w-72 bg-white rounded-xl border-2 border-[#E8E4E1] shadow-xl z-50 max-h-96 overflow-y-auto">
               {subjects.map((subject) => (
                 <button
                   key={subject.id}
@@ -57,8 +57,8 @@ export const SubjectSelector: React.FC<SubjectSelectorProps> = ({
                     onSelectSubject(subject);
                     onToggle();
                   }}
-                  className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition-colors first:rounded-t-xl last:rounded-b-xl ${
-                    selectedSubject.id === subject.id ? "bg-blue-50" : ""
+                  className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-[#FAF3E0] transition-colors first:rounded-t-xl last:rounded-b-xl ${
+                    selectedSubject.id === subject.id ? "bg-[#0D7377]/5" : ""
                   }`}
                 >
                   <div
@@ -69,11 +69,11 @@ export const SubjectSelector: React.FC<SubjectSelectorProps> = ({
                   >
                     <Book className="w-5 h-5 text-white" />
                   </div>
-                  <span className="flex-1 text-left font-semibold text-slate-900">
+                  <span className="flex-1 text-left font-semibold text-[#2D3436]">
                     {subject.name}
                   </span>
                   {selectedSubject.id === subject.id && (
-                    <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                    <CheckCircle2 className="w-5 h-5 text-[#0D7377]" />
                   )}
                 </button>
               ))}

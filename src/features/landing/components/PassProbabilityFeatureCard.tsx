@@ -3,7 +3,7 @@ import { TrendingUp } from "lucide-react";
 
 export default function PassProbabilityFeatureCard() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -49,13 +49,13 @@ export default function PassProbabilityFeatureCard() {
                       x2="100%"
                       y2="100%"
                     >
-                      <stop offset="0%" stopColor="#2563EB" />
-                      <stop offset="100%" stopColor="#9333EA" />
+                      <stop offset="0%" stopColor="#0A5C5F" />
+                      <stop offset="100%" stopColor="#6B9E9D" />
                     </linearGradient>
                   </defs>
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-6xl md:text-7xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#0D7377] to-[#4A7C59] bg-clip-text text-transparent">
                     80%
                   </span>
                   <span className="text-lg text-muted-foreground mt-2">

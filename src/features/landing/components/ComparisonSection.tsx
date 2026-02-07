@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 export default function ComparisonSection() {
   return (
     <section
-      className="py-20 bg-linear-to-b from-primary/5 to-background"
+      className="py-20 bg-gradient-to-b from-primary/10 to-secondary/30"
       id="comparison"
     >
       <div className="container">
@@ -27,7 +27,7 @@ export default function ComparisonSection() {
                       Feature
                     </th>
                     <th className="text-center p-6 font-bold text-lg bg-primary/10 min-w-[140px]">
-                      <span className="bg-linear-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-[#0D7377] to-[#4A7C59] bg-clip-text text-transparent">
                         PassAI
                       </span>
                     </th>

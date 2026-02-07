@@ -8,7 +8,7 @@ import {
 export default function PrivacyPolicy() {
   return (
     <section
-      className="py-20 bg-linear-to-b from-primary/5 to-background"
+      className="py-20 bg-gradient-to-b from-primary/5 to-background"
       id="privacy"
     >
       <div className="container">

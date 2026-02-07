@@ -14,24 +14,24 @@ export const ScoreProgressionChart: React.FC<ScoreProgressionChartProps> = ({
   if (attempts.length === 0) return null;
 
   return (
-    <section className="bg-white rounded-xl lg:rounded-2xl border border-slate-200 p-5 lg:p-6 shadow-sm">
+    <section className="bg-white rounded-xl lg:rounded-2xl border border-[#E8E4E1] p-5 lg:p-6 shadow-sm">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h2 className="text-lg lg:text-xl font-bold text-slate-900 flex items-center gap-2">
-            <TrendingUp className="w-5 h-5 text-blue-600" />
+          <h2 className="text-lg lg:text-xl font-bold text-[#2D3436] flex items-center gap-2">
+            <TrendingUp className="w-5 h-5 text-[#0D7377]" />
             Score Progression
           </h2>
-          <p className="text-sm text-slate-600 mt-1">
+          <p className="text-sm text-[#2D3436]/70 mt-1">
             Your performance over time
           </p>
         </div>
         <div className="flex items-center gap-2 px-3 py-2 bg-emerald-50 border border-emerald-200 rounded-lg">
-          <Award className="w-4 h-4 text-emerald-600" />
+          <Award className="w-4 h-4 text-[#6A994E]" />
           <div>
-            <p className="text-xs text-slate-600 font-medium leading-none">
+            <p className="text-xs text-[#2D3436]/70 font-medium leading-none">
               Best
             </p>
-            <p className="text-lg font-bold text-emerald-600 leading-tight">
+            <p className="text-lg font-bold text-[#6A994E] leading-tight">
               {bestScore}%
             </p>
           </div>
@@ -53,12 +53,12 @@ export const ScoreProgressionChart: React.FC<ScoreProgressionChartProps> = ({
             >
               <stop
                 offset="0%"
-                stopColor="rgb(59, 130, 246)"
+                stopColor="rgb(13, 115, 119)"
                 stopOpacity="0.3"
               />
               <stop
                 offset="100%"
-                stopColor="rgb(59, 130, 246)"
+                stopColor="rgb(13, 115, 119)"
                 stopOpacity="0"
               />
             </linearGradient>
@@ -106,7 +106,7 @@ export const ScoreProgressionChart: React.FC<ScoreProgressionChartProps> = ({
                   )
                   .join(" ")}`}
                 fill="none"
-                stroke="rgb(59, 130, 246)"
+                stroke="rgb(13, 115, 119)"
                 strokeWidth="3"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -121,7 +121,7 @@ export const ScoreProgressionChart: React.FC<ScoreProgressionChartProps> = ({
                       cy={200 - a.score * 2}
                       r="6"
                       fill="white"
-                      stroke="rgb(59, 130, 246)"
+                      stroke="rgb(13, 115, 119)"
                       strokeWidth="3"
                     />
                     <title>{`Attempt ${a.attempt_number}: ${a.score}%`}</title>
@@ -130,7 +130,7 @@ export const ScoreProgressionChart: React.FC<ScoreProgressionChartProps> = ({
             </>
           )}
         </svg>
-        <div className="absolute bottom-0 left-0 right-0 flex justify-between px-2 text-xs font-medium text-slate-500">
+        <div className="absolute bottom-0 left-0 right-0 flex justify-between px-2 text-xs font-medium text-[#6B7280]">
           {attempts
             .slice()
             .reverse()

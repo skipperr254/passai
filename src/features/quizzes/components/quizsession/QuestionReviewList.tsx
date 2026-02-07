@@ -20,9 +20,9 @@ export const QuestionReviewList: React.FC<QuestionReviewListProps> = ({
   // onDetailedReview,
 }) => {
   return (
-    <div className="bg-white rounded-2xl border-2 border-slate-200 p-5 lg:p-6 shadow-sm">
-      <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-        <Brain className="w-5 h-5 text-blue-600" />
+    <div className="bg-white rounded-2xl border-2 border-[#E8E4E1] p-5 lg:p-6 shadow-sm">
+      <h3 className="text-lg font-bold text-[#2D3436] mb-4 flex items-center gap-2">
+        <Brain className="w-5 h-5 text-[#0D7377]" />
         Question Review
       </h3>
       <div className="space-y-2 mb-4">
@@ -49,10 +49,10 @@ export const QuestionReviewList: React.FC<QuestionReviewListProps> = ({
                   <AlertCircle className="w-5 h-5 text-amber-600 shrink-0" />
                 )}
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-slate-900 truncate">
+                  <p className="text-sm font-semibold text-[#2D3436] truncate">
                     Question {idx + 1}
                   </p>
-                  <p className="text-xs text-slate-600">{question.topic}</p>
+                  <p className="text-xs text-[#2D3436]/70">{question.topic}</p>
                 </div>
                 <span
                   className={`text-xs font-bold px-2 py-1 rounded-lg ${
@@ -72,7 +72,7 @@ export const QuestionReviewList: React.FC<QuestionReviewListProps> = ({
       </div>
       <button
         // onClick={onDetailedReview}
-        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-50 hover:bg-blue-100 text-blue-600 font-semibold rounded-xl transition-colors border-2 border-blue-200"
+        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#0D7377]/5 hover:bg-[#0D7377]/10 text-[#0D7377] font-semibold rounded-xl transition-colors border-2 border-[#0D7377]/20"
       >
         <span>View Detailed Review</span>
         <ChevronRight className="w-5 h-5" />

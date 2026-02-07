@@ -12,26 +12,26 @@ import {
 export const getDifficultyColor = (difficulty: string) => {
   switch (difficulty) {
     case "easy":
-      return "text-green-600 bg-green-50 border-green-200";
+      return "text-[#6A994E] bg-[#6A994E]/10 border-[#6A994E]/20";
     case "medium":
-      return "text-amber-600 bg-amber-50 border-amber-200";
+      return "text-[#F2A541] bg-[#F2A541]/10 border-[#F2A541]/20";
     case "hard":
       return "text-red-600 bg-red-50 border-red-200";
     default:
-      return "text-slate-600 bg-slate-50 border-slate-200";
+      return "text-[#2D3436]/70 bg-[#FAF3E0] border-[#E8E4E1]";
   }
 };
 
 export const getStatusColor = (status: string) => {
   switch (status) {
     case "completed":
-      return "text-emerald-600 bg-emerald-50";
+      return "text-[#6A994E] bg-[#6A994E]/10";
     case "in-progress":
-      return "text-blue-600 bg-blue-50";
+      return "text-[#0D7377] bg-[#0D7377]/10";
     case "not-started":
-      return "text-slate-600 bg-slate-50";
+      return "text-[#2D3436]/70 bg-[#FAF3E0]";
     default:
-      return "text-slate-600 bg-slate-50";
+      return "text-[#2D3436]/70 bg-[#FAF3E0]";
   }
 };
 
@@ -49,9 +49,9 @@ export const getStatusIcon = (status: string) => {
 };
 
 export const getScoreColor = (score: number) => {
-  if (score >= 90) return "text-emerald-600";
-  if (score >= 75) return "text-green-600";
-  if (score >= 60) return "text-amber-600";
+  if (score >= 90) return "text-[#6A994E]";
+  if (score >= 75) return "text-[#6A994E]";
+  if (score >= 60) return "text-[#F2A541]";
   return "text-red-600";
 };
 
@@ -77,17 +77,17 @@ export const getMaterialIcon = (type: string) => {
 export const getMaterialColor = (type: string) => {
   switch (type) {
     case "pdf":
-      return "from-red-500 to-pink-600";
+      return "from-[#E07A5F] to-[#D4A373]";
     case "video":
-      return "from-purple-500 to-indigo-600";
+      return "from-[#0D7377] to-[#4A7C59]";
     case "notes":
-      return "from-blue-500 to-cyan-600";
+      return "from-[#4A7C59] to-[#0D7377]";
     case "textbook":
-      return "from-green-500 to-emerald-600";
+      return "from-[#6A994E] to-[#4A7C59]";
     case "slides":
-      return "from-amber-500 to-orange-600";
+      return "from-[#F2A541] to-[#E07A5F]";
     default:
-      return "from-slate-500 to-slate-600";
+      return "from-[#6B7280] to-[#2D3436]/70";
   }
 };
 

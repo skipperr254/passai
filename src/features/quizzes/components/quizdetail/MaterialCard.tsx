@@ -13,17 +13,17 @@ export const MaterialCard: React.FC<MaterialCardProps> = ({ material }) => {
   const timeAgo = calculateTimeAgo(material.created_at);
 
   return (
-    <div className="flex items-center gap-3 p-3 bg-slate-50 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer border border-slate-200">
-      <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
-        <Icon className="w-5 h-5 text-blue-600" />
+    <div className="flex items-center gap-3 p-3 bg-[#FAF3E0] hover:bg-[#FAF3E0] rounded-lg transition-colors cursor-pointer border border-[#E8E4E1]">
+      <div className="w-10 h-10 rounded-lg bg-[#0D7377]/10 flex items-center justify-center shrink-0">
+        <Icon className="w-5 h-5 text-[#0D7377]" />
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-slate-900 truncate">
+        <p className="text-sm font-semibold text-[#2D3436] truncate">
           {material.file_name}
         </p>
-        <p className="text-xs text-slate-600">{timeAgo}</p>
+        <p className="text-xs text-[#2D3436]/70">{timeAgo}</p>
       </div>
-      <ChevronRight className="w-4 h-4 text-slate-400 shrink-0" />
+      <ChevronRight className="w-4 h-4 text-[#2D3436]/50 shrink-0" />
     </div>
   );
 };

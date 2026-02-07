@@ -65,19 +65,19 @@ function getStatusBadge(status: ProcessingStatus) {
     case "pending":
       return {
         text: "Pending",
-        color: "bg-yellow-100 text-yellow-800",
+        color: "bg-[#F2A541]/10 text-yellow-800",
         icon: AlertCircle,
       };
     case "processing":
       return {
         text: "Processing",
-        color: "bg-blue-100 text-blue-800",
+        color: "bg-[#0D7377]/10 text-[#0D7377]",
         icon: AlertCircle,
       };
     case "ready":
       return {
         text: "Ready",
-        color: "bg-green-100 text-green-800",
+        color: "bg-[#6A994E]/10 text-[#4A7C59]/90",
         icon: CheckCircle2,
       };
     case "failed":
@@ -131,15 +131,15 @@ export function MaterialDetailModal({
         <DialogHeader className="shrink-0 pb-4">
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0 flex-1">
-              <DialogTitle className="wrap-break-word text-xl font-bold text-slate-900 lg:text-2xl">
+              <DialogTitle className="wrap-break-word text-xl font-bold text-[#2D3436] lg:text-2xl">
                 {material.file_name}
               </DialogTitle>
               <DialogDescription className="mt-2 flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-lg bg-linear-to-r from-blue-600 to-indigo-600 px-2.5 py-1 text-xs font-semibold text-white shadow-sm">
+                <span className="inline-flex items-center gap-1.5 rounded-lg bg-linear-to-r from-[#0D7377] to-[#4A7C59] px-2.5 py-1 text-xs font-semibold text-white shadow-sm">
                   <Book className="h-3.5 w-3.5" />
                   {subjectName}
                 </span>
-                <span className="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold uppercase text-slate-700">
+                <span className="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold uppercase text-[#2D3436]/80">
                   {material.file_type}
                 </span>
                 <span className="text-sm text-slate-600">
@@ -171,7 +171,7 @@ export function MaterialDetailModal({
             {material.processing_status !== "ready" && (
               <>
                 <div className="rounded-xl border-2 border-slate-200 bg-white p-4">
-                  <h3 className="mb-3 text-sm font-semibold text-slate-900">
+                  <h3 className="mb-3 text-sm font-semibold text-[#2D3436]">
                     Status
                   </h3>
                   <div className="flex items-center gap-2">
@@ -202,7 +202,7 @@ export function MaterialDetailModal({
               material.text_content && (
                 <div className="rounded-xl border-2 border-slate-200 bg-white">
                   <div className="flex items-center justify-between border-b-2 border-slate-200 px-4 py-3 lg:px-5 lg:py-4">
-                    <h3 className="text-sm font-semibold text-slate-900 lg:text-base">
+                    <h3 className="text-sm font-semibold text-[#2D3436] lg:text-base">
                       Extracted Text
                     </h3>
                     <Button
@@ -213,8 +213,8 @@ export function MaterialDetailModal({
                     >
                       {copied ? (
                         <>
-                          <Check className="mr-2 h-4 w-4 text-green-600" />
-                          <span className="text-green-600">Copied!</span>
+                          <Check className="mr-2 h-4 w-4 text-[#4A7C59]" />
+                          <span className="text-[#4A7C59]">Copied!</span>
                         </>
                       ) : (
                         <>
@@ -225,7 +225,7 @@ export function MaterialDetailModal({
                     </Button>
                   </div>
                   <div className="max-h-[400px] overflow-y-auto p-4 lg:p-6">
-                    <p className="wrap-break-word whitespace-pre-wrap text-sm leading-relaxed text-slate-700 lg:text-base lg:leading-loose">
+                    <p className="wrap-break-word whitespace-pre-wrap text-sm leading-relaxed text-[#2D3436]/80 lg:text-base lg:leading-loose">
                       {material.text_content}
                     </p>
                   </div>

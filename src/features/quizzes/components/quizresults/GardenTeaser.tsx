@@ -15,7 +15,7 @@ export const GardenTeaser: React.FC<GardenTeaserProps> = ({
   subject,
 }) => {
   return (
-    <div className="bg-linear-to-br from-emerald-500 to-green-600 rounded-2xl border-2 border-emerald-400 p-6 lg:p-8 text-white shadow-xl">
+    <div className="bg-linear-to-br from-[#6A994E] to-[#4A7C59] rounded-2xl border-2 border-[#8CB369] p-6 lg:p-8 text-white shadow-xl">
       <div className="flex items-start gap-4 mb-4">
         <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center shrink-0">
           <Sprout className="w-8 h-8 text-white" />
@@ -34,7 +34,7 @@ export const GardenTeaser: React.FC<GardenTeaserProps> = ({
       </div>
       <button
         onClick={onViewGarden}
-        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-white text-emerald-600 font-bold rounded-xl hover:bg-white/90 active:scale-95 transition-all"
+        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#6A994E] font-bold rounded-xl hover:bg-white/90 active:scale-95 transition-all"
       >
         <Leaf className="w-5 h-5" />
         <span>View Your Garden</span>

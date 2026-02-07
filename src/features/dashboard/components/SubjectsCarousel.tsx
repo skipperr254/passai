@@ -21,94 +21,94 @@ function getColorClasses(color: string) {
     { bg: string; border: string; text: string; badge: string }
   > = {
     blue: {
-      bg: "bg-blue-50",
-      border: "border-blue-200",
-      text: "text-blue-600",
-      badge: "bg-blue-100 text-blue-700",
+      bg: "bg-[#0D7377]/5",
+      border: "border-[#0D7377]/20",
+      text: "text-[#0D7377]",
+      badge: "bg-[#0D7377]/10 text-[#0D7377]",
     },
     green: {
-      bg: "bg-green-50",
-      border: "border-green-200",
-      text: "text-green-600",
-      badge: "bg-green-100 text-green-700",
+      bg: "bg-[#6A994E]/5",
+      border: "border-[#6A994E]/20",
+      text: "text-[#6A994E]",
+      badge: "bg-[#6A994E]/10 text-[#6A994E]",
     },
     purple: {
-      bg: "bg-purple-50",
-      border: "border-purple-200",
-      text: "text-purple-600",
-      badge: "bg-purple-100 text-purple-700",
+      bg: "bg-[#0D7377]/5",
+      border: "border-[#0D7377]/20",
+      text: "text-[#0D7377]",
+      badge: "bg-[#0D7377]/10 text-[#0D7377]",
     },
     red: {
-      bg: "bg-red-50",
-      border: "border-red-200",
-      text: "text-red-600",
-      badge: "bg-red-100 text-red-700",
+      bg: "bg-[#E07A5F]/5",
+      border: "border-[#E07A5F]/20",
+      text: "text-[#E07A5F]",
+      badge: "bg-[#E07A5F]/10 text-[#E07A5F]",
     },
     amber: {
-      bg: "bg-amber-50",
-      border: "border-amber-200",
-      text: "text-amber-600",
-      badge: "bg-amber-100 text-amber-700",
+      bg: "bg-[#F2A541]/5",
+      border: "border-[#F2A541]/20",
+      text: "text-[#F2A541]",
+      badge: "bg-[#F2A541]/10 text-[#F2A541]",
     },
     pink: {
-      bg: "bg-pink-50",
-      border: "border-pink-200",
-      text: "text-pink-600",
-      badge: "bg-pink-100 text-pink-700",
+      bg: "bg-[#E07A5F]/5",
+      border: "border-[#E07A5F]/20",
+      text: "text-[#E07A5F]",
+      badge: "bg-[#E07A5F]/10 text-[#E07A5F]",
     },
     cyan: {
-      bg: "bg-cyan-50",
-      border: "border-cyan-200",
-      text: "text-cyan-600",
-      badge: "bg-cyan-100 text-cyan-700",
+      bg: "bg-[#5FA8D3]/5",
+      border: "border-[#5FA8D3]/20",
+      text: "text-[#5FA8D3]",
+      badge: "bg-[#5FA8D3]/10 text-[#5FA8D3]",
     },
     indigo: {
-      bg: "bg-indigo-50",
-      border: "border-indigo-200",
-      text: "text-indigo-600",
-      badge: "bg-indigo-100 text-indigo-700",
+      bg: "bg-[#4A7C59]/5",
+      border: "border-[#4A7C59]/20",
+      text: "text-[#4A7C59]",
+      badge: "bg-[#4A7C59]/10 text-[#4A7C59]",
     },
     emerald: {
-      bg: "bg-emerald-50",
-      border: "border-emerald-200",
-      text: "text-emerald-600",
-      badge: "bg-emerald-100 text-emerald-700",
+      bg: "bg-[#8CB369]/5",
+      border: "border-[#8CB369]/20",
+      text: "text-[#8CB369]",
+      badge: "bg-[#8CB369]/10 text-[#8CB369]",
     },
     rose: {
-      bg: "bg-rose-50",
-      border: "border-rose-200",
-      text: "text-rose-600",
-      badge: "bg-rose-100 text-rose-700",
+      bg: "bg-[#E07A5F]/5",
+      border: "border-[#E07A5F]/20",
+      text: "text-[#E07A5F]",
+      badge: "bg-[#E07A5F]/10 text-[#E07A5F]",
     },
     violet: {
-      bg: "bg-violet-50",
-      border: "border-violet-200",
-      text: "text-violet-600",
-      badge: "bg-violet-100 text-violet-700",
+      bg: "bg-[#0D7377]/5",
+      border: "border-[#0D7377]/20",
+      text: "text-[#0D7377]",
+      badge: "bg-[#0D7377]/10 text-[#0D7377]",
     },
     teal: {
-      bg: "bg-teal-50",
-      border: "border-teal-200",
-      text: "text-teal-600",
-      badge: "bg-teal-100 text-teal-700",
+      bg: "bg-[#0D7377]/5",
+      border: "border-[#0D7377]/20",
+      text: "text-[#0D7377]",
+      badge: "bg-[#0D7377]/10 text-[#0D7377]",
     },
     orange: {
-      bg: "bg-orange-50",
-      border: "border-orange-200",
-      text: "text-orange-600",
-      badge: "bg-orange-100 text-orange-700",
+      bg: "bg-[#E07A5F]/5",
+      border: "border-[#E07A5F]/20",
+      text: "text-[#E07A5F]",
+      badge: "bg-[#E07A5F]/10 text-[#E07A5F]",
     },
     lime: {
-      bg: "bg-lime-50",
-      border: "border-lime-200",
-      text: "text-lime-600",
-      badge: "bg-lime-100 text-lime-700",
+      bg: "bg-[#8CB369]/5",
+      border: "border-[#8CB369]/20",
+      text: "text-[#8CB369]",
+      badge: "bg-[#8CB369]/10 text-[#8CB369]",
     },
     fuchsia: {
-      bg: "bg-fuchsia-50",
-      border: "border-fuchsia-200",
-      text: "text-fuchsia-600",
-      badge: "bg-fuchsia-100 text-fuchsia-700",
+      bg: "bg-[#E07A5F]/5",
+      border: "border-[#E07A5F]/20",
+      text: "text-[#E07A5F]",
+      badge: "bg-[#E07A5F]/10 text-[#E07A5F]",
     },
   };
 
@@ -123,10 +123,10 @@ export const SubjectsCarousel = () => {
   if (isLoading) {
     return (
       <div className="animate-pulse">
-        <div className="h-8 w-32 bg-slate-200 rounded mb-4"></div>
+        <div className="h-8 w-32 bg-[#E8E4E1] rounded mb-4"></div>
         <div className="flex gap-4">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="h-32 w-64 bg-slate-200 rounded-xl"></div>
+            <div key={i} className="h-32 w-64 bg-[#E8E4E1] rounded-xl"></div>
           ))}
         </div>
       </div>
@@ -135,21 +135,21 @@ export const SubjectsCarousel = () => {
 
   if (!subjects || subjects.length === 0) {
     return (
-      <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-8 border border-slate-200/60 shadow-lg">
+      <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-8 border border-[#E8E4E1]/60 shadow-lg">
         <div className="max-w-xl mx-auto text-center">
-          <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
-            <BookOpen className="w-8 h-8 text-blue-600" />
+          <div className="w-16 h-16 rounded-full bg-[#0D7377]/10 flex items-center justify-center mx-auto mb-4">
+            <BookOpen className="w-8 h-8 text-[#0D7377]" />
           </div>
-          <h3 className="text-xl font-bold text-slate-900 mb-2">
+          <h3 className="text-xl font-bold text-[#2D3436] mb-2">
             No subjects yet
           </h3>
-          <p className="text-slate-600 mb-6">
+          <p className="text-[#2D3436]/70 mb-6">
             Create your first subject to start generating quizzes, uploading
             materials, and tracking your progress.
           </p>
           <button
             onClick={() => navigate("/subjects")}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#0D7377] hover:bg-[#0D7377]/90 text-white font-semibold rounded-xl shadow-lg shadow-[#0D7377]/25 transition-all"
           >
             <Plus className="w-5 h-5" />
             Create Your First Subject
@@ -164,14 +164,14 @@ export const SubjectsCarousel = () => {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-          <BookOpen className="w-6 h-6 text-blue-600" />
+        <h2 className="text-xl font-bold text-[#2D3436] flex items-center gap-2">
+          <BookOpen className="w-6 h-6 text-[#0D7377]" />
           Your Subjects
         </h2>
         {subjects.length > 5 && (
           <button
             onClick={() => navigate("/subjects")}
-            className="text-sm font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1 transition-colors"
+            className="text-sm font-semibold text-[#0D7377] hover:text-[#0D7377]/80 flex items-center gap-1 transition-colors"
           >
             See all {subjects.length}
             <ArrowRight className="w-4 h-4" />
@@ -181,7 +181,7 @@ export const SubjectsCarousel = () => {
 
       <div
         ref={scrollContainerRef}
-        className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100"
+        className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-[#D4A373] scrollbar-track-[#E8E4E1]"
       >
         {displaySubjects.map((subject) => {
           const Icon = getIconComponent(subject.icon || "book");
@@ -191,14 +191,14 @@ export const SubjectsCarousel = () => {
             <div
               key={subject.id}
               onClick={() => navigate(`/subjects/${subject.id}`)}
-              className="shrink-0 w-72 bg-white/80 backdrop-blur-xl rounded-xl p-5 border border-slate-200/60 shadow-lg hover:shadow-xl cursor-pointer transition-all hover:scale-[1.02] group"
+              className="shrink-0 w-72 bg-white/80 backdrop-blur-xl rounded-xl p-5 border border-[#E8E4E1]/60 shadow-lg hover:shadow-xl cursor-pointer transition-all hover:scale-[1.02] group"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex-1">
-                  <h3 className="font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors line-clamp-1">
+                  <h3 className="font-bold text-[#2D3436] mb-1 group-hover:text-[#0D7377] transition-colors line-clamp-1">
                     {subject.name}
                   </h3>
-                  <p className="text-xs text-slate-500 uppercase font-semibold">
+                  <p className="text-xs text-[#6B7280] uppercase font-semibold">
                     {subject.exam_board || "General"}
                   </p>
                 </div>
@@ -219,21 +219,21 @@ export const SubjectsCarousel = () => {
                 subject.pass_chance !== undefined && (
                   <div className="mb-3">
                     <div className="flex items-center justify-between text-xs mb-1">
-                      <span className="text-slate-600 font-medium">
+                      <span className="text-[#2D3436]/70 font-medium">
                         Pass Probability
                       </span>
-                      <span className="font-bold text-slate-900">
+                      <span className="font-bold text-[#2D3436]">
                         {subject.pass_chance}%
                       </span>
                     </div>
-                    <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+                    <div className="w-full bg-[#E8E4E1] rounded-full h-2 overflow-hidden">
                       <div
                         className={`h-full rounded-full transition-all ${
                           subject.pass_chance >= 70
-                            ? "bg-linear-to-r from-emerald-500 to-green-500"
+                            ? "bg-linear-to-r from-[#6A994E] to-[#8CB369]"
                             : subject.pass_chance >= 50
-                            ? "bg-linear-to-r from-amber-500 to-orange-500"
-                            : "bg-linear-to-r from-red-500 to-rose-500"
+                            ? "bg-linear-to-r from-[#F2A541] to-[#E9C46A]"
+                            : "bg-linear-to-r from-[#E07A5F] to-[#D4A373]"
                         }`}
                         style={{ width: `${subject.pass_chance}%` }}
                       />
@@ -241,7 +241,7 @@ export const SubjectsCarousel = () => {
                   </div>
                 )}
 
-              <div className="flex items-center gap-4 text-xs text-slate-600">
+              <div className="flex items-center gap-4 text-xs text-[#2D3436]/70">
                 <div className="flex items-center gap-1">
                   <BookOpen className="w-3.5 h-3.5" />
                   <span>{subject.question_style || "Multiple Choice"}</span>
@@ -255,7 +255,7 @@ export const SubjectsCarousel = () => {
       {subjects.length <= 5 && subjects.length > 0 && (
         <button
           onClick={() => navigate("/subjects")}
-          className="w-full py-3 border-2 border-dashed border-slate-300 hover:border-blue-400 hover:bg-blue-50 rounded-xl text-slate-600 hover:text-blue-600 font-semibold transition-all flex items-center justify-center gap-2"
+          className="w-full py-3 border-2 border-dashed border-[#E8E4E1] hover:border-[#0D7377] hover:bg-[#0D7377]/5 rounded-xl text-[#2D3436]/70 hover:text-[#0D7377] font-semibold transition-all flex items-center justify-center gap-2"
         >
           <Plus className="w-5 h-5" />
           Add Another Subject

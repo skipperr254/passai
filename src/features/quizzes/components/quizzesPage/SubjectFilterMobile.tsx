@@ -23,7 +23,7 @@ export const SubjectFilterMobile: React.FC<SubjectFilterMobileProps> = ({
             className={`shrink-0 px-3 py-2 rounded-xl transition-all active:scale-95 ${
               selectedSubject.id === subject.id
                 ? `bg-${subject.color}-600 text-white shadow-md`
-                : "bg-white border-2 border-slate-200 text-slate-700"
+                : "bg-white border-2 border-[#E8E4E1] text-[#2D3436]/80"
             }`}
           >
             <div className="flex items-center gap-2">

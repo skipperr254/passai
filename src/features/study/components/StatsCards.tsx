@@ -14,33 +14,33 @@ export const StatsCards: React.FC<StatsCardsProps> = ({
   const daysUntilTest = calculateDaysUntilTest(testDate);
 
   const getPassChanceColor = (chance: number | null): string => {
-    if (chance === null) return "text-slate-600";
+    if (chance === null) return "text-[#2D3436]/70";
     if (chance >= 80) return "text-green-600";
-    if (chance >= 60) return "text-blue-600";
+    if (chance >= 60) return "text-[#0D7377]";
     if (chance >= 40) return "text-amber-600";
     return "text-red-600";
   };
 
   const getPassChanceBg = (chance: number | null): string => {
-    if (chance === null) return "from-slate-50 to-slate-100";
+    if (chance === null) return "from-[#FAF3E0] to-[#FAF3E0]";
     if (chance >= 80) return "from-green-50 to-emerald-50";
-    if (chance >= 60) return "from-blue-50 to-indigo-50";
+    if (chance >= 60) return "from-[#0D7377]/5 to-[#4A7C59]/5";
     if (chance >= 40) return "from-amber-50 to-yellow-50";
     return "from-red-50 to-rose-50";
   };
 
   const getDaysColor = (days: number): string => {
-    if (days === 0) return "text-slate-600";
+    if (days === 0) return "text-[#2D3436]/70";
     if (days <= 7) return "text-red-600";
     if (days <= 14) return "text-amber-600";
-    return "text-blue-600";
+    return "text-[#0D7377]";
   };
 
   const getDaysBg = (days: number): string => {
-    if (days === 0) return "from-slate-50 to-slate-100";
+    if (days === 0) return "from-[#FAF3E0] to-[#FAF3E0]";
     if (days <= 7) return "from-red-50 to-rose-50";
     if (days <= 14) return "from-amber-50 to-yellow-50";
-    return "from-blue-50 to-indigo-50";
+    return "from-[#0D7377]/5 to-[#4A7C59]/5";
   };
 
   return (
@@ -49,7 +49,7 @@ export const StatsCards: React.FC<StatsCardsProps> = ({
       <div
         className={`bg-linear-to-br ${getPassChanceBg(
           passChance
-        )} rounded-xl p-4 lg:p-6 border border-slate-200/60 shadow-sm`}
+        )} rounded-xl p-4 lg:p-6 border border-[#E8E4E1]/60 shadow-sm`}
       >
         <div className="flex items-start justify-between">
           <div className="flex-1">
@@ -57,7 +57,7 @@ export const StatsCards: React.FC<StatsCardsProps> = ({
               <TrendingUp
                 className={`w-5 h-5 ${getPassChanceColor(passChance)}`}
               />
-              <p className="text-sm font-medium text-slate-600">
+              <p className="text-sm font-medium text-[#2D3436]/70">
                 Projected Pass Chance
               </p>
             </div>
@@ -69,7 +69,7 @@ export const StatsCards: React.FC<StatsCardsProps> = ({
               {passChance !== null ? `${passChance}%` : "N/A"}
             </p>
             {passChance !== null && (
-              <p className="text-xs lg:text-sm text-slate-500 mt-1">
+              <p className="text-xs lg:text-sm text-[#2D3436]/60 mt-1">
                 {passChance >= 80
                   ? "Excellent! Keep up the great work"
                   : passChance >= 60
@@ -87,13 +87,13 @@ export const StatsCards: React.FC<StatsCardsProps> = ({
       <div
         className={`bg-linear-to-br ${getDaysBg(
           daysUntilTest
-        )} rounded-xl p-4 lg:p-6 border border-slate-200/60 shadow-sm`}
+        )} rounded-xl p-4 lg:p-6 border border-[#E8E4E1]/60 shadow-sm`}
       >
         <div className="flex items-start justify-between">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2">
               <Calendar className={`w-5 h-5 ${getDaysColor(daysUntilTest)}`} />
-              <p className="text-sm font-medium text-slate-600">
+              <p className="text-sm font-medium text-[#2D3436]/70">
                 Days Until Test
               </p>
             </div>
@@ -105,7 +105,7 @@ export const StatsCards: React.FC<StatsCardsProps> = ({
               {testDate ? daysUntilTest : "Not set"}
             </p>
             {testDate && daysUntilTest > 0 && (
-              <p className="text-xs lg:text-sm text-slate-500 mt-1">
+              <p className="text-xs lg:text-sm text-[#2D3436]/60 mt-1">
                 {new Date(testDate).toLocaleDateString("en-US", {
                   month: "short",
                   day: "numeric",
@@ -114,7 +114,7 @@ export const StatsCards: React.FC<StatsCardsProps> = ({
               </p>
             )}
             {testDate && daysUntilTest === 0 && (
-              <p className="text-xs lg:text-sm text-slate-500 mt-1">
+              <p className="text-xs lg:text-sm text-[#2D3436]/60 mt-1">
                 Test date has passed
               </p>
             )}

@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-4xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-primary to-[#0D7377] bg-clip-text text-transparent">
               Privacy Policy
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -348,7 +348,7 @@ export default function PrivacyPolicyPage() {
              {/* Section 13 */}
              <section className="border-t pt-8 mt-12">
               <h2 className="text-2xl font-bold mb-4">13. Beta Testing Acknowledgment</h2>
-              <div className="bg-linear-to-r from-primary/10 to-purple-600/10 p-6 rounded-xl border border-primary/20">
+              <div className="bg-linear-to-r from-primary/10 to-[#0D7377]/10 p-6 rounded-xl border border-primary/20">
                 <p className="font-semibold mb-4">By using PassAI during beta testing, you acknowledge:</p>
                 <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-6">
                   <li>This is a test version of the service</li>

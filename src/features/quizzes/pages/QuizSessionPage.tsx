@@ -116,10 +116,10 @@ export const QuizSessionPage = () => {
   // Show loading state
   if (isLoading || loadingResume) {
     return (
-      <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-br from-[#FAF3E0] via-[#0D7377]/5/30 to-[#4A7C59]/5/40 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-lg font-semibold text-slate-700">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#0D7377] mx-auto mb-4"></div>
+          <p className="text-lg font-semibold text-[#2D3436]/80">
             {loadingResume ? "Loading your progress..." : "Loading quiz..."}
           </p>
         </div>
@@ -130,17 +130,17 @@ export const QuizSessionPage = () => {
   // Show error state
   if (error || !quiz) {
     return (
-      <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-br from-[#FAF3E0] via-[#0D7377]/5/30 to-[#4A7C59]/5/40 flex items-center justify-center">
         <div className="text-center bg-white p-8 rounded-2xl shadow-lg max-w-md">
           <p className="text-lg font-semibold text-red-600 mb-2">
             Quiz not found
           </p>
-          <p className="text-sm text-slate-600 mb-4">
+          <p className="text-sm text-[#2D3436]/70 mb-4">
             The quiz you're looking for doesn't exist or has been deleted.
           </p>
           <button
             onClick={() => navigate("/quizzes")}
-            className="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:shadow-lg transition-all"
+            className="px-6 py-3 bg-[#0D7377] text-white font-bold rounded-xl hover:shadow-lg transition-all"
           >
             Back to Quizzes
           </button>

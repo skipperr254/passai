@@ -16,7 +16,7 @@ export const MotivationalMessage: React.FC<MotivationalMessageProps> = ({
       <div className="flex items-start gap-3">
         <Zap className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
         <div>
-          <p className="text-sm font-semibold text-slate-900 mb-1">
+          <p className="text-sm font-semibold text-[#2D3436] mb-1">
             {selectedMood === "confident" &&
               "Fantastic! Your garden is thriving! Keep that momentum going! 🌳"}
             {selectedMood === "okay" &&
@@ -26,7 +26,7 @@ export const MotivationalMessage: React.FC<MotivationalMessageProps> = ({
             {selectedMood === "confused" &&
               "No worries! We'll provide more support to help your garden grow! 💧"}
           </p>
-          <p className="text-xs text-slate-600">
+          <p className="text-xs text-[#2D3436]/70">
             We'll adapt the remaining questions based on your feedback.
           </p>
         </div>

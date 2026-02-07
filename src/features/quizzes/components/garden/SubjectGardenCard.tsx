@@ -34,12 +34,12 @@ export function SubjectGardenCard({
           <span className="text-sm font-medium text-gray-600">
             Garden Health
           </span>
-          <Sprout className="size-5 text-green-600" />
+          <Sprout className="size-5 text-[#6A994E]" />
         </div>
         <div className="mb-2 h-8 w-20 animate-pulse rounded bg-gray-200" />
         <div className="mb-3 h-4 w-32 animate-pulse rounded bg-gray-200" />
         <div className="h-2 overflow-hidden rounded-full bg-gray-100">
-          <div className="h-full w-0 bg-green-500" />
+          <div className="h-full w-0 bg-[#6A994E]" />
         </div>
       </div>
     );
@@ -54,7 +54,7 @@ export function SubjectGardenCard({
     >
       <div className="mb-3 flex items-center justify-between">
         <span className="text-sm font-medium text-gray-600">Garden Health</span>
-        <Sprout className="size-5 text-green-600" />
+        <Sprout className="size-5 text-[#6A994E]" />
       </div>
 
       {/* Health and Emoticon */}
@@ -75,7 +75,7 @@ export function SubjectGardenCard({
       {/* Progress Bar to Next Level */}
       <div className="h-2 overflow-hidden rounded-full bg-gray-100">
         <div
-          className="h-full bg-green-500 transition-all"
+          className="h-full bg-[#6A994E] transition-all"
           style={{ width: `${progressPercent}%` }}
         />
       </div>

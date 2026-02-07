@@ -34,19 +34,19 @@ export const AttemptCard: React.FC<AttemptCardProps> = ({
   return (
     <div
       onClick={isCompleted ? onClick : undefined}
-      className={`border-2 border-slate-200 rounded-xl p-4 transition-all ${
+      className={`border-2 border-[#E8E4E1] rounded-xl p-4 transition-all ${
         isCompleted
-          ? "hover:border-blue-400 cursor-pointer hover:shadow-md active:scale-[0.98]"
+          ? "hover:border-[#0D7377]/70 cursor-pointer hover:shadow-md active:scale-[0.98]"
           : "opacity-90"
       } group`}
     >
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-2">
           <div>
-            <h3 className="font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
+            <h3 className="font-bold text-[#2D3436] mb-1 group-hover:text-[#0D7377] transition-colors">
               Attempt #{attempt.attempt_number}
             </h3>
-            <p className="text-xs text-slate-600">{timeAge}</p>
+            <p className="text-xs text-[#2D3436]/70">{timeAge}</p>
           </div>
           {isInProgress && (
             <div className="flex items-center gap-1 px-2 py-1 bg-amber-50 border border-amber-200 rounded-md">
@@ -68,7 +68,7 @@ export const AttemptCard: React.FC<AttemptCardProps> = ({
         <div
           className={`text-right ${
             attempt.attempt_number === attempts[0].attempt_number
-              ? "px-2 py-1 bg-blue-50 rounded-lg"
+              ? "px-2 py-1 bg-[#0D7377]/5 rounded-lg"
               : ""
           }`}
         >
@@ -80,7 +80,7 @@ export const AttemptCard: React.FC<AttemptCardProps> = ({
                 {attempt.score}%
               </p>
               {attempt.attempt_number === attempts[0].attempt_number && (
-                <p className="text-xs text-blue-600 font-semibold">Latest</p>
+                <p className="text-xs text-[#0D7377] font-semibold">Latest</p>
               )}
             </>
           )}
@@ -93,11 +93,11 @@ export const AttemptCard: React.FC<AttemptCardProps> = ({
         </div>
       </div>
       <div className="grid grid-cols-3 gap-3 mb-3">
-        <div className="text-center p-2 bg-slate-50 rounded-lg">
-          <p className="text-xs text-slate-600 font-medium mb-0.5">
+        <div className="text-center p-2 bg-[#FAF3E0] rounded-lg">
+          <p className="text-xs text-[#2D3436]/70 font-medium mb-0.5">
             {isCompleted ? "Correct" : "Progress"}
           </p>
-          <p className="text-lg font-bold text-emerald-600">
+          <p className="text-lg font-bold text-[#6A994E]">
             {isCompleted
               ? `${attempt.correct_answers}/${attempt.total_questions}`
               : `${attempt.current_question_index || 0}/${
@@ -105,27 +105,27 @@ export const AttemptCard: React.FC<AttemptCardProps> = ({
                 }`}
           </p>
         </div>
-        <div className="text-center p-2 bg-slate-50 rounded-lg">
-          <p className="text-xs text-slate-600 font-medium mb-0.5">Time</p>
-          <p className="text-lg font-bold text-slate-900">
+        <div className="text-center p-2 bg-[#FAF3E0] rounded-lg">
+          <p className="text-xs text-[#2D3436]/70 font-medium mb-0.5">Time</p>
+          <p className="text-lg font-bold text-[#2D3436]">
             {formatTimeInMinutes(attempt.time_spent)}
           </p>
         </div>
         <div
           className={`text-center p-2 rounded-lg ${
-            isCompleted ? "bg-blue-50" : "bg-slate-100 opacity-50"
+            isCompleted ? "bg-[#0D7377]/5" : "bg-[#FAF3E0] opacity-50"
           }`}
         >
           <p
             className={`text-xs font-medium mb-0.5 ${
-              isCompleted ? "text-blue-600" : "text-slate-400"
+              isCompleted ? "text-[#0D7377]" : "text-[#2D3436]/50"
             }`}
           >
             View
           </p>
           <Eye
             className={`w-5 h-5 mx-auto ${
-              isCompleted ? "text-blue-600" : "text-slate-400"
+              isCompleted ? "text-[#0D7377]" : "text-[#2D3436]/50"
             }`}
           />
         </div>

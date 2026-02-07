@@ -44,16 +44,16 @@ const getTaskIcon = (type: string) => {
 const getTaskTypeColor = (type: string) => {
   switch (type) {
     case "reading":
-      return "text-blue-600 bg-blue-50";
+      return "text-[#0D7377] bg-[#0D7377]/5";
     case "video":
       return "text-red-600 bg-red-50";
     case "practice":
-      return "text-green-600 bg-green-50";
+      return "text-[#4A7C59] bg-[#6A994E]/5";
     case "exercise":
       return "text-amber-600 bg-amber-50";
     case "review":
     default:
-      return "text-purple-600 bg-purple-50";
+      return "text-[#0D7377] bg-[#0D7377]/5";
   }
 };
 
@@ -67,8 +67,8 @@ export const GardenTaskItem: React.FC<GardenTaskItemProps> = ({
       className={cn(
         "group flex items-start gap-3 p-3 rounded-lg border transition-all duration-200",
         task.is_completed
-          ? "bg-slate-50 border-slate-200"
-          : "bg-white border-slate-200 hover:border-blue-300 hover:shadow-sm"
+          ? "bg-[#FAF3E0] border-[#E8E4E1]"
+          : "bg-white border-[#E8E4E1] hover:border-[#0D7377]/30 hover:shadow-sm"
       )}
     >
       <button
@@ -77,8 +77,8 @@ export const GardenTaskItem: React.FC<GardenTaskItemProps> = ({
         className={cn(
           "shrink-0 mt-0.5 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors disabled:opacity-50",
           task.is_completed
-            ? "bg-green-500 border-green-500 text-white"
-            : "bg-white border-slate-300 text-transparent hover:border-green-500"
+            ? "bg-[#6A994E] border-[#6A994E] text-white"
+            : "bg-white border-[#E8E4E1] text-transparent hover:border-[#6A994E]"
         )}
       >
         <Check className="w-3.5 h-3.5" strokeWidth={3} />
@@ -90,14 +90,14 @@ export const GardenTaskItem: React.FC<GardenTaskItemProps> = ({
             className={cn(
               "text-sm font-medium transition-colors",
               task.is_completed
-                ? "text-slate-500 line-through"
-                : "text-slate-900"
+                ? "text-[#2D3436]/60 line-through"
+                : "text-[#2D3436]"
             )}
           >
             {task.title}
           </p>
           <div className="flex items-center gap-2 shrink-0">
-            <span className="text-xs text-slate-500 font-medium">
+            <span className="text-xs text-[#2D3436]/60 font-medium">
               {task.estimated_time_minutes}m
             </span>
             <div
@@ -111,7 +111,7 @@ export const GardenTaskItem: React.FC<GardenTaskItemProps> = ({
         <p
           className={cn(
             "text-xs leading-relaxed",
-            task.is_completed ? "text-slate-400" : "text-slate-600"
+            task.is_completed ? "text-[#2D3436]/50" : "text-[#2D3436]/70"
           )}
         >
           {task.description}
@@ -120,12 +120,12 @@ export const GardenTaskItem: React.FC<GardenTaskItemProps> = ({
         {/* Material reference - show if fileName exists */}
         {task.fileName && (
           <div className="mt-2 flex items-center gap-2 text-xs">
-            <FileText className="w-3.5 h-3.5 text-blue-500" />
-            <span className="font-medium text-blue-600">{task.fileName}</span>
+            <FileText className="w-3.5 h-3.5 text-[#0D7377]/50" />
+            <span className="font-medium text-[#0D7377]">{task.fileName}</span>
             {task.section && (
               <>
-                <span className="text-slate-400">•</span>
-                <span className="text-slate-500 italic">{task.section}</span>
+                <span className="text-[#2D3436]/50">•</span>
+                <span className="text-[#2D3436]/60 italic">{task.section}</span>
               </>
             )}
           </div>

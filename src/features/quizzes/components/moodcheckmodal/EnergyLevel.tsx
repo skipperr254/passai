@@ -12,9 +12,9 @@ export const EnergyLevel: React.FC<EnergyLevelProps> = ({
 }) => {
   return (
     <div className="mb-6">
-      <label className="block text-sm font-bold text-slate-900 mb-3">
+      <label className="block text-sm font-bold text-[#2D3436] mb-3">
         <div className="flex items-center gap-2">
-          <Coffee className="w-4 h-4 text-slate-600" />
+          <Coffee className="w-4 h-4 text-[#2D3436]/70" />
           <span>Energy Level</span>
         </div>
       </label>
@@ -25,7 +25,7 @@ export const EnergyLevel: React.FC<EnergyLevelProps> = ({
           max="10"
           value={energyLevel}
           onChange={(e) => setEnergyLevel(parseInt(e.target.value))}
-          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+          className="w-full h-2 bg-[#E8E4E1] rounded-lg appearance-none cursor-pointer accent-[#0D7377]"
           style={{
             background: `linear-gradient(to right, rgb(59, 130, 246) 0%, rgb(59, 130, 246) ${
               energyLevel * 10
@@ -35,11 +35,11 @@ export const EnergyLevel: React.FC<EnergyLevelProps> = ({
           }}
         />
         <div className="flex items-center justify-between mt-2">
-          <span className="text-xs text-slate-600 font-medium">Tired</span>
-          <span className="text-sm font-bold text-blue-600">
+          <span className="text-xs text-[#2D3436]/70 font-medium">Tired</span>
+          <span className="text-sm font-bold text-[#0D7377]">
             {energyLevel}/10
           </span>
-          <span className="text-xs text-slate-600 font-medium">Energized</span>
+          <span className="text-xs text-[#2D3436]/70 font-medium">Energized</span>
         </div>
       </div>
     </div>

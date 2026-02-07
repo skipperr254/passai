@@ -172,7 +172,7 @@ export function MaterialUploadPage() {
   return (
     <div className="h-full overflow-y-auto pb-4">
       {/* Header Section with Gradient Background */}
-      <div className="border-b border-slate-200/60 bg-linear-to-br from-slate-50 to-indigo-50/30 px-4 py-4 lg:px-8 lg:py-6">
+      <div className="border-b border-slate-200/60 bg-linear-to-br from-slate-50 to-[#4A7C59]/5/30 px-4 py-4 lg:px-8 lg:py-6">
         <div className="mx-auto max-w-7xl">
           {/* Back Button - only show if came from subject detail */}
           {showBackButton && (
@@ -199,7 +199,7 @@ export function MaterialUploadPage() {
             {/* Upload Button - Desktop Only */}
             <button
               onClick={handleOpenUploadModal}
-              className="hidden items-center gap-2 rounded-xl bg-linear-to-r from-blue-600 to-indigo-600 px-4 py-2.5 font-semibold text-white shadow-md transition-all hover:shadow-lg active:scale-95 lg:flex"
+              className="hidden items-center gap-2 rounded-xl bg-linear-to-r from-[#0D7377] to-[#4A7C59] px-4 py-2.5 font-semibold text-white shadow-md transition-all hover:shadow-lg active:scale-95 lg:flex"
             >
               <Upload className="h-5 w-5" />
               <span>Upload Materials</span>
@@ -252,7 +252,7 @@ export function MaterialUploadPage() {
                     className={cn(
                       "shrink-0 whitespace-nowrap rounded-xl px-3 py-2 text-sm font-semibold transition-all active:scale-95",
                       selectedSubjectId === subject.id
-                        ? "bg-linear-to-r from-blue-600 to-indigo-600 text-white shadow-md"
+                        ? "bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white shadow-md"
                         : "border-2 border-slate-200 bg-white text-slate-700"
                     )}
                   >
@@ -307,7 +307,7 @@ export function MaterialUploadPage() {
           {/* Loading state */}
           {isLoading && (
             <div className="flex items-center justify-center py-20">
-              <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+              <Loader2 className="h-8 w-8 animate-spin text-[#0D7377]" />
             </div>
           )}
 
@@ -361,7 +361,7 @@ export function MaterialUploadPage() {
       {/* Mobile FAB - Fixed Bottom Right */}
       <button
         onClick={handleOpenUploadModal}
-        className="fixed bottom-20 right-4 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-r from-blue-600 to-indigo-600 text-white shadow-xl transition-all hover:shadow-2xl active:scale-95 lg:hidden"
+        className="fixed bottom-20 right-4 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white shadow-xl transition-all hover:shadow-2xl active:scale-95 lg:hidden"
       >
         <Upload className="h-6 w-6" />
       </button>

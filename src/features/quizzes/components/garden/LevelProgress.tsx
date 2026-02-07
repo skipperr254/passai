@@ -15,7 +15,7 @@ export const LevelProgress: React.FC<LevelProgressProps> = ({
   leveledUp,
 }) => {
   return (
-    <div className="bg-linear-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-6">
+    <div className="bg-linear-to-br from-[#0D7377]/10 to-[#4A7C59]/10 border-2 border-[#0D7377]/20 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div
@@ -24,24 +24,24 @@ export const LevelProgress: React.FC<LevelProgressProps> = ({
             <Award className="w-6 h-6 text-white" />
           </div>
           <div>
-            <p className="text-sm font-semibold text-slate-600">
+            <p className="text-sm font-semibold text-[#2D3436]/70">
               Current Level
             </p>
-            <p className="text-2xl font-bold text-slate-900">Level {level}</p>
+            <p className="text-2xl font-bold text-[#2D3436]">Level {level}</p>
           </div>
         </div>
         {leveledUp && (
-          <div className="px-4 py-2 bg-linear-to-r from-amber-500 to-orange-600 text-white rounded-xl font-bold text-sm shadow-lg animate-bounce">
+          <div className="px-4 py-2 bg-linear-to-r from-[#F2A541] to-[#E07A5F] text-white rounded-xl font-bold text-sm shadow-lg animate-bounce">
             Level Up! �
           </div>
         )}
       </div>
       <div className="mb-2">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-semibold text-slate-700">
+          <span className="text-sm font-semibold text-[#2D3436]/80">
             Growth Progress
           </span>
-          <span className="text-sm font-bold text-blue-600">
+          <span className="text-sm font-bold text-[#0D7377]">
             {Math.round(displayProgress)}%
           </span>
         </div>
@@ -54,7 +54,7 @@ export const LevelProgress: React.FC<LevelProgressProps> = ({
           </div>
         </div>
       </div>
-      <p className="text-xs text-slate-600">
+      <p className="text-xs text-[#2D3436]/70">
         {leveledUp
           ? "� Congratulations! Your garden has grown to the next level!"
           : `${100 - Math.round(displayProgress)}% until next level`}

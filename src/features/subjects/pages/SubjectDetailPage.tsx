@@ -288,7 +288,7 @@ export default function SubjectDetailPage() {
               <span className="text-sm font-medium text-gray-600">
                 Overall Progress
               </span>
-              <TrendingUp className="size-5 text-blue-600" />
+              <TrendingUp className="size-5 text-[#0D7377]" />
             </div>
             <div className="mb-2 text-3xl font-bold text-gray-900">
               {subject.progress}%

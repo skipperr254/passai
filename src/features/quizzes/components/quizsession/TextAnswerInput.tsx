@@ -29,15 +29,15 @@ export const TextAnswerInput: React.FC<TextAnswerInputProps> = ({
           placeholder={placeholder || "Type the missing word(s)..."}
           className={`w-full px-4 py-3 rounded-xl border-2 font-medium transition-all ${
             disabled
-              ? "bg-slate-50 border-slate-200 text-slate-700 cursor-not-allowed"
-              : "bg-white border-slate-300 hover:border-blue-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              ? "bg-[#FAF3E0] border-[#E8E4E1] text-[#2D3436]/80 cursor-not-allowed"
+              : "bg-white border-[#E8E4E1] hover:border-[#0D7377]/70 focus:border-[#0D7377] focus:ring-2 focus:ring-[#0D7377]/10"
           }`}
         />
         <div className="flex items-center justify-between mt-2 px-1">
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-[#2D3436]/60">
             🌺 Fill in the blank with the correct term
           </p>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[#2D3436]/50">
             {value.length} character{value.length !== 1 ? "s" : ""}
           </p>
         </div>
@@ -64,17 +64,17 @@ export const TextAnswerInput: React.FC<TextAnswerInputProps> = ({
         rows={rows}
         className={`w-full px-4 py-3 rounded-xl border-2 font-medium transition-all resize-none ${
           disabled
-            ? "bg-slate-50 border-slate-200 text-slate-700 cursor-not-allowed"
-            : "bg-white border-slate-300 hover:border-blue-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            ? "bg-[#FAF3E0] border-[#E8E4E1] text-[#2D3436]/80 cursor-not-allowed"
+            : "bg-white border-[#E8E4E1] hover:border-[#0D7377]/70 focus:border-[#0D7377] focus:ring-2 focus:ring-[#0D7377]/10"
         }`}
       />
       <div className="flex items-center justify-between mt-2 px-1">
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-[#2D3436]/60">
           {questionType === "essay"
             ? "🌺 Write clearly and organize your thoughts"
             : "🌺 Be specific and concise"}
         </p>
-        <p className="text-xs text-slate-400">
+        <p className="text-xs text-[#2D3436]/50">
           {value.length} character{value.length !== 1 ? "s" : ""}
         </p>
       </div>

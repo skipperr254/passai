@@ -49,18 +49,18 @@ export const AnswerOptions: React.FC<AnswerOptionsProps> = ({
               currentQuestion.correct_answer.toLowerCase();
         const showResult = hasSubmitted;
         let optionClass =
-          "bg-white border-2 border-slate-200 hover:border-slate-300 text-slate-900";
+          "bg-white border-2 border-[#E8E4E1] hover:border-[#E8E4E1] text-[#2D3436]";
         if (showResult) {
           if (isCorrect)
             optionClass =
-              "bg-emerald-50 border-2 border-emerald-500 text-emerald-900";
+              "bg-[#6A994E]/10 border-2 border-[#6A994E] text-[#4A7C59]";
           else if (isSelected && !isCorrect)
             optionClass = "bg-red-50 border-2 border-red-500 text-red-900";
           else
             optionClass =
-              "bg-slate-50 border-2 border-slate-200 text-slate-600";
+              "bg-[#FAF3E0] border-2 border-[#E8E4E1] text-[#6B7280]";
         } else if (isSelected)
-          optionClass = "bg-blue-50 border-2 border-blue-500 text-blue-900";
+          optionClass = "bg-[#0D7377]/5 border-2 border-[#0D7377] text-[#0D7377]";
 
         return (
           <button
@@ -77,7 +77,7 @@ export const AnswerOptions: React.FC<AnswerOptionsProps> = ({
               </span>
               <span className="flex-1">{option}</span>
               {showResult && isCorrect && (
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-[#6A994E] shrink-0" />
               )}
               {showResult && isSelected && !isCorrect && (
                 <XCircle className="w-5 h-5 text-red-600 shrink-0" />

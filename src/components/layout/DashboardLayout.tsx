@@ -86,11 +86,11 @@ export default function DashboardLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/40">
+    <div className="min-h-screen bg-linear-to-br from-[#FAF3E0] via-[#FAF3E0]/80 to-[#E8E4E1]/40">
       <div className="flex flex-col h-screen lg:flex-row">
         {/* Desktop Sidebar */}
-        <aside className="hidden lg:flex w-80 bg-white/80 backdrop-blur-xl border-r border-slate-200/60 flex-col shadow-sm">
-          <div className="p-6 border-b border-slate-200/60">
+        <aside className="hidden lg:flex w-80 bg-white/80 backdrop-blur-xl border-r border-[#E8E4E1]/60 flex-col shadow-sm">
+          <div className="p-6 border-b border-[#E8E4E1]/60">
             <Logo size={48} showText={true} />
           </div>
 
@@ -99,7 +99,7 @@ export default function DashboardLayout() {
             aria-label="Main navigation"
           >
             <div className="mb-6">
-              <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3 px-3">
+              <h3 className="text-xs font-bold text-[#6B7280] uppercase tracking-wider mb-3 px-3">
                 Navigation
               </h3>
               <ul className="space-y-1">
@@ -113,8 +113,8 @@ export default function DashboardLayout() {
                         }}
                         className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
                           isActive(item.path)
-                            ? "bg-linear-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/25"
-                            : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                            ? "bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white shadow-lg shadow-[#0D7377]/25"
+                            : "text-[#2D3436] hover:bg-[#E8E4E1]/50 hover:text-[#2D3436]"
                         }`}
                         aria-current={isActive(item.path) ? "page" : undefined}
                       >
@@ -127,7 +127,7 @@ export default function DashboardLayout() {
                             className={`px-2 py-0.5 rounded-full text-xs font-bold ${
                               isActive(item.path)
                                 ? "bg-white/20 text-white"
-                                : "bg-blue-100 text-blue-600"
+                                : "bg-[#0D7377]/10 text-[#0D7377]"
                             }`}
                           >
                             {item.badge}
@@ -142,8 +142,8 @@ export default function DashboardLayout() {
             </div>
           </nav>
 
-          <div className="p-4 border-t border-slate-200/60 space-y-2">
-            <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-50 transition-all">
+          <div className="p-4 border-t border-[#E8E4E1]/60 space-y-2">
+            <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[#2D3436] hover:bg-[#E8E4E1]/50 transition-all">
               <Bell className="w-5 h-5" />
               <span className="text-sm font-semibold">Notifications</span>
               <span className="ml-auto w-2 h-2 bg-red-500 rounded-full"></span>
@@ -152,8 +152,8 @@ export default function DashboardLayout() {
               onClick={() => navigate("/settings")}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
                 isActive("/settings")
-                  ? "bg-linear-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/25"
-                  : "text-slate-700 hover:bg-slate-50"
+                  ? "bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white shadow-lg shadow-[#0D7377]/25"
+                  : "text-[#2D3436] hover:bg-slate-50"
               }`}
             >
               <Settings className="w-5 h-5" />
@@ -170,7 +170,7 @@ export default function DashboardLayout() {
         </aside>
 
         {/* Mobile Header */}
-        <header className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-b border-slate-200/60 shadow-sm safe-top">
+        <header className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-b border-[#E8E4E1]/60 shadow-sm safe-top">
           <div className="px-4 py-3">
             <div className="flex items-center justify-between">
               <button
@@ -179,22 +179,22 @@ export default function DashboardLayout() {
               >
                 <Logo size={40} />
                 <div>
-                  <h1 className="text-base font-bold text-slate-900">PassAI</h1>
-                  <p className="text-xs text-slate-500 font-medium">
+                  <h1 className="text-base font-bold text-[#2D3436]">PassAI</h1>
+                  <p className="text-xs text-[#6B7280] font-medium">
                     Hi, {profile?.first_name || "Student"}!
                   </p>
                 </div>
               </button>
               <div className="flex items-center gap-2">
-                <button className="w-9 h-9 rounded-lg bg-slate-100 hover:bg-slate-200 active:scale-95 flex items-center justify-center transition-all relative">
-                  <Bell className="w-4 h-4 text-slate-700" />
+                <button className="w-9 h-9 rounded-lg bg-[#E8E4E1] hover:bg-[#E8E4E1]/80 active:scale-95 flex items-center justify-center transition-all relative">
+                  <Bell className="w-4 h-4 text-[#2D3436]" />
                   <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                 </button>
                 <button
                   onClick={() => navigate("/settings")}
-                  className="w-9 h-9 rounded-lg bg-slate-100 hover:bg-slate-200 active:scale-95 flex items-center justify-center transition-all"
+                  className="w-9 h-9 rounded-lg bg-[#E8E4E1] hover:bg-[#E8E4E1]/80 active:scale-95 flex items-center justify-center transition-all"
                 >
-                  <Settings className="w-4 h-4 text-slate-700" />
+                  <Settings className="w-4 h-4 text-[#2D3436]" />
                 </button>
               </div>
             </div>
@@ -208,7 +208,7 @@ export default function DashboardLayout() {
 
         {/* Mobile Bottom Navigation */}
         <nav
-          className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-slate-200/60 shadow-lg safe-bottom"
+          className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-[#E8E4E1]/60 shadow-lg safe-bottom"
           aria-label="Mobile navigation"
         >
           <div className="grid grid-cols-5 gap-1 px-2 py-2">
@@ -221,7 +221,7 @@ export default function DashboardLayout() {
                     navigate(item.path);
                   }}
                   className={`relative flex flex-col items-center justify-center gap-1 py-2 px-2 rounded-xl transition-all active:scale-95 ${
-                    isActive(item.path) ? "text-blue-600" : "text-slate-500"
+                    isActive(item.path) ? "text-[#0D7377]" : "text-[#6B7280]"
                   }`}
                   aria-current={isActive(item.path) ? "page" : undefined}
                 >
@@ -232,20 +232,20 @@ export default function DashboardLayout() {
                       } transition-transform`}
                     />
                     {item.badge && (
-                      <span className="absolute -top-1 -right-1 w-4 h-4 bg-blue-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                      <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#0D7377] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                         {item.badge}
                       </span>
                     )}
                   </div>
                   <span
                     className={`text-[10px] font-semibold ${
-                      isActive(item.path) ? "text-blue-600" : "text-slate-500"
+                      isActive(item.path) ? "text-[#0D7377]" : "text-[#6B7280]"
                     }`}
                   >
                     {item.label.split(" ")[0]}
                   </span>
                   {isActive(item.path) && (
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-600 rounded-full"></div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-1 bg-[#0D7377] rounded-full"></div>
                   )}
                 </button>
               );

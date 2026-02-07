@@ -20,19 +20,19 @@ export const StudySchedule: React.FC<StudyScheduleProps> = ({
     <div>
       {/* Section Header */}
       <div className="flex items-center gap-3 mb-4 lg:mb-6">
-        <CalendarDays className="w-6 h-6 text-blue-600" />
-        <h2 className="text-xl lg:text-2xl font-bold text-slate-900">
+        <CalendarDays className="w-6 h-6 text-[#0D7377]" />
+        <h2 className="text-xl lg:text-2xl font-bold text-[#2D3436]">
           Study Schedule
         </h2>
       </div>
 
       {/* Topics List */}
       {topics.length === 0 ? (
-        <div className="text-center py-12 px-4 bg-slate-50 rounded-xl border-2 border-dashed border-slate-300">
-          <p className="text-slate-600 font-medium">
+        <div className="text-center py-12 px-4 bg-[#FAF3E0] rounded-xl border-2 border-dashed border-[#E8E4E1]">
+          <p className="text-[#2D3436]/70 font-medium">
             No study topics available yet
           </p>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-[#2D3436]/60 mt-1">
             Your study plan will appear here once generated
           </p>
         </div>

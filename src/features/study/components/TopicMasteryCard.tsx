@@ -35,14 +35,14 @@ export function TopicMasteryCard({ topics, isLoading }: TopicMasteryCardProps) {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
-            <Brain className="w-5 h-5 text-blue-600" />
+            <Brain className="w-5 h-5 text-[#0D7377]" />
             <span>Topic Mastery</span>
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="text-center py-8">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
-              <Brain className="h-8 w-8 text-blue-600" />
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#0D7377]/5">
+              <Brain className="h-8 w-8 text-[#0D7377]" />
             </div>
             <h3 className="mb-2 text-lg font-semibold text-gray-900">
               No mastery data yet
@@ -98,7 +98,7 @@ export function TopicMasteryCard({ topics, isLoading }: TopicMasteryCardProps) {
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2 text-lg">
-            <Brain className="w-5 h-5 text-blue-600" />
+            <Brain className="w-5 h-5 text-[#0D7377]" />
             <span>Topic Mastery</span>
           </CardTitle>
           <div className="flex items-center gap-2">

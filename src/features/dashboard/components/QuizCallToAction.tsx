@@ -5,7 +5,7 @@ export const QuizCallToAction = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative overflow-hidden bg-linear-to-br from-blue-600 via-indigo-600 to-violet-600 rounded-2xl p-8 shadow-xl">
+    <div className="relative overflow-hidden bg-linear-to-br from-[#0D7377] via-[#0D7377]/90 to-[#4A7C59] rounded-2xl p-8 shadow-xl">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-32 -translate-y-32" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full blur-3xl transform -translate-x-24 translate-y-24" />
@@ -22,7 +22,7 @@ export const QuizCallToAction = () => {
               Ready to test your knowledge?
             </h3>
           </div>
-          <p className="text-blue-100 text-sm md:text-base">
+          <p className="text-white/80 text-sm md:text-base">
             Take a quiz to identify your weak areas and track your progress with
             AI-powered insights
           </p>
@@ -30,7 +30,7 @@ export const QuizCallToAction = () => {
 
         <button
           onClick={() => navigate("/quizzes")}
-          className="shrink-0 px-8 py-4 bg-white hover:bg-slate-50 text-blue-600 font-bold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+          className="shrink-0 px-8 py-4 bg-white hover:bg-[#FAF3E0] text-[#0D7377] font-bold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
         >
           <TrendingUp className="w-5 h-5" />
           Start a Quiz

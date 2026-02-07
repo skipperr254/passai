@@ -8,7 +8,7 @@ import {
 export default function FAQSection() {
   return (
     <section
-      className="py-20 bg-linear-to-b from-primary/5 to-background"
+      className="py-20 bg-gradient-to-b from-secondary/30 to-primary/10"
       id="faq"
     >
       <div className="container">

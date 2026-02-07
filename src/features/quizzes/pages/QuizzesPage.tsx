@@ -22,7 +22,7 @@ export const QuizzesPage = () => {
   const allSubject: Subject = {
     id: "all",
     name: "All Subjects",
-    // color: "from-slate-600 to-slate-700",
+    // color: "from-[#2D3436]/70 to-[#2D3436]/80",
     color: "slate",
   };
   const subjects = [allSubject, ...rawSubjects];
@@ -45,20 +45,20 @@ export const QuizzesPage = () => {
   return (
     <div className="h-full overflow-y-auto pb-4">
       {/* Header Section */}
-      <div className="px-4 py-4 lg:px-8 lg:py-6 bg-linear-to-br from-slate-50 to-blue-50/30 border-b border-slate-200/60">
+      <div className="px-4 py-4 lg:px-8 lg:py-6 bg-linear-to-br from-[#FAF3E0] to-[#0D7377]/5/30 border-b border-[#E8E4E1]/60">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-start justify-between mb-4 lg:mb-6">
             <div>
-              <h1 className="text-2xl lg:text-4xl font-bold text-slate-900 mb-1 lg:mb-2">
+              <h1 className="text-2xl lg:text-4xl font-bold text-[#2D3436] mb-1 lg:mb-2">
                 My Quizzes
               </h1>
-              <p className="text-sm lg:text-base text-slate-600">
+              <p className="text-sm lg:text-base text-[#2D3436]/70">
                 Practice and track your performance
               </p>
             </div>
             <button
               onClick={() => setShowCreateQuiz(true)}
-              className="hidden lg:flex items-center gap-2 px-4 py-2.5 bg-linear-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-lg active:scale-95 transition-all"
+              className="hidden lg:flex items-center gap-2 px-4 py-2.5 bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white font-semibold rounded-xl hover:shadow-lg active:scale-95 transition-all"
             >
               <Plus className="w-5 h-5" />
               <span>Create Quiz</span>
@@ -109,7 +109,7 @@ export const QuizzesPage = () => {
       {/* Mobile FAB */}
       <button
         onClick={() => setShowCreateQuiz(true)}
-        className="lg:hidden fixed bottom-20 right-4 z-30 w-14 h-14 bg-linear-to-r from-blue-600 to-indigo-600 text-white rounded-full shadow-xl flex items-center justify-center hover:shadow-2xl active:scale-95 transition-all"
+        className="lg:hidden fixed bottom-20 right-4 z-30 w-14 h-14 bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white rounded-full shadow-xl flex items-center justify-center hover:shadow-2xl active:scale-95 transition-all"
       >
         <Plus className="w-6 h-6" />
       </button>

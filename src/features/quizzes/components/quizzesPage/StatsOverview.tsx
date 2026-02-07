@@ -32,14 +32,14 @@ export const StatsOverview: React.FC<StatsOverviewProps> = ({
         onClick={() => setFilterStatus("all")}
         className={`bg-white rounded-xl p-3 lg:p-4 border-2 transition-all active:scale-95 ${
           filterStatus === "all"
-            ? "border-blue-500 ring-2 ring-blue-100"
-            : "border-slate-200"
+            ? "border-[#0D7377] ring-2 ring-[#0D7377]/10"
+            : "border-[#E8E4E1]"
         }`}
       >
-        <p className="text-xs lg:text-sm text-slate-600 font-medium mb-1">
+        <p className="text-xs lg:text-sm text-[#2D3436]/70 font-medium mb-1">
           Total
         </p>
-        <p className="text-xl lg:text-3xl font-bold text-slate-900">
+        <p className="text-xl lg:text-3xl font-bold text-[#2D3436]">
           {stats.total}
         </p>
       </button>
@@ -47,18 +47,18 @@ export const StatsOverview: React.FC<StatsOverviewProps> = ({
         onClick={() => setFilterStatus("completed")}
         className={`bg-white rounded-xl p-3 lg:p-4 border-2 transition-all active:scale-95 ${
           filterStatus === "completed"
-            ? "border-emerald-500 ring-2 ring-emerald-100"
-            : "border-slate-200"
+            ? "border-[#6A994E] ring-2 ring-[#6A994E]/10"
+            : "border-[#E8E4E1]"
         }`}
       >
-        <p className="text-xs lg:text-sm text-slate-600 font-medium mb-1">
+        <p className="text-xs lg:text-sm text-[#2D3436]/70 font-medium mb-1">
           Done
         </p>
-        <p className="text-xl lg:text-3xl font-bold text-emerald-600">
+        <p className="text-xl lg:text-3xl font-bold text-[#6A994E]">
           {stats.completed}
         </p>
       </button>
-      <div className="bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl p-3 lg:p-4 text-white col-span-2 lg:col-span-1">
+      <div className="bg-linear-to-br from-[#0D7377] to-[#4A7C59] rounded-xl p-3 lg:p-4 text-white col-span-2 lg:col-span-1">
         <p className="text-xs lg:text-sm font-medium mb-1 text-white/90">
           Avg Score
         </p>

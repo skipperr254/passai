@@ -6,7 +6,7 @@ export default function Footer({
   scrollToId: (id: string) => void;
 }) {
   return (
-    <footer className="border-t border-border/40 py-12 bg-linear-to-br from-background via-primary/5 to-purple-500/5">
+    <footer className="border-t border-border/40 py-12 bg-gradient-to-br from-background via-primary/5 to-[#4A7C59]/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -26,11 +26,11 @@ export default function Footer({
                   >
                     <stop
                       offset="0%"
-                      style={{ stopColor: "#2563EB", stopOpacity: 1 }}
+                      style={{ stopColor: "#0D7377", stopOpacity: 1 }}
                     />
                     <stop
                       offset="100%"
-                      style={{ stopColor: "#9333EA", stopOpacity: 1 }}
+                      style={{ stopColor: "#4A7C59", stopOpacity: 1 }}
                     />
                   </linearGradient>
 
@@ -43,11 +43,11 @@ export default function Footer({
                   >
                     <stop
                       offset="0%"
-                      style={{ stopColor: "#60A5FA", stopOpacity: 1 }}
+                      style={{ stopColor: "#E07A5F", stopOpacity: 1 }}
                     />
                     <stop
                       offset="100%"
-                      style={{ stopColor: "#A78BFA", stopOpacity: 1 }}
+                      style={{ stopColor: "#F2A541", stopOpacity: 1 }}
                     />
                   </linearGradient>
 
@@ -168,7 +168,7 @@ export default function Footer({
                   filter="url(#footerGlow)"
                 />
               </svg>
-              <span className="text-xl font-bold bg-linear-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-linear-to-r from-primary to-[#0D7377] bg-clip-text text-transparent">
                 PassAI
               </span>
             </div>

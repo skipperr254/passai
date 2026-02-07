@@ -89,20 +89,20 @@ export const QuickInsights = ({ subjects }: QuickInsightsProps) => {
           key={index}
           className={`p-4 rounded-xl border-2 ${
             insight.type === "success"
-              ? "bg-emerald-50 border-emerald-200"
+              ? "bg-[#4A7C59]/10 border-[#4A7C59]/30"
               : insight.type === "warning"
-              ? "bg-amber-50 border-amber-200"
-              : "bg-blue-50 border-blue-200"
+              ? "bg-[#E07A5F]/10 border-[#E07A5F]/30"
+              : "bg-[#0D7377]/10 border-[#0D7377]/30"
           }`}
         >
           <div className="flex items-start gap-3">
             <div
               className={`mt-0.5 ${
                 insight.type === "success"
-                  ? "text-emerald-600"
+                  ? "text-[#4A7C59]"
                   : insight.type === "warning"
-                  ? "text-amber-600"
-                  : "text-blue-600"
+                  ? "text-[#E07A5F]"
+                  : "text-[#0D7377]"
               }`}
             >
               {insight.type === "success" ? (
@@ -117,10 +117,10 @@ export const QuickInsights = ({ subjects }: QuickInsightsProps) => {
               <h3
                 className={`font-bold text-sm mb-1 ${
                   insight.type === "success"
-                    ? "text-emerald-900"
+                    ? "text-[#4A7C59]"
                     : insight.type === "warning"
-                    ? "text-amber-900"
-                    : "text-blue-900"
+                    ? "text-[#E07A5F]"
+                    : "text-[#0D7377]"
                 }`}
               >
                 {insight.title}
@@ -128,10 +128,10 @@ export const QuickInsights = ({ subjects }: QuickInsightsProps) => {
               <p
                 className={`text-sm ${
                   insight.type === "success"
-                    ? "text-emerald-700"
+                    ? "text-[#4A7C59]/80"
                     : insight.type === "warning"
-                    ? "text-amber-700"
-                    : "text-blue-700"
+                    ? "text-[#E07A5F]/80"
+                    : "text-[#0D7377]/80"
                 }`}
               >
                 {insight.description}
@@ -141,10 +141,10 @@ export const QuickInsights = ({ subjects }: QuickInsightsProps) => {
                   onClick={() => navigate(insight.action!.path)}
                   className={`mt-3 text-sm font-semibold underline ${
                     insight.type === "success"
-                      ? "text-emerald-700 hover:text-emerald-800"
+                      ? "text-[#4A7C59] hover:text-[#4A7C59]/80"
                       : insight.type === "warning"
-                      ? "text-amber-700 hover:text-amber-800"
-                      : "text-blue-700 hover:text-blue-800"
+                      ? "text-[#E07A5F] hover:text-[#E07A5F]/80"
+                      : "text-[#0D7377] hover:text-[#0D7377]/80"
                   }`}
                 >
                   {insight.action.label} →

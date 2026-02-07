@@ -42,23 +42,23 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-[#FAF3E0] via-[#FAF3E0]/80 to-[#E8E4E1]/40 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo and Header */}
         <div className="text-center mb-8">
           <div className="mb-4">
             <Logo size={64} className="mx-auto justify-center" />
           </div>
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">
+          <h1 className="text-3xl font-bold text-[#2D3436] mb-2">
             Create your account
           </h1>
-          <p className="text-slate-600">
+          <p className="text-[#2D3436]/70">
             Start your journey to smarter studying
           </p>
         </div>
 
         {/* Form Card */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-slate-200/60 p-8">
+        <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-[#E8E4E1]/60 p-8">
           {/* Error Alert */}
           {error && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
@@ -86,7 +86,7 @@ export default function SignUpPage() {
               <div>
                 <label
                   htmlFor="firstName"
-                  className="block text-sm font-semibold text-slate-700 mb-2"
+                  className="block text-sm font-semibold text-[#2D3436] mb-2"
                 >
                   First Name
                 </label>
@@ -97,7 +97,7 @@ export default function SignUpPage() {
                   className={`w-full px-4 py-3 rounded-xl border ${
                     errors.firstName
                       ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                      : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                      : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
                   } focus:outline-none focus:ring-4 transition-all`}
                   placeholder="John"
                   disabled={isLoading}
@@ -113,7 +113,7 @@ export default function SignUpPage() {
               <div>
                 <label
                   htmlFor="lastName"
-                  className="block text-sm font-semibold text-slate-700 mb-2"
+                  className="block text-sm font-semibold text-[#2D3436] mb-2"
                 >
                   Last Name
                 </label>
@@ -124,7 +124,7 @@ export default function SignUpPage() {
                   className={`w-full px-4 py-3 rounded-xl border ${
                     errors.lastName
                       ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                      : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                      : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
                   } focus:outline-none focus:ring-4 transition-all`}
                   placeholder="Doe"
                   disabled={isLoading}
@@ -141,7 +141,7 @@ export default function SignUpPage() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-semibold text-slate-700 mb-2"
+                className="block text-sm font-semibold text-[#2D3436] mb-2"
               >
                 Email Address
               </label>
@@ -152,7 +152,7 @@ export default function SignUpPage() {
                 className={`w-full px-4 py-3 rounded-xl border ${
                   errors.email
                     ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                    : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                    : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
                 } focus:outline-none focus:ring-4 transition-all`}
                 placeholder="john.doe@example.com"
                 disabled={isLoading}
@@ -169,7 +169,7 @@ export default function SignUpPage() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-semibold text-slate-700 mb-2"
+                className="block text-sm font-semibold text-[#2D3436] mb-2"
               >
                 Password
               </label>
@@ -180,7 +180,7 @@ export default function SignUpPage() {
                 className={`w-full px-4 py-3 rounded-xl border ${
                   errors.password
                     ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                    : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/20"
+                    : "border-[#E8E4E1] focus:border-[#0D7377] focus:ring-[#0D7377]/20"
                 } focus:outline-none focus:ring-4 transition-all`}
                 placeholder="At least 8 characters"
                 disabled={isLoading}
@@ -191,7 +191,7 @@ export default function SignUpPage() {
                   {errors.password.message}
                 </p>
               )}
-              <p className="mt-1.5 text-xs text-slate-500">
+              <p className="mt-1.5 text-xs text-[#6B7280]">
                 Must be at least 8 characters long
               </p>
             </div>
@@ -200,7 +200,7 @@ export default function SignUpPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3.5 px-4 bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full py-3.5 px-4 bg-linear-to-r from-[#0D7377] to-[#4A7C59] hover:from-[#0D7377]/90 hover:to-[#4A7C59]/90 text-white font-semibold rounded-xl shadow-lg shadow-[#0D7377]/25 hover:shadow-xl hover:shadow-[#0D7377]/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isLoading ? (
                 <>
@@ -215,11 +215,11 @@ export default function SignUpPage() {
 
           {/* Divider */}
           <div className="mt-6 text-center">
-            <p className="text-sm text-slate-600">
+            <p className="text-sm text-[#2D3436]/70">
               Already have an account?{" "}
               <Link
                 to="/login"
-                className="font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                className="font-semibold text-[#0D7377] hover:text-[#0D7377]/90 transition-colors"
               >
                 Log in
               </Link>
@@ -228,13 +228,13 @@ export default function SignUpPage() {
         </div>
 
         {/* Footer Links */}
-        <div className="mt-6 text-center text-xs text-slate-500">
+        <div className="mt-6 text-center text-xs text-[#6B7280]">
           By signing up, you agree to our{" "}
-          <a href="#" className="underline hover:text-slate-700">
+          <a href="#" className="underline hover:text-[#2D3436]">
             Terms of Service
           </a>{" "}
           and{" "}
-          <a href="#" className="underline hover:text-slate-700">
+          <a href="#" className="underline hover:text-[#2D3436]">
             Privacy Policy
           </a>
         </div>

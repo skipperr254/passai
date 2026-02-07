@@ -17,7 +17,7 @@ export const CurrentPerformance: React.FC<CurrentPerformanceProps> = ({
   return (
     <div className="mb-6 p-4 bg-linear-to-br from-emerald-50 to-green-50 border-2 border-emerald-200 rounded-xl">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-semibold text-slate-700">
+        <span className="text-sm font-semibold text-[#2D3436]/80">
           Current Score
         </span>
         <span className="text-2xl font-bold text-emerald-600">

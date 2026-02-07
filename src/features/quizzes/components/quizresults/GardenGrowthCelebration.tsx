@@ -104,11 +104,11 @@ export function GardenGrowthCelebration({
             <Sparkles className="w-7 h-7 text-white" />
           </div>
           <div className="flex-1">
-            <h2 className="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <h2 className="text-2xl font-bold text-[#2D3436] mb-2 flex items-center gap-2">
               Your Garden Grew!
               <TrendingUp className="w-6 h-6 text-green-600" />
             </h2>
-            <p className="text-slate-700 text-base leading-relaxed">
+            <p className="text-[#2D3436]/80 text-base leading-relaxed">
               {getEncouragementMessage()}
             </p>
           </div>
@@ -139,7 +139,7 @@ export function GardenGrowthCelebration({
                     <span className={`text-xs font-medium ${beforeInfo.color}`}>
                       {beforeInfo.name}
                     </span>
-                    <span className="text-xs text-slate-500 mt-0.5">
+                    <span className="text-xs text-[#2D3436]/60 mt-0.5">
                       {topic.beforeMastery}%
                     </span>
                   </div>
@@ -155,14 +155,14 @@ export function GardenGrowthCelebration({
                     <span className={`text-xs font-medium ${afterInfo.color}`}>
                       {afterInfo.name}
                     </span>
-                    <span className="text-xs text-slate-500 mt-0.5">
+                    <span className="text-xs text-[#2D3436]/60 mt-0.5">
                       {topic.afterMastery}%
                     </span>
                   </div>
 
                   {/* Topic Info */}
                   <div className="flex-1 ml-2">
-                    <h4 className="font-semibold text-slate-900 text-sm mb-1">
+                    <h4 className="font-semibold text-[#2D3436] text-sm mb-1">
                       {topic.topicName}
                     </h4>
                     <div className="flex items-center gap-2">
@@ -184,7 +184,7 @@ export function GardenGrowthCelebration({
 
         {/* Summary Footer */}
         <div className="mt-6 pt-4 border-t border-green-200">
-          <p className="text-sm text-slate-600 text-center">
+          <p className="text-sm text-[#2D3436]/70 text-center">
             Keep taking quizzes to grow your {subjectName} garden! 🌱→🌳
           </p>
         </div>

@@ -4,10 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section
-      className="py-20 bg-linear-to-b from-primary/5 to-background"
-      id="contact"
-    >
+    <section className="py-20 bg-card" id="contact">
       <div className="container">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -68,7 +65,7 @@ export default function ContactSection() {
                 </p>
                 <Button
                   size="lg"
-                  className="w-full bg-linear-to-r from-primary to-purple-600 hover:opacity-90"
+                  className="w-full bg-gradient-to-r from-[#0D7377] to-[#4A7C59] hover:opacity-90"
                   onClick={() =>
                     (window.location.href = "mailto:passai.study@gmail.com")
                   }

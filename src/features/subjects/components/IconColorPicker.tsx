@@ -26,19 +26,19 @@ function getColorClasses(color: string): {
     { bg: string; border: string; selected: string }
   > = {
     blue: {
-      bg: "bg-blue-100",
-      border: "border-blue-500",
-      selected: "bg-blue-500",
+      bg: "bg-[#0D7377]/10",
+      border: "border-[#0D7377]",
+      selected: "bg-[#0D7377]",
     },
     green: {
-      bg: "bg-green-100",
-      border: "border-green-500",
-      selected: "bg-green-500",
+      bg: "bg-[#6A994E]/10",
+      border: "border-[#6A994E]",
+      selected: "bg-[#6A994E]",
     },
     purple: {
-      bg: "bg-purple-100",
-      border: "border-purple-500",
-      selected: "bg-purple-500",
+      bg: "bg-[#0D7377]/10",
+      border: "border-[#0D7377]",
+      selected: "bg-[#0D7377]",
     },
     red: { bg: "bg-red-100", border: "border-red-500", selected: "bg-red-500" },
     amber: {
@@ -57,14 +57,14 @@ function getColorClasses(color: string): {
       selected: "bg-cyan-500",
     },
     indigo: {
-      bg: "bg-indigo-100",
-      border: "border-indigo-500",
-      selected: "bg-indigo-500",
+      bg: "bg-[#4A7C59]/10",
+      border: "border-[#4A7C59]",
+      selected: "bg-[#4A7C59]",
     },
     emerald: {
-      bg: "bg-emerald-100",
-      border: "border-emerald-500",
-      selected: "bg-emerald-500",
+      bg: "bg-[#6A994E]/10",
+      border: "border-[#6A994E]",
+      selected: "bg-[#6A994E]",
     },
     rose: {
       bg: "bg-rose-100",
@@ -72,9 +72,9 @@ function getColorClasses(color: string): {
       selected: "bg-rose-500",
     },
     violet: {
-      bg: "bg-violet-100",
-      border: "border-violet-500",
-      selected: "bg-violet-500",
+      bg: "bg-[#4A7C59]/10",
+      border: "border-[#4A7C59]",
+      selected: "bg-[#4A7C59]",
     },
     teal: {
       bg: "bg-teal-100",
@@ -116,7 +116,7 @@ export function IconColorPicker({
 
   return (
     <div className="space-y-3">
-      <label className="block text-sm font-semibold text-slate-700">
+      <label className="block text-sm font-semibold text-[#2D3436]/80">
         Icon & Color
       </label>
 
@@ -157,7 +157,7 @@ export function IconColorPicker({
 
               {/* Tooltip on hover */}
               <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                <span className="text-xs font-medium text-slate-600 whitespace-nowrap bg-white px-2 py-1 rounded shadow-sm">
+                <span className="text-xs font-medium text-[#2D3436]/70 whitespace-nowrap bg-white px-2 py-1 rounded shadow-sm">
                   {preset.name}
                 </span>
               </div>
@@ -166,7 +166,7 @@ export function IconColorPicker({
         })}
       </div>
 
-      <p className="text-xs text-slate-500 mt-2">
+      <p className="text-xs text-[#2D3436]/60 mt-2">
         Select an icon and color combination for your subject
       </p>
     </div>

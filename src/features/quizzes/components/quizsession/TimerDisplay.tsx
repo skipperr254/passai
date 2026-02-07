@@ -7,8 +7,8 @@ interface TimerDisplayProps {
 
 export const TimerDisplay: React.FC<TimerDisplayProps> = ({ timeLeft }) => {
   const getTimeColor = () => {
-    if (timeLeft > 60) return "text-green-600 bg-green-50";
-    if (timeLeft > 30) return "text-amber-600 bg-amber-50";
+    if (timeLeft > 60) return "text-[#6A994E] bg-[#6A994E]/10";
+    if (timeLeft > 30) return "text-[#F2A541] bg-[#F2A541]/10";
     return "text-red-600 bg-red-50 animate-pulse";
   };
 

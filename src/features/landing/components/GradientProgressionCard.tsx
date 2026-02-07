@@ -9,7 +9,7 @@ export default function GradientProgressionCard({
 }) {
   return (
     <section
-      className="py-16 bg-linear-to-b from-background to-primary/5"
+      className="py-16 bg-gradient-to-b from-secondary/50 to-[#0D7377]/10"
       id="garden"
     >
       <div className="container">
@@ -54,7 +54,7 @@ export default function GradientProgressionCard({
               {
                 emoji: "💧",
                 label: "Needs Water",
-                color: "text-blue-600",
+                color: "text-[#0D7377]",
                 desc: "Time to review",
               },
             ].map((stage, i) => (
@@ -77,7 +77,7 @@ export default function GradientProgressionCard({
           <Button
             size="lg"
             onClick={handleGetStarted}
-            className="bg-linear-to-r from-green-600 to-emerald-600 hover:opacity-90 text-lg px-8 py-6"
+            className="bg-gradient-to-r from-green-600 to-emerald-600 hover:opacity-90 text-lg px-8 py-6"
           >
             Start Your Growth Journey
           </Button>

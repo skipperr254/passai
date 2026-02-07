@@ -20,7 +20,7 @@ export const ActionButton: React.FC<ActionButtonProps> = ({
     return (
       <button
         onClick={onStart}
-        className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl active:scale-95 transition-all"
+        className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white font-bold rounded-xl shadow-lg hover:shadow-xl active:scale-95 transition-all"
       >
         <Play className="w-5 h-5" />
         <span>Take Quiz</span>
@@ -33,7 +33,7 @@ export const ActionButton: React.FC<ActionButtonProps> = ({
     return (
       <button
         onClick={onStart}
-        className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-emerald-600 to-green-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl active:scale-95 transition-all"
+        className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-[#4A7C59] to-[#4A7C59] text-white font-bold rounded-xl shadow-lg hover:shadow-xl active:scale-95 transition-all"
       >
         <RotateCcw className="w-5 h-5" />
         <span>Retake Quiz</span>
@@ -45,7 +45,7 @@ export const ActionButton: React.FC<ActionButtonProps> = ({
   return (
     <button
       onClick={onStart}
-      className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-white border-2 border-slate-300 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 active:scale-95 transition-all"
+      className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-white border-2 border-[#E8E4E1] text-[#2D3436]/80 font-semibold rounded-xl hover:bg-[#FAF3E0] active:scale-95 transition-all"
     >
       <PlusCircle className="w-4 h-4" />
       <span>Start New Attempt</span>

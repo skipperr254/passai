@@ -264,23 +264,23 @@ export const STATUS_BADGE_CONFIG = {
   pending: {
     label: "Pending",
     variant: "secondary" as const,
-    color: "bg-gray-500",
+    color: "bg-[#6B7280]",
   },
   processing: {
     label: "Processing",
     variant: "default" as const,
-    color: "bg-yellow-500",
+    color: "bg-[#F2A541]",
     animated: true,
   },
   ready: {
     label: "Ready",
     variant: "success" as const,
-    color: "bg-green-500",
+    color: "bg-[#6A994E]",
   },
   failed: {
     label: "Failed",
     variant: "destructive" as const,
-    color: "bg-red-500",
+    color: "bg-[#E07A5F]",
   },
 } as const;
 
@@ -291,27 +291,27 @@ export const STATUS_BADGE_CONFIG = {
 export const FILE_TYPE_CONFIG = {
   pdf: {
     icon: "FileText",
-    color: "text-red-600",
-    bgColor: "bg-red-50",
+    color: "text-[#E07A5F]",
+    bgColor: "bg-[#E07A5F]/10",
   },
   image: {
     icon: "Image",
-    color: "text-blue-600",
-    bgColor: "bg-blue-50",
+    color: "text-[#0D7377]",
+    bgColor: "bg-[#0D7377]/10",
   },
   text: {
     icon: "FileText",
-    color: "text-gray-600",
-    bgColor: "bg-gray-50",
+    color: "text-[#6B7280]",
+    bgColor: "bg-[#E8E4E1]",
   },
   docx: {
     icon: "FileText",
-    color: "text-blue-700",
-    bgColor: "bg-blue-50",
+    color: "text-[#4A7C59]",
+    bgColor: "bg-[#4A7C59]/10",
   },
   pptx: {
     icon: "Presentation",
-    color: "text-orange-600",
-    bgColor: "bg-orange-50",
+    color: "text-[#F2A541]",
+    bgColor: "bg-[#F2A541]/10",
   },
 } as const;

@@ -43,11 +43,11 @@ export const Logo: React.FC<LogoProps> = ({
             >
               <stop
                 offset="0%"
-                style={{ stopColor: "#2563EB", stopOpacity: 1 }}
+                style={{ stopColor: "#0D7377", stopOpacity: 1 }}
               />
               <stop
                 offset="100%"
-                style={{ stopColor: "#9333EA", stopOpacity: 1 }}
+                style={{ stopColor: "#4A7C59", stopOpacity: 1 }}
               />
             </linearGradient>
             <linearGradient
@@ -59,11 +59,11 @@ export const Logo: React.FC<LogoProps> = ({
             >
               <stop
                 offset="0%"
-                style={{ stopColor: "#60A5FA", stopOpacity: 1 }}
+                style={{ stopColor: "#E07A5F", stopOpacity: 1 }}
               />
               <stop
                 offset="100%"
-                style={{ stopColor: "#A78BFA", stopOpacity: 1 }}
+                style={{ stopColor: "#F2A541", stopOpacity: 1 }}
               />
             </linearGradient>
             <filter id="glow">
@@ -192,7 +192,7 @@ export const Logo: React.FC<LogoProps> = ({
 
         {/* Optional pulsing glow animation for loading states */}
         {animate && (
-          <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl animate-pulse" />
+          <div className="absolute inset-0 bg-[#0D7377]/20 rounded-full blur-xl animate-pulse" />
         )}
       </div>
 
@@ -233,9 +233,9 @@ export const LoadingLogo: React.FC<LoadingLogoProps> = ({
       <div className="relative">
         {/* Animated background rings */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="absolute w-full h-full rounded-full border-2 border-blue-200/30 animate-ping" />
+          <div className="absolute w-full h-full rounded-full border-2 border-[#0D7377]/30 animate-ping" />
           <div
-            className="absolute w-[120%] h-[120%] rounded-full border-2 border-indigo-200/20 animate-ping"
+            className="absolute w-[120%] h-[120%] rounded-full border-2 border-[#4A7C59]/20 animate-ping"
             style={{ animationDuration: "2s" }}
           />
         </div>
@@ -275,8 +275,8 @@ export const LoadingLogo: React.FC<LoadingLogoProps> = ({
                 x2="100%"
                 y2="0%"
               >
-                <stop offset="0%" stopColor="#2563EB" />
-                <stop offset="100%" stopColor="#9333EA" />
+                <stop offset="0%" stopColor="#0D7377" />
+                <stop offset="100%" stopColor="#4A7C59" />
               </linearGradient>
             </defs>
           </svg>

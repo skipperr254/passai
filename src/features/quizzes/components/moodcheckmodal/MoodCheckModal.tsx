@@ -11,14 +11,14 @@ const moodOptions: MoodOption[] = [
     id: "confident",
     emoji: "�",
     label: "Thriving",
-    color: "from-emerald-500 to-green-600",
+    color: "from-[#6A994E] to-[#4A7C59]",
     icon: Target,
   },
   {
     id: "okay",
     emoji: "🌿",
     label: "Growing Well",
-    color: "from-blue-500 to-indigo-600",
+    color: "from-[#0D7377] to-[#4A7C59]",
     icon: TrendingUp,
   },
   {
@@ -68,16 +68,16 @@ export const MoodCheckModal: React.FC<MoodCheckModalProps> = (props) => {
           />
           <MotivationalMessage selectedMood={selectedMood} />
         </div>
-        <div className="px-6 lg:px-8 pb-8 pt-4 border-t border-slate-100">
+        <div className="px-6 lg:px-8 pb-8 pt-4 border-t border-[#FAF3E0]">
           <button
             onClick={handleContinue}
             disabled={!selectedMood}
-            className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
+            className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
           >
             <span>Continue Quiz</span>
             <Zap className="w-5 h-5" />
           </button>
-          <p className="text-xs text-center text-slate-500 mt-3">
+          <p className="text-xs text-center text-[#2D3436]/60 mt-3">
             Your feedback helps us personalize your learning experience
           </p>
         </div>

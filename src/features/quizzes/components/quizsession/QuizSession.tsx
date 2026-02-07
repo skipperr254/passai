@@ -304,10 +304,10 @@ export const QuizSession: React.FC<QuizSessionProps> = (props) => {
   // Loading state
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-br from-[#FAF3E0] via-[#0D7377]/5/30 to-[#4A7C59]/5/40 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-lg font-semibold text-slate-700">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#0D7377] mx-auto mb-4"></div>
+          <p className="text-lg font-semibold text-[#2D3436]/80">
             Loading questions...
           </p>
         </div>
@@ -318,17 +318,17 @@ export const QuizSession: React.FC<QuizSessionProps> = (props) => {
   // Error state
   if (error) {
     return (
-      <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-br from-[#FAF3E0] via-[#0D7377]/5/30 to-[#4A7C59]/5/40 flex items-center justify-center">
         <div className="text-center bg-white p-8 rounded-2xl shadow-lg max-w-md">
           <p className="text-lg font-semibold text-red-600 mb-2">
             Error loading quiz
           </p>
-          <p className="text-sm text-slate-600 mb-4">
+          <p className="text-sm text-[#2D3436]/70 mb-4">
             {error instanceof Error ? error.message : "An error occurred"}
           </p>
           <button
             onClick={props.onExit}
-            className="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:shadow-lg transition-all"
+            className="px-6 py-3 bg-[#0D7377] text-white font-bold rounded-xl hover:shadow-lg transition-all"
           >
             Go Back
           </button>
@@ -340,17 +340,17 @@ export const QuizSession: React.FC<QuizSessionProps> = (props) => {
   // No questions state
   if (!questions || questions.length === 0) {
     return (
-      <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-br from-[#FAF3E0] via-[#0D7377]/5/30 to-[#4A7C59]/5/40 flex items-center justify-center">
         <div className="text-center bg-white p-8 rounded-2xl shadow-lg max-w-md">
-          <p className="text-lg font-semibold text-slate-700 mb-2">
+          <p className="text-lg font-semibold text-[#2D3436]/80 mb-2">
             No questions found
           </p>
-          <p className="text-sm text-slate-600 mb-4">
+          <p className="text-sm text-[#2D3436]/70 mb-4">
             This quiz doesn't have any questions yet.
           </p>
           <button
             onClick={props.onExit}
-            className="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl hover:shadow-lg transition-all"
+            className="px-6 py-3 bg-[#0D7377] text-white font-bold rounded-xl hover:shadow-lg transition-all"
           >
             Go Back
           </button>
@@ -374,7 +374,7 @@ export const QuizSession: React.FC<QuizSessionProps> = (props) => {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 pb-20 lg:pb-8">
+    <div className="min-h-screen bg-linear-to-br from-[#FAF3E0] via-[#0D7377]/5/30 to-[#4A7C59]/5/40 pb-20 lg:pb-8">
       <div
         className={`px-4 py-3 lg:px-8 lg:py-4 bg-${props.subjectColor}-600 border-b border-white/20 sticky top-0 z-30`}
       >
@@ -407,7 +407,7 @@ export const QuizSession: React.FC<QuizSessionProps> = (props) => {
         </div>
       </div>
       <div className="max-w-4xl mx-auto px-4 py-6 lg:px-8">
-        <div className="bg-white rounded-2xl border-2 border-slate-200 shadow-lg p-5 lg:p-8">
+        <div className="bg-white rounded-2xl border-2 border-[#E8E4E1] shadow-lg p-5 lg:p-8">
           <QuestionHeader
             currentQuestionIndex={currentQuestionIndex}
             totalQuestions={questions.length}
@@ -415,7 +415,7 @@ export const QuizSession: React.FC<QuizSessionProps> = (props) => {
             hasSubmitted={hasSubmitted}
             handleQuestionFeedback={handleQuestionFeedback}
           />
-          <h2 className="text-xl lg:text-2xl font-bold text-slate-900 mb-6">
+          <h2 className="text-xl lg:text-2xl font-bold text-[#2D3436] mb-6">
             {currentQuestion.question}
           </h2>
           <AnswerOptions
@@ -433,24 +433,24 @@ export const QuizSession: React.FC<QuizSessionProps> = (props) => {
           />
           <button
             onClick={() => setShowSourceModal(true)}
-            className="w-full mb-6 p-3 lg:p-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl transition-colors text-left group"
+            className="w-full mb-6 p-3 lg:p-4 bg-[#FAF3E0] hover:bg-[#FAF3E0] border border-[#E8E4E1] rounded-xl transition-colors text-left group"
           >
             <div className="flex gap-3 ">
-              <BookOpen className="w-5 h-5 text-slate-600 shrink-0 mt-0.5" />
+              <BookOpen className="w-5 h-5 text-[#2D3436]/70 shrink-0 mt-0.5" />
               <div className="flex-1 min-w-0">
-                <p className="text-xs font-semibold text-slate-600 mb-1">
+                <p className="text-xs font-semibold text-[#2D3436]/70 mb-1">
                   Source Snippet
                 </p>
-                {/* <p className="text-sm font-bold text-slate-900 truncate">
+                {/* <p className="text-sm font-bold text-[#2D3436] truncate">
                   {currentQuestion.source_snippet?.material}{" "}
                   * TODO: come back and thing about this source snippet thing
                 </p>
-                <p className="text-xs text-slate-600 mt-1">
+                <p className="text-xs text-[#2D3436]/70 mt-1">
                   Page {currentQuestion.source_snippet?.page} • Click to review{" "}
                   * TODO: come back and thing about this source snippet thing
                 </p> */}
               </div>
-              <Eye className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors shrink-0" />
+              <Eye className="w-5 h-5 text-[#2D3436]/50 group-hover:text-[#0D7377] transition-colors shrink-0" />
             </div>
           </button>
           <div className="flex gap-3">
@@ -458,7 +458,7 @@ export const QuizSession: React.FC<QuizSessionProps> = (props) => {
               <button
                 onClick={handleSubmitAnswer}
                 disabled={!selectedAnswer || isGrading}
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 lg:py-4 bg-linear-to-r from-blue-600 to-indigo-600 text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 lg:py-4 bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
               >
                 <span>{isGrading ? "Grading..." : "Submit Answer"}</span>
                 <ArrowRight className="w-5 h-5" />
@@ -466,7 +466,7 @@ export const QuizSession: React.FC<QuizSessionProps> = (props) => {
             ) : (
               <button
                 onClick={handleNextQuestion}
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 lg:py-4 bg-linear-to-r from-emerald-600 to-green-600 text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 lg:py-4 bg-linear-to-r from-[#4A7C59] to-[#4A7C59] text-white font-bold rounded-xl hover:shadow-lg active:scale-95 transition-all"
               >
                 <span>{isLastQuestion ? "View Results" : "Next Question"}</span>
                 {isLastQuestion ? (

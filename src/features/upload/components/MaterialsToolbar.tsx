@@ -115,7 +115,7 @@ export function MaterialsToolbar({
           placeholder="Search materials..."
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full rounded-xl border-2 border-slate-200 bg-white pl-12 pr-4 text-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+          className="w-full rounded-xl border-2 border-slate-200 bg-white pl-12 pr-4 text-sm outline-none transition-all focus:border-[#0D7377] focus:ring-2 focus:ring-[#0D7377]/10"
         />
       </div>
 
@@ -148,7 +148,7 @@ export function MaterialsToolbar({
               <SlidersHorizontal className="mr-2 h-4 w-4" />
               Filters
               {hasActiveFilters && (
-                <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white">
+                <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#0D7377] text-[10px] font-bold text-white">
                   {selectedTypes.length + selectedStatuses.length}
                 </span>
               )}

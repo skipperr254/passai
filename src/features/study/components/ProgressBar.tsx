@@ -15,19 +15,19 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
 
   const getProgressColor = (percent: number): string => {
-    if (percent === 100) return "bg-green-600";
-    if (percent >= 75) return "bg-blue-600";
-    if (percent >= 50) return "bg-indigo-600";
-    if (percent >= 25) return "bg-purple-600";
-    return "bg-slate-600";
+    if (percent === 100) return "bg-[#4A7C59]";
+    if (percent >= 75) return "bg-[#0D7377]";
+    if (percent >= 50) return "bg-[#4A7C59]";
+    if (percent >= 25) return "bg-[#0D7377]";
+    return "bg-[#2D3436]/70";
   };
 
   const getProgressBgColor = (percent: number): string => {
-    if (percent === 100) return "bg-green-100";
-    if (percent >= 75) return "bg-blue-100";
-    if (percent >= 50) return "bg-indigo-100";
-    if (percent >= 25) return "bg-purple-100";
-    return "bg-slate-100";
+    if (percent === 100) return "bg-[#6A994E]/10";
+    if (percent >= 75) return "bg-[#0D7377]/10";
+    if (percent >= 50) return "bg-[#4A7C59]/10";
+    if (percent >= 25) return "bg-[#0D7377]/10";
+    return "bg-[#FAF3E0]";
   };
 
   return (
@@ -35,12 +35,12 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
       {showLabel && (
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-5 h-5 text-slate-600" />
-            <span className="text-sm font-semibold text-slate-700">
+            <CheckCircle2 className="w-5 h-5 text-[#2D3436]/70" />
+            <span className="text-sm font-semibold text-[#2D3436]/80">
               Overall Progress
             </span>
           </div>
-          <span className="text-sm font-bold text-slate-900">
+          <span className="text-sm font-bold text-[#2D3436]">
             {completed} / {total} tasks completed
           </span>
         </div>
@@ -59,7 +59,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
       </div>
       {showLabel && (
         <div className="flex justify-end mt-1">
-          <span className="text-xs font-medium text-slate-500">
+          <span className="text-xs font-medium text-[#2D3436]/60">
             {percentage}% complete
           </span>
         </div>

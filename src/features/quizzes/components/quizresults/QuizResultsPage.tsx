@@ -96,7 +96,7 @@ export const QuizResultsPage: React.FC<QuizResultsPageProps> = (props) => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 pb-8">
+    <div className="min-h-screen bg-linear-to-br from-[#FAF3E0] via-[#0D7377]/5 to-[#4A7C59]/5 pb-8">
       <div
         className={`px-4 py-6 lg:px-8 lg:py-8 bg-${props.subjectColor}-600 border-b border-white/20`}
       >
@@ -123,34 +123,34 @@ export const QuizResultsPage: React.FC<QuizResultsPageProps> = (props) => {
           unanswered={unanswered}
         />
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-white rounded-xl border-2 border-slate-200 p-5 shadow-sm">
+          <div className="bg-white rounded-xl border-2 border-[#E8E4E1] p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 rounded-xl bg-linear-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#0D7377] to-[#4A7C59] flex items-center justify-center">
                 <Clock className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1">
-                <p className="text-xs text-slate-600 font-medium">Total Time</p>
-                <p className="text-2xl font-bold text-slate-900">
+                <p className="text-xs text-[#2D3436]/70 font-medium">Total Time</p>
+                <p className="text-2xl font-bold text-[#2D3436]">
                   {formatTime(totalTimeSpent)}
                 </p>
               </div>
             </div>
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-[#2D3436]/70">
               Avg:{" "}
-              <span className="font-bold text-slate-900">
+              <span className="font-bold text-[#2D3436]">
                 {averageTimePerQuestion}s
               </span>{" "}
               per question
             </p>
           </div>
-          <div className="bg-white rounded-xl border-2 border-slate-200 p-5 shadow-sm">
+          <div className="bg-white rounded-xl border-2 border-[#E8E4E1] p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 rounded-xl bg-linear-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#F2A541] to-[#E07A5F] flex items-center justify-center">
                 <Target className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1">
-                <p className="text-xs text-slate-600 font-medium">Accuracy</p>
-                <p className="text-2xl font-bold text-slate-900">
+                <p className="text-xs text-[#2D3436]/70 font-medium">Accuracy</p>
+                <p className="text-2xl font-bold text-[#2D3436]">
                   {Math.round(
                     (correctAnswers / (totalQuestions - unanswered)) * 100
                   ) || 0}
@@ -158,9 +158,9 @@ export const QuizResultsPage: React.FC<QuizResultsPageProps> = (props) => {
                 </p>
               </div>
             </div>
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-[#2D3436]/70">
               Answered:{" "}
-              <span className="font-bold text-slate-900">
+              <span className="font-bold text-[#2D3436]">
                 {totalQuestions - unanswered}/{totalQuestions}
               </span>
             </p>
@@ -191,7 +191,7 @@ export const QuizResultsPage: React.FC<QuizResultsPageProps> = (props) => {
         <div className="grid grid-cols-2 gap-4">
           <button
             onClick={props.onExit}
-            className="flex items-center justify-center gap-2 px-6 py-4 bg-white border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 active:scale-95 transition-all"
+            className="flex items-center justify-center gap-2 px-6 py-4 bg-white border-2 border-[#E8E4E1] text-[#2D3436]/70 font-semibold rounded-xl hover:bg-[#FAF3E0] active:scale-95 transition-all"
           >
             <Home className="w-5 h-5" />
             <span>Home</span>
@@ -200,7 +200,7 @@ export const QuizResultsPage: React.FC<QuizResultsPageProps> = (props) => {
             onClick={() => {
               /* Retake logic */
             }}
-            className="flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-lg active:scale-95 transition-all"
+            className="flex items-center justify-center gap-2 px-6 py-4 bg-linear-to-r from-[#0D7377] to-[#4A7C59] text-white font-semibold rounded-xl hover:shadow-lg active:scale-95 transition-all"
           >
             <RotateCcw className="w-5 h-5" />
             <span>Retake</span>

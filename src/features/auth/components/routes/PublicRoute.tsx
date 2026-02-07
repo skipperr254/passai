@@ -14,9 +14,9 @@ export default function PublicRoute() {
   // Show loading spinner while checking auth
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-br from-slate-50 via-[#0D7377]/5/30 to-[#4A7C59]/5/40 flex items-center justify-center">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 text-blue-600 animate-spin mx-auto mb-4" />
+          <Loader2 className="w-12 h-12 text-[#0D7377] animate-spin mx-auto mb-4" />
           <p className="text-slate-600 font-medium">Loading...</p>
         </div>
       </div>

@@ -92,10 +92,10 @@ export function getUrgencyColor(daysUntil: number | null): {
 
   // Normal - more than 2 weeks
   return {
-    text: "text-green-600",
-    bg: "bg-green-50",
-    border: "border-green-200",
-    badge: "bg-green-100 text-green-700",
+    text: "text-[#4A7C59]",
+    bg: "bg-[#6A994E]/5",
+    border: "border-[#6A994E]/20",
+    badge: "bg-[#6A994E]/10 text-[#4A7C59]",
   };
 }
 
@@ -109,17 +109,17 @@ export function getProgressColor(progress: number): {
 } {
   if (progress >= 80) {
     return {
-      bar: "bg-green-600",
-      text: "text-green-600",
-      badge: "bg-green-100 text-green-700",
+      bar: "bg-[#4A7C59]",
+      text: "text-[#4A7C59]",
+      badge: "bg-[#6A994E]/10 text-[#4A7C59]",
     };
   }
 
   if (progress >= 50) {
     return {
-      bar: "bg-blue-600",
-      text: "text-blue-600",
-      badge: "bg-blue-100 text-blue-700",
+      bar: "bg-[#0D7377]",
+      text: "text-[#0D7377]",
+      badge: "bg-[#0D7377]/10 text-[#0D7377]/90",
     };
   }
 
@@ -147,15 +147,15 @@ export function getPassChanceColor(passChance: number): {
 } {
   if (passChance >= 75) {
     return {
-      text: "text-green-600",
-      badge: "bg-green-100 text-green-700",
+      text: "text-[#4A7C59]",
+      badge: "bg-[#6A994E]/10 text-[#4A7C59]",
     };
   }
 
   if (passChance >= 50) {
     return {
-      text: "text-blue-600",
-      badge: "bg-blue-100 text-blue-700",
+      text: "text-[#0D7377]",
+      badge: "bg-[#0D7377]/10 text-[#0D7377]/90",
     };
   }
 

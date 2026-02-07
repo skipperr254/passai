@@ -1,6 +1,6 @@
 export default function HowItWorksSection() {
   return (
-    <section className="py-20 bg-background" id="how-it-works">
+    <section className="py-20 bg-card" id="how-it-works">
       <div className="container">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -34,7 +34,7 @@ export default function HowItWorksSection() {
               },
             ].map((item, i) => (
               <div key={i} className="flex gap-6 items-start group">
-                <div className="shrink-0 w-16 h-16 rounded-full bg-linear-to-br from-primary to-purple-600 flex items-center justify-center text-white font-bold text-2xl group-hover:scale-110 transition-transform duration-300">
+                <div className="shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#0D7377] to-[#4A7C59] flex items-center justify-center text-white font-bold text-2xl group-hover:scale-110 transition-transform duration-300">
                   {item.step}
                 </div>
                 <div className="flex-1">

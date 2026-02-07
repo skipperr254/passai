@@ -31,14 +31,14 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({
   // Show grading spinner for AI-graded questions
   if (isGrading) {
     return (
-      <div className="p-4 lg:p-5 rounded-xl border-2 mb-6 bg-blue-50 border-blue-200">
+      <div className="p-4 lg:p-5 rounded-xl border-2 mb-6 bg-[#0D7377]/5 border-[#0D7377]/20">
         <div className="flex items-start gap-3">
-          <Loader2 className="w-6 h-6 text-blue-600 shrink-0 animate-spin" />
+          <Loader2 className="w-6 h-6 text-[#0D7377] shrink-0 animate-spin" />
           <div className="flex-1">
-            <h3 className="font-bold text-slate-900 mb-1">
+            <h3 className="font-bold text-[#2D3436] mb-1">
               🌱 Carefully reviewing your answer...
             </h3>
-            <p className="text-sm text-slate-700">
+            <p className="text-sm text-[#2D3436]/70">
               Our AI is nurturing your response with care. This usually takes
               2-3 seconds.
             </p>
@@ -56,29 +56,29 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({
   if (isOpenEnded && gradingResult) {
     const scoreColor =
       gradingResult.score >= 90
-        ? "text-emerald-600"
+        ? "text-[#6A994E]"
         : gradingResult.score >= 70
-        ? "text-blue-600"
+        ? "text-[#0D7377]"
         : gradingResult.score >= 50
-        ? "text-amber-600"
+        ? "text-[#F2A541]"
         : "text-red-600";
 
     const bgColor =
       gradingResult.score >= 70
-        ? "bg-emerald-50 border-emerald-200"
-        : "bg-amber-50 border-amber-200";
+        ? "bg-[#6A994E]/10 border-[#6A994E]/20"
+        : "bg-[#F2A541]/10 border-[#F2A541]/20";
 
     return (
       <div className={`p-4 lg:p-5 rounded-xl border-2 mb-6 ${bgColor}`}>
         <div className="flex items-start gap-3 mb-3">
           {gradingResult.isCorrect ? (
-            <CheckCircle2 className="w-6 h-6 text-emerald-600 shrink-0" />
+            <CheckCircle2 className="w-6 h-6 text-[#6A994E] shrink-0" />
           ) : (
-            <Star className="w-6 h-6 text-amber-600 shrink-0" />
+            <Star className="w-6 h-6 text-[#F2A541] shrink-0" />
           )}
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2">
-              <h3 className="font-bold text-slate-900">
+              <h3 className="font-bold text-[#2D3436]">
                 {gradingResult.isCorrect ? "✓ Great Answer!" : "Partial Credit"}
               </h3>
               <span className={`text-lg font-bold ${scoreColor}`}>
@@ -88,11 +88,11 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({
 
             {/* AI Feedback */}
             <div className="mb-3">
-              <p className="text-sm font-semibold text-slate-900 mb-1 flex items-center gap-1.5">
+              <p className="text-sm font-semibold text-[#2D3436] mb-1 flex items-center gap-1.5">
                 <Lightbulb className="w-4 h-4" />
                 Feedback:
               </p>
-              <p className="text-sm text-slate-700 leading-relaxed">
+              <p className="text-sm text-[#2D3436]/70 leading-relaxed">
                 {gradingResult.feedback}
               </p>
             </div>
@@ -103,11 +103,11 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({
                 gradingResult.keyPoints.missed.length > 0) && (
                 <div className="space-y-2">
                   {gradingResult.keyPoints.captured.length > 0 && (
-                    <div className="bg-emerald-50 p-2 rounded-lg border border-emerald-200">
-                      <p className="text-xs font-bold text-emerald-800 mb-1.5">
+                    <div className="bg-[#6A994E]/10 p-2 rounded-lg border border-[#6A994E]/20">
+                      <p className="text-xs font-bold text-[#4A7C59] mb-1.5">
                         ✓ What you got right:
                       </p>
-                      <ul className="list-disc list-inside text-xs text-slate-700 space-y-1">
+                      <ul className="list-disc list-inside text-xs text-[#2D3436]/70 space-y-1">
                         {gradingResult.keyPoints.captured.map((point, idx) => (
                           <li key={idx} className="leading-relaxed">
                             {point}
@@ -117,12 +117,12 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({
                     </div>
                   )}
                   {gradingResult.keyPoints.missed.length > 0 && (
-                    <div className="bg-amber-50 p-2 rounded-lg border border-amber-200">
-                      <p className="text-xs font-bold text-amber-800 mb-1.5">
-                        � To earn the missing {100 - gradingResult.score}{" "}
+                    <div className="bg-[#F2A541]/10 p-2 rounded-lg border border-[#F2A541]/20">
+                      <p className="text-xs font-bold text-[#F2A541] mb-1.5">
+                        💡 To earn the missing {100 - gradingResult.score}{" "}
                         points:
                       </p>
-                      <ul className="list-disc list-inside text-xs text-slate-700 space-y-1">
+                      <ul className="list-disc list-inside text-xs text-[#2D3436]/70 space-y-1">
                         {gradingResult.keyPoints.missed.map((point, idx) => (
                           <li key={idx} className="leading-relaxed">
                             {point}
@@ -136,11 +136,11 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({
 
             {/* Model Answer */}
             {!gradingResult.isCorrect && (
-              <div className="mt-3 pt-3 border-t border-slate-200">
-                <p className="text-xs font-bold text-slate-700 mb-1">
+              <div className="mt-3 pt-3 border-t border-[#E8E4E1]">
+                <p className="text-xs font-bold text-[#2D3436]/70 mb-1">
                   📖 Model Answer:
                 </p>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-[#6B7280] leading-relaxed">
                   {currentQuestion.correct_answer}
                 </p>
               </div>
@@ -156,22 +156,22 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({
     <div
       className={`p-4 lg:p-5 rounded-xl border-2 mb-6 ${
         latestResult.isCorrect
-          ? "bg-emerald-50 border-emerald-200"
+          ? "bg-[#6A994E]/10 border-[#6A994E]/20"
           : latestResult.wasAnswered
           ? "bg-red-50 border-red-200"
-          : "bg-amber-50 border-amber-200"
+          : "bg-[#F2A541]/10 border-[#F2A541]/20"
       }`}
     >
       <div className="flex items-start gap-3 mb-3">
         {latestResult.isCorrect ? (
-          <CheckCircle2 className="w-6 h-6 text-emerald-600 shrink-0" />
+          <CheckCircle2 className="w-6 h-6 text-[#6A994E] shrink-0" />
         ) : latestResult.wasAnswered ? (
           <XCircle className="w-6 h-6 text-red-600 shrink-0" />
         ) : (
-          <AlertCircle className="w-6 h-6 text-amber-600 shrink-0" />
+          <AlertCircle className="w-6 h-6 text-[#F2A541] shrink-0" />
         )}
         <div className="flex-1">
-          <h3 className="font-bold text-slate-900 mb-1">
+          <h3 className="font-bold text-[#2D3436] mb-1">
             {latestResult.isCorrect
               ? "✓ Correct!"
               : latestResult.wasAnswered
@@ -179,14 +179,14 @@ export const FeedbackSection: React.FC<FeedbackSectionProps> = ({
               : "⏱ Time's Up!"}
           </h3>
           {!latestResult.isCorrect && (
-            <p className="text-sm font-semibold text-slate-700 mb-2">
+            <p className="text-sm font-semibold text-[#2D3436]/70 mb-2">
               Correct answer:{" "}
-              <span className="text-emerald-700">
+              <span className="text-[#4A7C59]">
                 {getCorrectAnswerText(currentQuestion)}
               </span>
             </p>
           )}
-          <p className="text-sm text-slate-700 leading-relaxed">
+          <p className="text-sm text-[#2D3436]/70 leading-relaxed">
             <span className="font-semibold flex items-center gap-1.5 mb-1">
               <Lightbulb className="w-4 h-4" />
               Explanation:

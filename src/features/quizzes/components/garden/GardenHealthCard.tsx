@@ -25,33 +25,33 @@ export const GardenHealthCard: React.FC<GardenHealthCardProps> = ({
 }) => {
   return (
     <div
-      className={`bg-white/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/60 shadow-lg ${className}`}
+      className={`bg-white/80 backdrop-blur-xl rounded-2xl p-6 border border-[#E8E4E1]/60 shadow-lg ${className}`}
     >
       <div className="flex items-center justify-between mb-4">
-        <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
-          <Sprout className="w-6 h-6 text-green-600" />
+        <div className="w-12 h-12 rounded-xl bg-[#6A994E]/10 flex items-center justify-center">
+          <Sprout className="w-6 h-6 text-[#6A994E]" />
         </div>
-        <span className="text-xs font-semibold text-slate-500 uppercase">
+        <span className="text-xs font-semibold text-[#2D3436]/60 uppercase">
           Garden
         </span>
       </div>
 
       {isLoading ? (
         <div className="animate-pulse">
-          <div className="h-8 bg-slate-200 rounded w-20 mb-2"></div>
-          <div className="h-4 bg-slate-200 rounded w-32"></div>
+          <div className="h-8 bg-[#E8E4E1] rounded w-20 mb-2"></div>
+          <div className="h-4 bg-[#E8E4E1] rounded w-32"></div>
         </div>
       ) : (
         <>
           <div className="flex items-baseline gap-2 mb-1">
-            <p className="text-3xl font-bold text-slate-900">
+            <p className="text-3xl font-bold text-[#2D3436]">
               {health !== null ? `${health}%` : "--"}
             </p>
             <span className="text-2xl" role="img" aria-label="garden status">
               {emoticon}
             </span>
           </div>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-[#2D3436]/70">
             {health !== null ? statusLabel : "Start studying to grow"}
           </p>
         </>

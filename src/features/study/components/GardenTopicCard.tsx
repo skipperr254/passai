@@ -28,10 +28,10 @@ interface GardenTopicCardProps {
 
 const getGardenStage = (masteryLevel: number | null) => {
   const level = masteryLevel || 0;
-  if (level < 40) return { emoji: "🌱", label: "Seedling", color: "text-green-600" };
-  if (level < 60) return { emoji: "🌿", label: "Growing", color: "text-emerald-600" };
+  if (level < 40) return { emoji: "🌱", label: "Seedling", color: "text-[#4A7C59]" };
+  if (level < 60) return { emoji: "🌿", label: "Growing", color: "text-[#4A7C59]" };
   if (level < 75) return { emoji: "🌻", label: "Blooming", color: "text-amber-600" };
-  return { emoji: "🌳", label: "Thriving", color: "text-green-700" };
+  return { emoji: "🌳", label: "Thriving", color: "text-[#4A7C59]" };
 };
 
 const getPriorityStyles = (priority: "high" | "medium" | "low") => {
@@ -39,10 +39,10 @@ const getPriorityStyles = (priority: "high" | "medium" | "low") => {
     case "high":
       return "border-l-4 border-l-orange-400 bg-orange-50/30";
     case "medium":
-      return "border-l-4 border-l-blue-400 bg-blue-50/30";
+      return "border-l-4 border-l-[#0D7377]/70 bg-[#0D7377]/5/30";
     case "low":
     default:
-      return "border-l-4 border-l-green-400 bg-green-50/30";
+      return "border-l-4 border-l-[#8CB369] bg-[#6A994E]/5/30";
   }
 };
 
@@ -61,49 +61,49 @@ export const GardenTopicCard: React.FC<GardenTopicCardProps> = ({
   return (
     <div
       className={cn(
-        "bg-white rounded-xl border border-slate-200 shadow-xs mb-4 overflow-hidden transition-all duration-300",
+        "bg-white rounded-xl border border-[#E8E4E1] shadow-xs mb-4 overflow-hidden transition-all duration-300",
         getPriorityStyles(topic.priority)
       )}
     >
       <div 
-        className="p-4 cursor-pointer hover:bg-slate-50/50 transition-colors"
+        className="p-4 cursor-pointer hover:bg-[#FAF3E0]/50 transition-colors"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="flex items-start gap-4">
           <div className="shrink-0 flex flex-col items-center">
             <span className="text-3xl mb-1 filter drop-shadow-sm">{stage.emoji}</span>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-[#2D3436]/60">
               {stage.label}
             </span>
           </div>
 
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between mb-1">
-              <h3 className="text-base font-semibold text-slate-900 truncate pr-2">
+              <h3 className="text-base font-semibold text-[#2D3436] truncate pr-2">
                 {topic.title}
               </h3>
               <div className="flex items-center gap-2 shrink-0">
-                <span className="text-xs font-medium text-slate-600 bg-white/50 px-2 py-1 rounded-full border border-slate-100">
+                <span className="text-xs font-medium text-[#2D3436]/70 bg-white/50 px-2 py-1 rounded-full border border-[#FAF3E0]">
                   {completedTasks}/{totalTasks} tasks
                 </span>
                 {isExpanded ? (
-                  <ChevronUp className="w-5 h-5 text-slate-400" />
+                  <ChevronUp className="w-5 h-5 text-[#2D3436]/50" />
                 ) : (
-                  <ChevronDown className="w-5 h-5 text-slate-400" />
+                  <ChevronDown className="w-5 h-5 text-[#2D3436]/50" />
                 )}
               </div>
             </div>
             
-            <p className="text-sm text-slate-600 mb-3 line-clamp-2">
+            <p className="text-sm text-[#2D3436]/70 mb-3 line-clamp-2">
               {topic.description}
             </p>
 
             {/* Progress Bar */}
-            <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+            <div className="w-full h-1.5 bg-[#FAF3E0] rounded-full overflow-hidden">
               <div 
                 className={cn(
                   "h-full rounded-full transition-all duration-500",
-                  progress === 100 ? "bg-green-500" : "bg-blue-500"
+                  progress === 100 ? "bg-[#6A994E]" : "bg-[#0D7377]"
                 )}
                 style={{ width: `${progress}%` }}
               />
@@ -114,9 +114,9 @@ export const GardenTopicCard: React.FC<GardenTopicCardProps> = ({
 
       {/* Expanded Content */}
       {isExpanded && (
-        <div className="border-t border-slate-100 bg-white/50 p-4 animate-in slide-in-from-top-2 duration-200">
-          <div className="flex items-center gap-2 mb-4 text-xs font-semibold uppercase tracking-wider text-slate-500">
-            <Droplets className="w-3 h-3 text-blue-500" />
+        <div className="border-t border-[#FAF3E0] bg-white/50 p-4 animate-in slide-in-from-top-2 duration-200">
+          <div className="flex items-center gap-2 mb-4 text-xs font-semibold uppercase tracking-wider text-[#2D3436]/60">
+            <Droplets className="w-3 h-3 text-[#0D7377]" />
             <span>Water your garden with these tasks</span>
           </div>
           
@@ -132,8 +132,8 @@ export const GardenTopicCard: React.FC<GardenTopicCardProps> = ({
           </div>
 
           {progress === 100 && (
-            <div className="mt-4 p-3 bg-green-50 text-green-700 rounded-lg flex items-center gap-3 text-sm">
-              <Trophy className="w-5 h-5 text-green-600" />
+            <div className="mt-4 p-3 bg-[#6A994E]/5 text-[#4A7C59] rounded-lg flex items-center gap-3 text-sm">
+              <Trophy className="w-5 h-5 text-[#4A7C59]" />
               <span className="font-medium">
                 Great job! You've watered this seedling completely. 
               </span>

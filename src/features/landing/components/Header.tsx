@@ -30,11 +30,11 @@ export default function Header({
               >
                 <stop
                   offset="0%"
-                  style={{ stopColor: "#2563EB", stopOpacity: 1 }}
+                  style={{ stopColor: "#0D7377", stopOpacity: 1 }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: "#9333EA", stopOpacity: 1 }}
+                  style={{ stopColor: "#4A7C59", stopOpacity: 1 }}
                 />
               </linearGradient>
 
@@ -47,11 +47,11 @@ export default function Header({
               >
                 <stop
                   offset="0%"
-                  style={{ stopColor: "#60A5FA", stopOpacity: 1 }}
+                  style={{ stopColor: "#E07A5F", stopOpacity: 1 }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: "#A78BFA", stopOpacity: 1 }}
+                  style={{ stopColor: "#F2A541", stopOpacity: 1 }}
                 />
               </linearGradient>
 
@@ -172,9 +172,7 @@ export default function Header({
               filter="url(#glow)"
             />
           </svg>
-          <span className="text-2xl font-bold bg-linear-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-            PassAI
-          </span>
+          <span className="text-2xl font-bold text-[#0A5C5F]">PassAI</span>
         </button>
         <nav className="hidden md:flex items-center gap-6">
           <button
@@ -208,7 +206,7 @@ export default function Header({
           </Button>
           <Button
             onClick={handleGetStarted}
-            className="bg-linear-to-r from-primary to-purple-600 hover:opacity-90"
+            className="bg-gradient-to-r from-[#0D7377] to-[#4A7C59] hover:opacity-90"
           >
             Get Started
           </Button>

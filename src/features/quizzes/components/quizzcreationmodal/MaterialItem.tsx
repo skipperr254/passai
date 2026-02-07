@@ -24,8 +24,8 @@ export const MaterialItem: React.FC<MaterialItemProps> = ({
       onClick={onToggle}
       className={`w-full p-3 lg:p-4 rounded-xl border-2 transition-all active:scale-[0.98] ${
         isSelected
-          ? "border-blue-500 bg-blue-50"
-          : "border-slate-200 bg-white hover:border-slate-300"
+          ? "border-[#0D7377] bg-[#0D7377]/10"
+          : "border-[#E8E4E1] bg-white hover:border-[#E8E4E1]"
       }`}
     >
       <div className="flex items-center gap-3">
@@ -37,14 +37,14 @@ export const MaterialItem: React.FC<MaterialItemProps> = ({
           <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
         </div>
         <div className="flex-1 text-left min-w-0">
-          <p className="font-bold text-slate-900 text-sm lg:text-base truncate">
+          <p className="font-bold text-[#2D3436] text-sm lg:text-base truncate">
             {material.file_name}
           </p>
           <div className="flex items-center gap-2 mt-0.5">
             {/* {material.page_count && (             // TODo: add page count to materials
               <>
-                <span className="w-1 h-1 bg-slate-400 rounded-full" />
-                <span className="text-xs text-slate-600">
+                <span className="w-1 h-1 bg-[#2D3436]/50 rounded-full" />
+                <span className="text-xs text-[#2D3436]/70">
                   {material.page_count} pages
                 </span>
               </>
@@ -52,8 +52,8 @@ export const MaterialItem: React.FC<MaterialItemProps> = ({
             {/* Use date of upload of material to calculate how long ago it was uploaded */}
             {timeAgo && (
               <>
-                <span className="w-1 h-1 bg-slate-400 rounded-full" />
-                <span className="text-xs text-slate-600">{timeAgo}</span>
+                <span className="w-1 h-1 bg-[#2D3436]/50 rounded-full" />
+                <span className="text-xs text-[#2D3436]/70">{timeAgo}</span>
               </>
             )}
           </div>
@@ -61,8 +61,8 @@ export const MaterialItem: React.FC<MaterialItemProps> = ({
         <div
           className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${
             isSelected
-              ? "bg-blue-600 border-blue-600"
-              : "bg-white border-slate-300"
+              ? "bg-[#0D7377] border-[#0D7377]"
+              : "bg-white border-[#E8E4E1]"
           }`}
         >
           {isSelected && <Check className="w-4 h-4 text-white" />}

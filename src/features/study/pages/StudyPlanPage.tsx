@@ -116,7 +116,7 @@ export const StudyPlanPage = () => {
   ) {
     return (
       <div className="flex items-center justify-center h-full">
-        <Loader2 className="w-8 h-8 text-blue-500 animate-spin" />
+        <Loader2 className="w-8 h-8 text-[#0D7377] animate-spin" />
       </div>
     );
   }
@@ -125,18 +125,18 @@ export const StudyPlanPage = () => {
   if (subjects.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-full p-8 text-center bg-white/50">
-        <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4">
-          <BookOpen className="w-8 h-8 text-slate-400" />
+        <div className="w-16 h-16 bg-[#FAF3E0] rounded-full flex items-center justify-center mb-4">
+          <BookOpen className="w-8 h-8 text-[#2D3436]/50" />
         </div>
-        <h2 className="text-xl font-bold text-slate-900 mb-2">
+        <h2 className="text-xl font-bold text-[#2D3436] mb-2">
           No Subjects Found
         </h2>
-        <p className="text-slate-600 mb-6">
+        <p className="text-[#2D3436]/70 mb-6">
           Create a subject to start building your study plan.
         </p>
         <button
           onClick={() => navigate("/subjects")}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="px-4 py-2 bg-[#0D7377] text-white rounded-lg hover:bg-[#0D7377]/90 transition-colors"
         >
           Go to Subjects
         </button>
@@ -146,20 +146,20 @@ export const StudyPlanPage = () => {
 
   if (!subject) {
     return (
-      <div className="p-8 text-center text-slate-500">Subject not found</div>
+      <div className="p-8 text-center text-[#2D3436]/60">Subject not found</div>
     );
   }
 
   return (
     <div className="h-full overflow-y-auto bg-white/50">
-      <div className="bg-white border-b border-slate-200">
+      <div className="bg-white border-b border-[#E8E4E1]">
         <div className="px-4 py-4 lg:px-8 lg:py-6 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-slate-900 mb-1">
+              <h1 className="text-2xl font-bold text-[#2D3436] mb-1">
                 My Study Plan
               </h1>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm text-[#2D3436]/70">
                 Managed growth for your subjects
               </p>
             </div>
@@ -173,7 +173,7 @@ export const StudyPlanPage = () => {
                   {subjects.map((sub) => (
                     <SelectItem key={sub.id} value={sub.id}>
                       <div className="flex items-center gap-2">
-                        <BookOpen className="w-4 h-4 text-slate-600" />
+                        <BookOpen className="w-4 h-4 text-[#2D3436]/70" />
                         <span>{sub.name}</span>
                       </div>
                     </SelectItem>

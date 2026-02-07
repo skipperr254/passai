@@ -25,7 +25,7 @@ export function StorageStatsCard({
       {isLoading ? (
         <div className="mt-2 h-8 w-32 animate-pulse rounded bg-slate-200 lg:h-10" />
       ) : (
-        <p className="text-xl font-bold text-blue-600 lg:text-3xl">
+        <p className="text-xl font-bold text-[#0D7377] lg:text-3xl">
           {usedMB}MB
           <span className="ml-2 text-sm font-normal text-slate-600 lg:text-base">
             / {limitMB}MB

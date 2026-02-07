@@ -33,7 +33,7 @@ export const SubjectFilterDesktop: React.FC<SubjectFilterDesktopProps> = ({
           />
         </button>
         {isOpen && (
-          <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border-2 border-slate-200 shadow-xl z-10">
+          <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl border-2 border-[#E8E4E1] shadow-xl z-10">
             {subjects.map((subject) => (
               <button
                 key={subject.id}
@@ -41,8 +41,8 @@ export const SubjectFilterDesktop: React.FC<SubjectFilterDesktopProps> = ({
                   setSelectedSubject(subject);
                   setIsOpen(false);
                 }}
-                className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-slate-50 transition-colors first:rounded-t-xl last:rounded-b-xl ${
-                  selectedSubject.id === subject.id ? "bg-blue-50" : ""
+                className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-[#FAF3E0] transition-colors first:rounded-t-xl last:rounded-b-xl ${
+                  selectedSubject.id === subject.id ? "bg-[#0D7377]/5" : ""
                 }`}
               >
                 <div
@@ -50,11 +50,11 @@ export const SubjectFilterDesktop: React.FC<SubjectFilterDesktopProps> = ({
                 >
                   <Book className="w-5 h-5 text-white" />
                 </div>
-                <span className="flex-1 text-left font-semibold text-slate-900">
+                <span className="flex-1 text-left font-semibold text-[#2D3436]">
                   {subject.name}
                 </span>
                 {selectedSubject.id === subject.id && (
-                  <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                  <CheckCircle2 className="w-5 h-5 text-[#0D7377]" />
                 )}
               </button>
             ))}

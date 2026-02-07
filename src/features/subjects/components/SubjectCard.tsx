@@ -47,10 +47,10 @@ function getColorClasses(color: string) {
     { bg: string; border: string; text: string; badge: string }
   > = {
     blue: {
-      bg: "bg-blue-50",
-      border: "border-blue-200",
-      text: "text-blue-600",
-      badge: "bg-blue-100 text-blue-700",
+      bg: "bg-[#0D7377]/5",
+      border: "border-[#0D7377]/20",
+      text: "text-[#0D7377]",
+      badge: "bg-[#0D7377]/10 text-[#0D7377]/90",
     },
     green: {
       bg: "bg-green-50",
@@ -59,10 +59,10 @@ function getColorClasses(color: string) {
       badge: "bg-green-100 text-green-700",
     },
     purple: {
-      bg: "bg-purple-50",
-      border: "border-purple-200",
-      text: "text-purple-600",
-      badge: "bg-purple-100 text-purple-700",
+      bg: "bg-[#0D7377]/5",
+      border: "border-[#0D7377]/20",
+      text: "text-[#0D7377]",
+      badge: "bg-[#0D7377]/10 text-[#0D7377]/90",
     },
     red: {
       bg: "bg-red-50",
@@ -89,10 +89,10 @@ function getColorClasses(color: string) {
       badge: "bg-cyan-100 text-cyan-700",
     },
     indigo: {
-      bg: "bg-indigo-50",
-      border: "border-indigo-200",
-      text: "text-indigo-600",
-      badge: "bg-indigo-100 text-indigo-700",
+      bg: "bg-[#4A7C59]/5",
+      border: "border-[#4A7C59]/20",
+      text: "text-[#4A7C59]",
+      badge: "bg-[#4A7C59]/10 text-[#4A7C59]/90",
     },
     emerald: {
       bg: "bg-emerald-50",
@@ -107,10 +107,10 @@ function getColorClasses(color: string) {
       badge: "bg-rose-100 text-rose-700",
     },
     violet: {
-      bg: "bg-violet-50",
-      border: "border-violet-200",
-      text: "text-violet-600",
-      badge: "bg-violet-100 text-violet-700",
+      bg: "bg-[#4A7C59]/5",
+      border: "border-[#4A7C59]/20",
+      text: "text-[#4A7C59]",
+      badge: "bg-[#4A7C59]/10 text-[#4A7C59]/90",
     },
     teal: {
       bg: "bg-teal-50",
@@ -237,11 +237,11 @@ export default function SubjectCard({
 
             {/* Name and Description */}
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-bold text-slate-900 truncate">
+              <h3 className="text-lg font-bold text-[#2D3436] truncate">
                 {subject.name}
               </h3>
               {subject.description && (
-                <p className="text-sm text-slate-600 line-clamp-1">
+                <p className="text-sm text-[#2D3436]/70 line-clamp-1">
                   {subject.description}
                 </p>
               )}
@@ -253,7 +253,7 @@ export default function SubjectCard({
             {onEdit && (
               <button
                 onClick={handleEdit}
-                className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 hover:text-blue-600 transition-colors"
+                className="p-2 rounded-lg hover:bg-[#FAF3E0] text-[#2D3436]/70 hover:text-[#0D7377] transition-colors"
                 aria-label="Edit subject"
               >
                 <Edit className="w-4 h-4" />
@@ -262,7 +262,7 @@ export default function SubjectCard({
             {onDelete && (
               <button
                 onClick={handleDelete}
-                className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 hover:text-red-600 transition-colors"
+                className="p-2 rounded-lg hover:bg-[#FAF3E0] text-[#2D3436]/70 hover:text-red-600 transition-colors"
                 aria-label="Delete subject"
               >
                 <Trash2 className="w-4 h-4" />
@@ -276,7 +276,7 @@ export default function SubjectCard({
           {/* Progress */}
           <div className="space-y-1">
             <div className="flex items-center justify-between text-xs">
-              <span className="text-slate-600 font-medium flex items-center gap-1">
+              <span className="text-[#2D3436]/70 font-medium flex items-center gap-1">
                 <TrendingUp className="w-3 h-3" />
                 Progress
               </span>
@@ -286,20 +286,20 @@ export default function SubjectCard({
                     ? "text-green-600"
                     : progressLevel === "medium"
                     ? "text-amber-600"
-                    : "text-slate-600"
+                    : "text-[#2D3436]/70"
                 }`}
               >
                 {subject.progress}%
               </span>
             </div>
-            <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+            <div className="h-2 bg-[#FAF3E0] rounded-full overflow-hidden">
               <div
                 className={`h-full transition-all duration-500 ${
                   progressLevel === "high"
                     ? "bg-green-500"
                     : progressLevel === "medium"
                     ? "bg-amber-500"
-                    : "bg-slate-400"
+                    : "bg-[#2D3436]/50"
                 }`}
                 style={{ width: `${subject.progress}%` }}
               />
@@ -309,7 +309,7 @@ export default function SubjectCard({
           {/* Pass Chance */}
           <div className="space-y-1">
             <div className="flex items-center justify-between text-xs">
-              <span className="text-slate-600 font-medium flex items-center gap-1">
+              <span className="text-[#2D3436]/70 font-medium flex items-center gap-1">
                 <Target className="w-3 h-3" />
                 Pass Chance
               </span>
@@ -322,18 +322,18 @@ export default function SubjectCard({
                       ? "text-amber-600"
                       : passChanceLevel === "low"
                       ? "text-red-600"
-                      : "text-slate-600"
+                      : "text-[#2D3436]/70"
                   }`}
                 >
                   {subject.pass_chance}%
                 </span>
               ) : (
-                <span className="text-xs text-slate-400 font-medium">
+                <span className="text-xs text-[#2D3436]/50 font-medium">
                   Need data
                 </span>
               )}
             </div>
-            <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+            <div className="h-2 bg-[#FAF3E0] rounded-full overflow-hidden">
               {subject.pass_chance !== null ? (
                 <div
                   className={`h-full transition-all duration-500 ${
@@ -343,12 +343,12 @@ export default function SubjectCard({
                       ? "bg-amber-500"
                       : passChanceLevel === "low"
                       ? "bg-red-500"
-                      : "bg-slate-400"
+                      : "bg-[#2D3436]/50"
                   }`}
                   style={{ width: `${subject.pass_chance}%` }}
                 />
               ) : (
-                <div className="h-full bg-slate-300 w-full opacity-30" />
+                <div className="h-full bg-[#E8E4E1] w-full opacity-30" />
               )}
             </div>
           </div>
@@ -361,8 +361,8 @@ export default function SubjectCard({
               testDateInfo.urgency === "soon"
                 ? "text-red-600 font-bold"
                 : testDateInfo.urgency === "past"
-                ? "text-slate-400"
-                : "text-slate-600"
+                ? "text-[#2D3436]/50"
+                : "text-[#2D3436]/70"
             }`}
           >
             <Calendar className="w-4 h-4" />

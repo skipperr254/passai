@@ -27,26 +27,26 @@ export const QuestionsReview: React.FC<QuestionsReviewProps> = ({
               <XCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
             )}
             <div className="flex-1">
-              <p className="font-semibold text-slate-900 mb-1">
+              <p className="font-semibold text-[#2D3436] mb-1">
                 Question {idx + 1}
               </p>
-              <p className="text-sm text-slate-700 mb-3">{q.question}</p>
+              <p className="text-sm text-[#2D3436]/80 mb-3">{q.question}</p>
               <div className="space-y-2">
                 <div
                   className={`p-2 rounded-lg ${
                     q.isCorrect ? "bg-white" : "bg-red-100"
                   }`}
                 >
-                  <p className="text-xs font-semibold text-slate-600 mb-0.5">
+                  <p className="text-xs font-semibold text-[#2D3436]/70 mb-0.5">
                     Your Answer:
                   </p>
-                  <p className="text-sm font-medium text-slate-900">
+                  <p className="text-sm font-medium text-[#2D3436]">
                     {q.userAnswer}
                   </p>
                 </div>
                 {!q.isCorrect && (
                   <div className="p-2 rounded-lg bg-emerald-100">
-                    <p className="text-xs font-semibold text-slate-600 mb-0.5">
+                    <p className="text-xs font-semibold text-[#2D3436]/70 mb-0.5">
                       Correct Answer:
                     </p>
                     <p className="text-sm font-medium text-emerald-900">
@@ -55,7 +55,7 @@ export const QuestionsReview: React.FC<QuestionsReviewProps> = ({
                   </div>
                 )}
               </div>
-              <span className="inline-block mt-2 text-xs font-semibold text-slate-600 bg-white px-2 py-1 rounded">
+              <span className="inline-block mt-2 text-xs font-semibold text-[#2D3436]/70 bg-white px-2 py-1 rounded">
                 Topic: {q.topic}
               </span>
             </div>

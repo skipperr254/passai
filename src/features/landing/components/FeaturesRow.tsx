@@ -3,7 +3,7 @@ import { Brain, CalendarCheck, Target } from "lucide-react";
 
 export default function FeaturesRow() {
   return (
-    <section className="py-20 bg-background" id="features">
+    <section className="py-20 bg-card" id="features">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -21,14 +21,14 @@ export default function FeaturesRow() {
               title: "Pass Probability",
               description:
                 "Real-time calculation of your pass chance based on your progress, quiz scores, and study consistency.",
-              gradient: "from-blue-500 to-cyan-500",
+              gradient: "from-[#0D7377] to-[#4A7C59]",
             },
             {
               icon: <Brain className="h-12 w-12" />,
               title: "AI Quiz Generation",
               description:
                 "Unlimited practice quizzes tailored to your materials and weak areas, adapting to your progress.",
-              gradient: "from-purple-500 to-pink-500",
+              gradient: "from-[#4A7C59] to-[#6A994E]",
             },
             {
               icon: <CalendarCheck className="h-12 w-12" />,

@@ -9,7 +9,7 @@ export default function PricingSection({
 }) {
   return (
     <section
-      className="py-20 bg-linear-to-b from-primary/5 to-background"
+      className="py-20 bg-gradient-to-b from-primary/10 to-secondary/30"
       id="pricing"
     >
       <div className="container">
@@ -63,12 +63,12 @@ export default function PricingSection({
               }`}
             >
               {plan.popular && (
-                <div className="bg-linear-to-r from-primary to-purple-600 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 inline-block">
+                <div className="bg-gradient-to-r from-[#0D7377] to-[#4A7C59] text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 inline-block">
                   Most Popular
                 </div>
               )}
               <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-              <div className="text-4xl font-bold mb-6 bg-linear-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+              <div className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#0D7377] to-[#4A7C59] bg-clip-text text-transparent">
                 {plan.price}
               </div>
               <ul className="space-y-3 mb-8">
@@ -82,7 +82,7 @@ export default function PricingSection({
               <Button
                 className={`w-full ${
                   plan.popular
-                    ? "bg-linear-to-r from-primary to-purple-600 hover:opacity-90"
+                    ? "bg-gradient-to-r from-[#0D7377] to-[#4A7C59] hover:opacity-90"
                     : ""
                 }`}
                 variant={plan.popular ? "default" : "outline"}

@@ -120,10 +120,10 @@ export function FileUploadZone({
           "relative flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 py-12 transition-all lg:py-16",
           isDragActive &&
             !disabled &&
-            "border-blue-500 bg-blue-50 scale-[1.02]",
+            "border-[#0D7377] bg-[#0D7377]/5 scale-[1.02]",
           !isDragActive &&
             !disabled &&
-            "border-slate-300 bg-slate-50 hover:border-blue-400 hover:bg-blue-50/50",
+            "border-slate-300 bg-slate-50 hover:border-[#0D7377]/70 hover:bg-[#0D7377]/5/50",
           disabled && "cursor-not-allowed bg-slate-100 opacity-50"
         )}
       >
@@ -142,11 +142,11 @@ export function FileUploadZone({
         <div
           className={cn(
             "mb-4 flex h-16 w-16 items-center justify-center rounded-full transition-all lg:h-20 lg:w-20",
-            isDragActive ? "bg-blue-100 animate-pulse" : "bg-slate-100"
+            isDragActive ? "bg-[#0D7377]/10 animate-pulse" : "bg-slate-100"
           )}
         >
           {isDragActive ? (
-            <Upload className="h-8 w-8 text-blue-600 lg:h-10 lg:w-10" />
+            <Upload className="h-8 w-8 text-[#0D7377] lg:h-10 lg:w-10" />
           ) : (
             <Upload className="h-8 w-8 text-slate-400 lg:h-10 lg:w-10" />
           )}

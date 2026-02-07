@@ -11,10 +11,10 @@ export const RestartTourButton: React.FC<{ variant?: "full" | "icon" }> = ({
     return (
       <button
         onClick={resetOnboarding}
-        className="p-2 rounded-lg hover:bg-slate-100 transition-colors"
+        className="p-2 rounded-lg hover:bg-[#FAF3E0] transition-colors"
         title="Restart Tour"
       >
-        <HelpCircle className="w-5 h-5 text-slate-600" />
+        <HelpCircle className="w-5 h-5 text-[#2D3436]/70" />
       </button>
     );
   }
@@ -22,7 +22,7 @@ export const RestartTourButton: React.FC<{ variant?: "full" | "icon" }> = ({
   return (
     <button
       onClick={resetOnboarding}
-      className="flex items-center gap-2 px-4 py-2.5 bg-white border-2 border-blue-600 text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-colors"
+      className="flex items-center gap-2 px-4 py-2.5 bg-white border-2 border-[#0D7377] text-[#0D7377] font-semibold rounded-xl hover:bg-[#0D7377]/5 transition-colors"
     >
       <RotateCcw className="w-4 h-4" />
       <span>Restart Tour</span>

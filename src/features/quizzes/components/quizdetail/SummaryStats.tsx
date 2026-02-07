@@ -15,21 +15,21 @@ export const SummaryStats: React.FC<SummaryStatsProps> = ({ attempt }) => {
         <p className="text-2xl font-bold text-emerald-600 mb-1">
           {attempt.correct_answers}
         </p>
-        <p className="text-xs text-slate-600 font-medium">Correct</p>
+        <p className="text-xs text-[#2D3436]/70 font-medium">Correct</p>
       </div>
       <div className="text-center p-4 bg-red-50 border border-red-200 rounded-xl">
         <XCircle className="w-6 h-6 text-red-600 mx-auto mb-2" />
         <p className="text-2xl font-bold text-red-600 mb-1">
           {attempt.total_questions - attempt.correct_answers}
         </p>
-        <p className="text-xs text-slate-600 font-medium">Wrong</p>
+        <p className="text-xs text-[#2D3436]/70 font-medium">Wrong</p>
       </div>
-      <div className="text-center p-4 bg-slate-50 border border-slate-200 rounded-xl">
-        <Clock className="w-6 h-6 text-slate-600 mx-auto mb-2" />
-        <p className="text-2xl font-bold text-slate-900 mb-1">
+      <div className="text-center p-4 bg-[#FAF3E0] border border-[#E8E4E1] rounded-xl">
+        <Clock className="w-6 h-6 text-[#2D3436]/70 mx-auto mb-2" />
+        <p className="text-2xl font-bold text-[#2D3436] mb-1">
           {formatTimeInMinutes(attempt.time_spent)}
         </p>
-        <p className="text-xs text-slate-600 font-medium">Time Spent</p>
+        <p className="text-xs text-[#2D3436]/70 font-medium">Time Spent</p>
       </div>
     </div>
   );
