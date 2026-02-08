@@ -6,7 +6,7 @@ export default function Footer({
   scrollToId: (id: string) => void;
 }) {
   return (
-    <footer className="border-t border-border/40 py-12 bg-gradient-to-br from-background via-primary/5 to-[#4A7C59]/5">
+    <footer className="border-t border-border/40 py-12 bg-linear-to-br from-background via-primary/5 to-[#4A7C59]/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -43,11 +43,11 @@ export default function Footer({
                   >
                     <stop
                       offset="0%"
-                      style={{ stopColor: "#E07A5F", stopOpacity: 1 }}
+                      style={{ stopColor: "#3D9A9E", stopOpacity: 1 }}
                     />
                     <stop
                       offset="100%"
-                      style={{ stopColor: "#F2A541", stopOpacity: 1 }}
+                      style={{ stopColor: "#8CB369", stopOpacity: 1 }}
                     />
                   </linearGradient>
 

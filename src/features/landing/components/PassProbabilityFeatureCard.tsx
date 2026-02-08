@@ -49,13 +49,13 @@ export default function PassProbabilityFeatureCard() {
                       x2="100%"
                       y2="100%"
                     >
-                      <stop offset="0%" stopColor="#0A5C5F" />
-                      <stop offset="100%" stopColor="#6B9E9D" />
+                      <stop offset="0%" stopColor="#0D7377" />
+                      <stop offset="100%" stopColor="#10B981" />
                     </linearGradient>
                   </defs>
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#0D7377] to-[#4A7C59] bg-clip-text text-transparent">
+                  <span className="text-6xl md:text-7xl font-bold bg-linear-to-r from-[#0D7377] to-[#4A7C59] bg-clip-text text-transparent">
                     80%
                   </span>
                   <span className="text-lg text-muted-foreground mt-2">

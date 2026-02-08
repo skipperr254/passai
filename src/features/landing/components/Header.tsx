@@ -47,11 +47,11 @@ export default function Header({
               >
                 <stop
                   offset="0%"
-                  style={{ stopColor: "#E07A5F", stopOpacity: 1 }}
+                  style={{ stopColor: "#3D9A9E", stopOpacity: 1 }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: "#F2A541", stopOpacity: 1 }}
+                  style={{ stopColor: "#8CB369", stopOpacity: 1 }}
                 />
               </linearGradient>
 
@@ -206,7 +206,7 @@ export default function Header({
           </Button>
           <Button
             onClick={handleGetStarted}
-            className="bg-gradient-to-r from-[#0D7377] to-[#4A7C59] hover:opacity-90"
+            className="bg-linear-to-r from-[#0D7377] to-[#4A7C59] hover:opacity-90"
           >
             Get Started
           </Button>

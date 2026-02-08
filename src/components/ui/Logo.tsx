@@ -58,14 +58,14 @@ export const Logo: React.FC<LogoProps> = ({
               y2="100%"
             >
               <stop
-                offset="0%"
-                style={{ stopColor: "#E07A5F", stopOpacity: 1 }}
-              />
-              <stop
-                offset="100%"
-                style={{ stopColor: "#F2A541", stopOpacity: 1 }}
-              />
-            </linearGradient>
+              offset="0%"
+              style={{ stopColor: "#3D9A9E", stopOpacity: 1 }}
+            />
+            <stop
+              offset="100%"
+              style={{ stopColor: "#8CB369", stopOpacity: 1 }}
+            />
+          </linearGradient>
             <filter id="glow">
               <feGaussianBlur stdDeviation="2" result="coloredBlur" />
               <feMerge>
@@ -198,10 +198,10 @@ export const Logo: React.FC<LogoProps> = ({
 
       {showText && (
         <div>
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight leading-none">
+          <h1 className="text-2xl font-bold text-[#0A5C5F] tracking-tight leading-none">
             PassAI
           </h1>
-          <p className="text-sm text-slate-500 font-medium leading-none">
+          <p className="text-sm text-[#4A7C59] font-medium leading-none">
             Intelligent Study
           </p>
         </div>

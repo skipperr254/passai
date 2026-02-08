@@ -34,7 +34,7 @@ export default function HowItWorksSection() {
               },
             ].map((item, i) => (
               <div key={i} className="flex gap-6 items-start group">
-                <div className="shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#0D7377] to-[#4A7C59] flex items-center justify-center text-white font-bold text-2xl group-hover:scale-110 transition-transform duration-300">
+                <div className="shrink-0 w-16 h-16 rounded-full bg-linear-to-br from-[#0D7377] to-[#4A7C59] flex items-center justify-center text-white font-bold text-2xl group-hover:scale-110 transition-transform duration-300">
                   {item.step}
                 </div>
                 <div className="flex-1">

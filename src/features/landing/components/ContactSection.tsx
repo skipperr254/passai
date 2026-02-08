@@ -65,7 +65,7 @@ export default function ContactSection() {
                 </p>
                 <Button
                   size="lg"
-                  className="w-full bg-gradient-to-r from-[#0D7377] to-[#4A7C59] hover:opacity-90"
+                  className="w-full bg-linear-to-r from-[#0D7377] to-[#4A7C59] hover:opacity-90"
                   onClick={() =>
                     (window.location.href = "mailto:passai.study@gmail.com")
                   }

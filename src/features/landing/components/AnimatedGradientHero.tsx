@@ -8,8 +8,8 @@ export default function AnimatedGradientHero({
   scrollToId: (id: string) => void;
 }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-[#4A7C59]/10 animate-gradient">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent animate-pulse opacity-50" />
+    <section className="relative overflow-hidden bg-linear-to-br from-background via-primary/5 to-[#4A7C59]/10 animate-gradient">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent animate-pulse opacity-50" />
       <div className="container relative py-24 md:py-32">
         <div className="mx-auto max-w-4xl text-center space-y-8">
           <h1

@@ -107,8 +107,8 @@ export default function LandingPage() {
 
           {/* Feature 4 */}
           <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 border border-[#E8E4E1]/60 shadow-lg hover:shadow-xl transition-all">
-            <div className="w-12 h-12 rounded-xl bg-[#E07A5F]/10 flex items-center justify-center mb-4">
-              <Sparkles className="w-6 h-6 text-[#E07A5F]" />
+            <div className="w-12 h-12 rounded-xl bg-[#8CB369]/10 flex items-center justify-center mb-4">
+              <Sparkles className="w-6 h-6 text-[#8CB369]" />
             </div>
             <h3 className="text-lg font-bold text-[#2D3436] mb-2">
               Gamified Learning
@@ -166,7 +166,7 @@ export default function LandingPage() {
 
           {/* Step 3 */}
           <div className="flex items-start gap-6">
-            <div className="shrink-0 w-12 h-12 rounded-full bg-linear-to-br from-[#E07A5F] to-[#F2A541] flex items-center justify-center text-white font-bold text-lg shadow-lg">
+            <div className="shrink-0 w-12 h-12 rounded-full bg-linear-to-br from-[#8CB369] to-[#6A994E] flex items-center justify-center text-white font-bold text-lg shadow-lg">
               3
             </div>
             <div>
